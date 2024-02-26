@@ -24,7 +24,7 @@
                     <!-- Logo -->
                     <a href="#">
                         <span class="sr-only">Santoryo</span>
-                        <img src="{{ URL::asset('assets/images/logo1-01.png') }}" style="width: 7rem" alt="">
+                        <img src="{{ URL::asset('assets/images/santoryooblack.png') }}" style="width: 10rem" alt="">
                     </a>
                     <!-- Close btn -->
                     <button @click="isSidebarOpen = false" class="p-1 rounded-lg focus:outline-none focus:ring">
@@ -37,7 +37,7 @@
                     </button>
                 </div>
                 <ul class="flex  overflow-y-scroll flex-col flex-1 w-64 p-4 mt-2">
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/dashboard.html">
                             <div
@@ -66,7 +66,7 @@
                         </a>
                     </li>
 
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/tables.html">
                             <div
@@ -95,7 +95,7 @@
                         </a>
                     </li>
 
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/billing.html">
                             <div
@@ -124,7 +124,7 @@
                         </a>
                     </li>
 
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/virtual-reality.html">
                             <div
@@ -157,7 +157,7 @@
                         </a>
                     </li>
 
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/rtl.html">
                             <div
@@ -189,11 +189,11 @@
                         </a>
                     </li>
 
-                    <li class="w-full mt-4">
+                    <li class="w-full mt-4 hover:bg-gray-100 rounded-xl group">
                         <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">Gym Management</h6>
                     </li>
                     <!---Sales-->
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/tables.html">
                             <div
@@ -223,7 +223,7 @@
                     </li>
                     <!---Offer-->
 
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/tables.html">
                             <div
@@ -252,7 +252,7 @@
                         </a>
                     </li>
                     <!---Subscription-->
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/sign-in.html">
                             <div
@@ -282,13 +282,13 @@
                         </a>
                     </li>
 
-                    <li class="w-full mt-4">
+                    <li class="w-full mt-4 hover:bg-gray-100 rounded-xl group">
                         <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">Lessons Managment
                         </h6>
                     </li>
 
                     <!---Lessons-->
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/sign-up.html">
                             <div
@@ -323,7 +323,7 @@
                         </a>
                     </li>
                     <!---Coashs-->
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/sign-up.html">
                             <div
@@ -358,7 +358,7 @@
                         </a>
                     </li>
 
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/sign-up.html">
                             <div
@@ -394,11 +394,11 @@
                     </li>
                     <!---Accounts Management-->
 
-                    <li class="w-full mt-4">
+                    <li class="w-full mt-4 hover:bg-gray-100 rounded-xl group">
                         <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">Account pages</h6>
                     </li>
 
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/profile.html">
                             <div
@@ -430,7 +430,7 @@
                         </a>
                     </li>
 
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/sign-in.html">
                             <div
@@ -459,7 +459,7 @@
                         </a>
                     </li>
 
-                    <li class="mt-0.5 w-full">
+                    <li class="mt-0.5 w-full hover:bg-gray-100 rounded-xl group">
                         <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors"
                             href="../pages/sign-up.html">
                             <div

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Offer extends Model
 {
     use HasFactory;
+    protected $table = "offers";
+    protected $fillable = [
+        "","","","","","","",
+    ] ;
 }

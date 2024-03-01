@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\salle;
-use Illuminate\Http\Request;
+use App\Models\Transaction;
+use App\Http\Requests\StoreTransactionRequest;
+use App\Http\Requests\UpdateTransactionRequest;
 
-class SalleController extends Controller
+class TransactionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +27,7 @@ class SalleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTransactionRequest $request)
     {
         //
     }
@@ -34,7 +35,7 @@ class SalleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(salle $salle)
+    public function show(Transaction $transaction)
     {
         //
     }
@@ -42,7 +43,7 @@ class SalleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(salle $salle)
+    public function edit(Transaction $transaction)
     {
         //
     }
@@ -50,7 +51,7 @@ class SalleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, salle $salle)
+    public function update(UpdateTransactionRequest $request, Transaction $transaction)
     {
         //
     }
@@ -58,7 +59,7 @@ class SalleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(salle $salle)
+    public function destroy(Transaction $transaction)
     {
         //
     }

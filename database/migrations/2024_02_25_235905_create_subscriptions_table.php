@@ -15,13 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('offer_id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('salle_id');
             $table->date('start_date');
             $table->date('end_date');
             $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('user_id')->references('id')->on('offers')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('user_id')->references('id')->on('offers')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            
         });
     }
 

@@ -5,31 +5,38 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use App\Repositories\Interfaces\UserRepositoryInterface;
 
 class LoginController extends Controller
 {
-  public function showLoginForm()
-  {
-    return view('auth.login');
-  }
-  public function login(LoginRequest $request)
-  {
-    $form = $request->validated();
+    protected $userRepository;
 
-    if (Auth::attempt($form)) {
-      $request->session()->regenerate();
-      return redirect('/');
+    public function __construct(UserRepositoryInterface $userRepository)
+    {
+        $this->userRepository = $userRepository;
     }
 
-    return back()->onlyInput('email');
-  }
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
 
-  public function logout(Request $request)
-  {
-    auth()->logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    return redirect('login');
-  }
+    public function login(LoginRequest $request)
+    {
+        $credentials = $request->validated();
+
+        if ($this->userRepository->attemptLogin($credentials)) {
+            return redirect()->intended('/');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided email or password do not match',
+        ])->onlyInput('email');
+    }
+
+    public function logout(Request $request)
+    {
+        $this->userRepository->logout();
+        return redirect('login');
+    }
 }

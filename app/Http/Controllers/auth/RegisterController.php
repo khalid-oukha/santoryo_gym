@@ -6,12 +6,20 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Role;
 use App\Models\User;
+use App\Repositories\Interfaces\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
     //
+
+    protected $userRepository;
+
+    public function __construct(UserRepositoryInterface $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
     public function showRegistrationForm(){
         return view('auth.register');
     }
@@ -19,15 +27,14 @@ class RegisterController extends Controller
     public function register(RegisterRequest $request){
         $form = $request->validated();
         // dd($form);
+
+
         $form['password'] = Hash::make($form['password']);
-        $user = User::create($form);
-        if($user){
-            $memberRole = Role::where('name','member')->first();
-            // dd($memberRole);
-            $user->roles()->attach($memberRole->id);
+
+        if($this->userRepository->createUser($form)){
+            return redirect('/');
         }
-        auth()->login($user);
-        return redirect('/');
+
 
     }
 }

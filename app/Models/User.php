@@ -51,4 +51,8 @@ class User extends Authenticatable
     public static function getTokenSingle($token){
         return self::where('remember_token', $token)->first();
     }
+
+    public function roles(){
+        return $this->belongsToMany(Role::class,'role_user', 'user_id', 'role_id');
+    }
 }

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -20,6 +21,11 @@ class RegisterController extends Controller
         // dd($form);
         $form['password'] = Hash::make($form['password']);
         $user = User::create($form);
+        if($user){
+            $memberRole = Role::where('name','member')->first();
+            // dd($memberRole);
+            $user->roles()->attach($memberRole->id);
+        }
         auth()->login($user);
         return redirect('/');
 

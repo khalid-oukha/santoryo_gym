@@ -9,28 +9,27 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function showLoginForm(){
-        return view('auth.login');
-    }
-    public function login(LoginRequest $request)
-    {
-       $form = $request->validated();
+  public function showLoginForm()
+  {
+    return view('auth.login');
+  }
+  public function login(LoginRequest $request)
+  {
+    $form = $request->validated();
 
-       if(Auth::attempt($form)){
-        $request->session()->regenerate();
-        return redirect('/');
-       }
-
-       return back()->onlyInput('email');
-
+    if (Auth::attempt($form)) {
+      $request->session()->regenerate();
+      return redirect('/');
     }
 
-    public function logout(Request $request)
-    {
-      auth()->logout();
-      $request->session()->invalidate();
-      $request->session()->regenerateToken();
-      return redirect('login');
-    }
-    
+    return back()->onlyInput('email');
+  }
+
+  public function logout(Request $request)
+  {
+    auth()->logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('login');
+  }
 }

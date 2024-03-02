@@ -8,6 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Role[] $roles
+ * @method bool isManager()
+ * @method bool isAdmin()
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -54,5 +59,12 @@ class User extends Authenticatable
 
     public function roles(){
         return $this->belongsToMany(Role::class,'role_user', 'user_id', 'role_id');
+    }
+
+    public function isAdmin(){
+        return $this->roles()->where('name', 'admin')->exists();
+    }
+    public function isManager(){
+        return $this->roles()->where('name','manager')->exists();
     }
 }

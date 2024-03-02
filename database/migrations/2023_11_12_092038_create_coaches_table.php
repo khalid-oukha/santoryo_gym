@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('cin');
             $table->string('specialization'); // Additional information specific to coaches
             $table->timestamps();
+            $table->text('description');
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade');

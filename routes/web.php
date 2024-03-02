@@ -24,6 +24,7 @@ Route::get('/', function () {
 });
 
 // Authentication Routes...
+
 Route::get('/login', [LoginController::class,'showLoginForm'])->name('loginform');
 Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::post('/logout', [LoginController::class,'logout'])->name('logout');
@@ -41,5 +42,8 @@ Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('
 
 // dashboard Routes...
 
-Route::get('/admin', [StatisticsController::class,'index'])->name('index.statistics');
 
+Route::prefix('admin')->middleware(['is_admin'])->group(function () {
+        Route::get('/', [StatisticsController::class, 'index'])->name('index.statistics');
+});
+    

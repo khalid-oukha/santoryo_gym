@@ -20,6 +20,8 @@ class CoachFactory extends Factory
             'user_id' => \App\Models\User::factory(),
             'cin' => $this->faker->regexify('PA[0-9]{6}'), // Moroccan CIN format
             'specialization' => $this->faker->randomElement(['Football', 'Basketball', 'Swimming', 'Athletics']),
+            'description' => $this->faker->paragraph(),
         ];
+
     }
 }

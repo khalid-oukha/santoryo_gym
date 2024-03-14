@@ -28,11 +28,10 @@ class LoginController extends Controller
 
     if ($this->userRepository->attemptLogin($credentials)) {
 
-        if (auth()->user()->isAdmin() || auth()->user()->isManager()) {
-            return redirect('/admin'); 
-        }
-            return redirect('/');
-
+      if (auth()->user()->isAdmin() || auth()->user()->isManager()) {
+        return redirect('/admin/coachs');
+      }
+      return redirect('/');
     }
 
     return back()->withErrors([

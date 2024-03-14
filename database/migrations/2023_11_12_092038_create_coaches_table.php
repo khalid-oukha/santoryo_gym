@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('coaches', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id')->primary();
             $table->string('cin');
-            $table->string('specialization'); // Additional information specific to coaches
+            $table->string('specialization');
             $table->timestamps();
             $table->text('description');
+            $table->enum('status', ['avaliable', 'active'])->default('avaliable');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('image')->nullable();
 
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade');
         });
     }
 

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->decimal('price', 5, 2);
             $table->integer('months_valid');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

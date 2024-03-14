@@ -21,6 +21,7 @@ return new class extends Migration
             $table->enum('status', ['planned', 'completed', 'canceled'])->default('planned');
             $table->timestamps();
             $table->text('description');
+            $table->string('image')->nullable();
 
             $table->foreign('coach_id')->references('user_id')->on('coaches')
                 ->onDelete('cascade');

@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\StatisticsController;
+use App\Http\Controllers\backoffice\Coachs\CoachController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,9 @@ Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('
 
 
 Route::prefix('admin')->middleware(['is_admin'])->group(function () {
-        Route::get('/', [StatisticsController::class, 'index'])->name('index.statistics');
+        Route::get('/coachs', [StatisticsController::class, 'index'])->name('index.statistics');
+        // Coash Routes...
+
+        Route::get('/coachs',[CoachController::class, 'index'])->name('coash.index');
+
 });
-    

@@ -1,0 +1,29 @@
+.customgradient {
+    background: rgb(12, 10, 9);
+    background: linear-gradient(90deg, rgba(12, 10, 9, 0.9697128851540616) 21%, rgba(0, 80, 3, 0.9613095238095238) 100%);
+}
+
+.darkgradient {
+    background: rgb(12, 10, 9);
+    background: linear-gradient(90deg, rgba(12, 10, 9, 0.9697128851540616) 7%, rgba(12, 10, 9, 0.9360994397759104) 100%);
+}
+
+.darkgradients {
+    background: rgb(12, 10, 9);
+    background: linear-gradient(70deg, rgba(12, 10, 9, 0.871) 70%, rgba(1, 65, 6, 0.899) 100%);
+}
+
+
+/* Add this style to your existing CSS or in a separate stylesheet */
+.nav-item {
+    transition: transform 0.3s ease;
+    /* Add smooth transition for the scaling effect */
+}
+
+.nav-item:hover {
+    background-color: #f0f0f0;
+    /* Change the background color as desired */
+    transform: scale(1.05);
+    /* Scale up by 5% on hover */
+}
+

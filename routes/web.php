@@ -47,7 +47,7 @@ Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('
 Route::prefix('admin')->middleware(['is_admin'])->group(function () {
         Route::get('/coachs', [StatisticsController::class, 'index'])->name('index.statistics');
         // Coash Routes...
-
-        Route::get('/coachs',[CoachController::class, 'index'])->name('coash.index');
+        // Route::get('/coachs',[CoachController::class, 'index'])->name('coash.index');
 
 });
+Route::resource('coach', CoachController::class);

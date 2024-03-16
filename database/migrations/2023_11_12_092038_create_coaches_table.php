@@ -18,9 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->text('description');
             $table->enum('status', ['avaliable', 'active'])->default('avaliable');
+            $table->enum('gender', ['male', 'female'])->default('male');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('image')->nullable();
-
         });
     }
 

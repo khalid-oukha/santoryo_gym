@@ -12,5 +12,9 @@ class Coach extends Model
     protected $fillable = [
         "cin",
         "specialization",
+        "description",
+        "status",
+        "gender",
+        "image"
     ];
 }

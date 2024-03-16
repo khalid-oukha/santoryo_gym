@@ -1,5 +1,5 @@
-<div class="nk-sidebar" data-content="sidebarMenu">
-    <div class="nk-sidebar-bar">
+<div class="nk-sidebar " data-content="sidebarMenu">
+    <div class="nk-sidebar-bar bg-primary-100">
         <div class="nk-apps-brand">
             <a href="html/index.html" class="logo-link">
                 <img class="logo-light logo-img" src="./images/logo-small.png" srcset="./images/logo-small2x.png 2x"
@@ -8,12 +8,12 @@
                     srcset="./images/logo-dark-small2x.png 2x" alt="logo-dark">
             </a>
         </div>
-        <div class="nk-sidebar-element">
+        <div class="nk-sidebar-element ">
             <div class="nk-sidebar-body">
                 <div class="nk-sidebar-content" data-simplebar>
-                    <div class="nk-sidebar-menu">
+                    <div class="nk-sidebar-menu ">
                         <!-- Menu -->
-                        <ul class="nk-menu apps-menu">
+                        <ul class="nk-menu apps-menu ">
                             <li class="nk-menu-item">
                                 <a href="#" class="nk-menu-link nk-menu-switch" data-target="navPharmacy">
                                     <span class="nk-menu-icon"><em class="icon ni ni-capsule"></em></span>

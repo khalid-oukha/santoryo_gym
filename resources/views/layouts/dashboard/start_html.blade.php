@@ -14,4 +14,6 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('assets/css/dashlite.css?ver=3.2.3') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('assets/css/dashlite.css?ver=3.2.3') }}">
+    @vite('resources/css/app.css')
+
 </head>

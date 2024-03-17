@@ -8,10 +8,10 @@
                             </div>
                             <div class="nk-header-brand d-xl-none">
                                 <a href="html/index.html" class="logo-link">
-                                    <img class="logo-light logo-img" src="./images/logo.png"
-                                        srcset="./images/logo2x.png 2x" alt="logo">
-                                    <img class="logo-dark logo-img" src="./images/logo-dark.png"
-                                        srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                                    <img class="logo-light logo-img" src="/images/logo.png"
+                                        srcset="/images/logo2x.png 2x" alt="logo">
+                                    <img class="logo-dark logo-img" src="/images/logo-dark.png"
+                                        srcset="/images/logo-dark2x.png 2x" alt="logo-dark">
                                 </a>
                             </div><!-- .nk-header-brand -->
                             <div class="nk-header-search ms-3 ms-xl-0 d-none d-md-flex">
@@ -257,7 +257,7 @@
                                         <a href="#" class="dropdown-toggle nk-quick-nav-icon"
                                             data-bs-toggle="dropdown">
                                             <div class="quick-icon border border-light">
-                                                <img class="icon" src="./images/flags/english-sq.png"
+                                                <img class="icon" src="/images/flags/english-sq.png"
                                                     alt="">
                                             </div>
                                         </a>
@@ -265,28 +265,28 @@
                                             <ul class="language-list">
                                                 <li>
                                                     <a href="#" class="language-item">
-                                                        <img src="./images/flags/english.png" alt=""
+                                                        <img src="/images/flags/english.png" alt=""
                                                             class="language-flag">
                                                         <span class="language-name">English</span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" class="language-item">
-                                                        <img src="./images/flags/spanish.png" alt=""
+                                                        <img src="/images/flags/spanish.png" alt=""
                                                             class="language-flag">
                                                         <span class="language-name">Español</span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" class="language-item">
-                                                        <img src="./images/flags/french.png" alt=""
+                                                        <img src="/images/flags/french.png" alt=""
                                                             class="language-flag">
                                                         <span class="language-name">Français</span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" class="language-item">
-                                                        <img src="./images/flags/turkey.png" alt=""
+                                                        <img src="/images/flags/turkey.png" alt=""
                                                             class="language-flag">
                                                         <span class="language-name">Türkçe</span>
                                                     </a>

@@ -247,7 +247,7 @@
                                                     </div>
                                                     <div class="user-name">
                                                         <span
-                                                            class="tb-lead">{{ $coash->user->firstname . $coash->user->lastname }}<span
+                                                            class="tb-lead">{{ $coash->user->firstname . '' . $coash->user->lastname }}<span
                                                                 class="dot dot-info d-lg-none ms-1"></span></span>
                                                     </div>
                                                 </div>
@@ -277,18 +277,22 @@
                                                     </a>
                                                 </li>
                                                 <li class="nk-tb-action-hidden">
-                                                    <a href="#" class="btn btn-trigger btn-icon"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Send Email">
-                                                        <em class="icon ni ni-mail-fill"></em>
-                                                    </a>
+
+                                                        <a href="{{ route('coach.edit', ['coach' => $coash]) }}" class="btn btn-trigger btn-icon"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Edit">
+                                                            <em class="icon ni ni-edit"></em>
+                                                        </a>
+
                                                 </li>
                                                 <li class="nk-tb-action-hidden">
-                                                    <form action="{{route('coach.destroy',['coach' => $coash]) }}" method="POST">
+                                                    <form action="{{ route('coach.destroy', ['coach' => $coash]) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('DELETE')
 
-                                                        <button onclick="return confirm('Do you really want to Delete ?');" type="submit"  class="btn btn-trigger btn-icon"
+                                                        <button onclick="return confirm('Do you really want to Delete ?');"
+                                                            type="submit" class="btn btn-trigger btn-icon"
                                                             data-bs-toggle="tooltip" data-bs-placement="top"
                                                             title="Suspend">
                                                             <em class="icon ni ni-cross-fill-c"></em>

@@ -9,14 +9,14 @@
                         <div class="nk-block-head-content">
                             <div class="nk-block-head-sub"><a class="back-to" href="html/components.html"><em
                                         class="icon ni ni-arrow-left"></em><span>Coach's management</span></a></div>
-                            <h2 class="nk-block-title fw-normal">Here YOU can add new coach</h2>
+                            <h2 class="nk-block-title fw-normal">Here YOU can Edit  coach</h2>
 
                         </div>
                     </div><!-- .nk-block-head -->
                     <div class="nk-block nk-block-lg">
                         <div class="nk-block-head">
                             <div class="nk-block-head-content">
-                                <h4 class="title nk-block-title">Please to create an account for coash </h4>
+                                <h4 class="title nk-block-title">YOU CAN EDIT THEN SUBMIT FORM </h4>
                                 <div class="nk-block-des">
                                     <p>give the informations and Validating your form, just add the class </p>
                                 </div>
@@ -36,26 +36,27 @@
                                 </div>
                             @endif
                             <div class="card-inner">
-                                <form action="{{ route('coach.store') }}" enctype="multipart/form-data" method="POST"
+                                <form action="{{ route('coach.update',['coach' => $coach]) }}" enctype="multipart/form-data" method="POST"
                                     class="form-validate">
                                     @csrf
-                                    @method('POST')
+                                    @method('PATCH')
                                     <div class="row g-gs">
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-full-name">Last Name</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control" id="fv-full-name"
-                                                        name="lastname" required>
+                                                    <input type="text" value="{{ $coach->user->lastname }}" class="form-control" id="fv-full-name"
+                                                        name="lastname" >
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="hidden" name="id" value="{{ $coach->user->id }}">
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-full-name">First Name</label>
                                                 <div class="form-control-wrap">
                                                     <input type="text" class="form-control" id="fv-full-name"
-                                                        name="firstname" required>
+                                                        name="firstname" value="{{ $coach->user->firstname }}" >
                                                 </div>
                                             </div>
                                         </div>
@@ -66,8 +67,8 @@
                                                     <div class="form-icon form-icon-right">
                                                         <em class="icon ni ni-mail"></em>
                                                     </div>
-                                                    <input type="text" class="form-control" id="fv-email" name="email"
-                                                        required>
+                                                    <input type="text" value="{{ $coach->user->email }}" class="form-control" id="fv-email" name="email"
+                                                        >
                                                 </div>
                                             </div>
                                         </div>
@@ -79,8 +80,8 @@
                                                     <div class="form-icon form-icon-right">
                                                         <em class="icon ni ni-mail"></em>
                                                     </div>
-                                                    <input type="password" class="form-control" id="fv-email"
-                                                        name="password" required>
+                                                    <input type="password"  class="form-control" id="fv-email"
+                                                        name="password" >
                                                 </div>
                                             </div>
                                         </div>
@@ -92,7 +93,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text" id="fv-phone">CIN</span>
                                                         </div>
-                                                        <input name="cin" type="cin" class="form-control" required>
+                                                        <input name="cin" value="{{ $coach->cin }}" type="cin" class="form-control" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -107,7 +108,7 @@
                                                                 class="custom-control custom-radio custom-control-pro no-control">
                                                                 <input name="gender" checked type="radio"
                                                                     class="custom-control-input" value="male"
-                                                                    id="sex-male" required>
+                                                                    id="sex-male" >
                                                                 <label class="custom-control-label"
                                                                     for="sex-male">male</label>
                                                             </div>
@@ -117,7 +118,7 @@
                                                                 class="custom-control custom-radio custom-control-pro no-control">
                                                                 <input name="gender" type="radio"
                                                                     class="custom-control-input" value="female"
-                                                                    id="sex-female" required>
+                                                                    id="sex-female" >
                                                                 <label class="custom-control-label"
                                                                     for="sex-female">female</label>
                                                             </div>
@@ -130,8 +131,8 @@
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-subject">specialization</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control" id="fv-subject"
-                                                        name="specialization" required>
+                                                    <input type="text" value="{{ $coach->specialization }}" class="form-control" id="fv-subject"
+                                                        name="specialization" >
                                                 </div>
                                             </div>
                                         </div>
@@ -141,7 +142,7 @@
                                                 <label class="form-label" for="fv-message">description</label>
                                                 <div class="form-control-wrap">
                                                     <textarea class="form-control form-control-sm" id="fv-message" name="description" placeholder="Write your message"
-                                                        required>lorem</textarea>
+                                                        >{{ $coach->description }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,7 +152,7 @@
                                                 <div class="form-control-wrap">
                                                     <input name="image" type="file"
                                                         class="form-control form-control-sm" id="fv-image"
-                                                         required>
+                                                        >
                                                 </div>
                                             </div>
                                         </div>

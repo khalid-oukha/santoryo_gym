@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backoffice\Coachs;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Coash\CoachUpdateRequest;
 use App\Http\Requests\Coash\StoreCoashRequest;
 use App\Models\Coach;
 use App\Models\User;
@@ -26,7 +27,6 @@ class CoachController extends Controller
     {
         $data = $request->validated();
     
-        // Create the user
         $user = User::create([
             'lastname' => $data['lastname'],
             'firstname' => $data['firstname'],
@@ -34,21 +34,17 @@ class CoachController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     
-        // Handle image upload
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = time() . '-' . $data['lastname'] . '.' . $image->getClientOriginalExtension();
             
-            // Store the image
             $imagePath = $image->storeAs('public/images/uploads', $imageName);
     
             if ($imagePath) {
-                // Update the user's image path
                 $user->image = $imageName;
                 $user->save();
             } else {
-                // Handle error if image upload fails
-                $user->delete(); // Rollback user creation
+                $user->delete(); 
                 return back()->with('error', 'Failed to upload image.');
             }
         }
@@ -72,11 +68,9 @@ class CoachController extends Controller
 
         }
     
-        // Return a response or redirect as needed
     }
     
     public function destroy(Coach $coach){
-        // $coach = Coach::findOrFail('user_id',$user_id);
         $coach->delete();
         if($coach)
         {
@@ -86,6 +80,40 @@ class CoachController extends Controller
     }
 
 
+    public function edit(Coach $coach)
+    {
+        return view('admin.coach.edit', compact('coach'));
+    }
 
+    public function update(CoachUpdateRequest $request){
+        $data = $request->validated();
+        // dd($data);
+        $coach = Coach::find($data['id']);
+        $user = User::find($data['id']);
+        $user->update([
+            'lastname' => $data['lastname'],
+            'firstname' => $data['firstname'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '-' . $data['lastname'] . '.' . $image->getClientOriginalExtension();
+            
+            $imagePath = $image->storeAs('public/images/uploads', $imageName);
+    
+            if ($imagePath) {
+                $user->image = $imageName;
+                $user->save();
+            } else {
+                $user->delete(); 
+                return back()->with('error', 'Failed to upload image.');
+            }
+        }
+        $coach->update([
+            'cin' => $data['cin'],
+            'specialization' => $data['specialization'],
+            'description' => $data['description'],]);
+    }
     
 }

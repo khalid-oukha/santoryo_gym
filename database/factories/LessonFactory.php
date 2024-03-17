@@ -19,7 +19,7 @@ class LessonFactory extends Factory
      */
     public function definition(): array
     {
-        $coachId = Coach::inRandomOrder()->first()?->user_id ?? null;
+        $coachId = Coach::inRandomOrder()->first()?->id ?? null;
 
         return [
             'title' => $this->faker->sentence(3),

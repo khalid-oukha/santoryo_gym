@@ -346,45 +346,19 @@
             <div class="flex relative items-center justify-center">
     
                 <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-10 px-16 ">
-    
+                    @foreach ($coachs as $coach)
+                        
                     <div class="">
                         <div class="max-w-sm border border-red-900 shadow-lg rounded-lg overflow-hidden my-4">
-                            <img class="w-full h-56 object-cover object-center" src="{{ asset('assets/images/coash1.png') }}"
+                            <img class="w-full h-56 object-cover object-center" src="{{ asset('storage/images/uploads/' . $coach->user->image) }}"
                                 alt="avatar">
                             <div class=" px-6 py-3 ">
-                                <h3 class="text-2xl font-semibold text-gray-100">Ghoufran</h3>
-                                <p class="  text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
-                                    voluptatibus libero quaerat dignissimos vero officiis recusandae tenetur distinctio totam
-                                    inventore illo assumenda molestiae est odit animi commodi nostrum, atque expedita?</p>
+                                <h3 class="text-2xl font-semibold text-gray-100">{{ $coach->user->firstname . $coach->user->lastname }}</h3>
+                                <p class="  text-gray-400">{{ $coach->description }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="">
-                        <div class="max-w-sm border border-red-900 shadow-lg rounded-lg overflow-hidden my-4">
-                            <img class="w-full h-56 object-cover object-center"
-                                src="{{ asset('assets/images/yogaclass.png') }}" alt="avatar">
-                            <div class=" px-6 py-3 ">
-                                <h3 class="text-2xl font-semibold text-gray-100">louisi yassine</h3>
-                                <p class="  text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
-                                    voluptatibus libero quaerat dignissimos vero officiis recusandae tenetur distinctio totam
-                                    inventore illo assumenda molestiae est odit animi commodi nostrum, atque expedita?</p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="">
-                        <div class="max-w-sm border border-red-900 shadow-lg rounded-lg overflow-hidden my-4">
-                            <img class="w-full h-56 object-cover object-center" src="{{ asset('assets/images/coash1.png') }}"
-                                alt="avatar">
-                            <div class=" px-6 py-3 ">
-                                <h3 class="text-2xl font-semibold text-gray-100">carla</h3>
-                                <p class="  text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
-                                    voluptatibus libero quaerat dignissimos vero officiis recusandae tenetur distinctio totam
-                                    inventore illo assumenda molestiae est odit animi commodi nostrum, atque expedita?</p>
-                            </div>
-                        </div>
-                    </div>
-    
+                    @endforeach
                 </div>
             </div>
         </div>

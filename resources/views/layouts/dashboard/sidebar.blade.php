@@ -126,11 +126,11 @@
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
                                 <a href="{{ route('coach.create') }}" class="nk-menu-link"><span
-                                        class="nk-menu-text">Coach List</span></a>
+                                        class="nk-menu-text">Add Coach</span></a>
                             </li>
                             <li class="nk-menu-item">
                                 <a href="{{ route('coach.index') }}" class="nk-menu-link"><span
-                                        class="nk-menu-text">Add Coach</span></a>
+                                        class="nk-menu-text">Coach List</span></a>
                             </li>
 
                             <li class="nk-menu-item">

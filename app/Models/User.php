@@ -63,7 +63,7 @@ class User extends Authenticatable
     }
 
     public function Coach(){
-        return $this->hasOne(Coach::class);
+        return $this->hasOne(Coach::class,'id');
     }
 
     public function isAdmin(){

@@ -141,7 +141,7 @@
                                                 <label class="form-label" for="fv-message">description</label>
                                                 <div class="form-control-wrap">
                                                     <textarea class="form-control form-control-sm" id="fv-message" name="description" placeholder="Write your message"
-                                                        required></textarea>
+                                                        required>lorem</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,7 +159,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <button type="submit" class="text-gray-300 btn btn-lg bg-dark-400  ">Save
-                                                    Submit
+                                                    Submit 
                                                 </button>
                                             </div>
                                         </div>

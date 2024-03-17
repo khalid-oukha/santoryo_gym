@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('image')->nullable();
 
-            $table->foreign('coach_id')->references('user_id')->on('coaches')
+            $table->foreign('coach_id')->references('id')->on('coaches')
                 ->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });

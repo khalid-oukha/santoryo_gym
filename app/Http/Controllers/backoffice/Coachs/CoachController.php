@@ -40,7 +40,7 @@ class CoachController extends Controller
             $imageName = time() . '-' . $data['lastname'] . '.' . $image->getClientOriginalExtension();
             
             // Store the image
-            $imagePath = $image->storeAs('images/uploads', $imageName);
+            $imagePath = $image->storeAs('public/images/uploads', $imageName);
     
             if ($imagePath) {
                 // Update the user's image path
@@ -55,17 +55,36 @@ class CoachController extends Controller
     
         // Create the coach
         $coach = Coach::create([
-            'user_id' => $user->id,
+            'id' => $user->id,
             'cin' => $data['cin'],
             'specialization' => $data['specialization'],
             'description' => $data['description'],
             'gender' => $data['gender'],
         ]);
+
+        if($coach)
+        {
+            return redirect()->route('coach.index')->with('success', 'Coach created successfully.');
+
+        }else{
+            $user->delete();
+            return redirect()->route('coach.index')->with('success', 'Coach created successfully.');
+
+        }
     
         // Return a response or redirect as needed
-        return redirect()->route('coach.index')->with('success', 'Coach created successfully.');
     }
     
+    public function destroy(Coach $coach){
+        // $coach = Coach::findOrFail('user_id',$user_id);
+        $coach->delete();
+        if($coach)
+        {
+            redirect()->back()->with('success','Coach deleted successfully ');
+        }
+        redirect()->back()->with('error','there is an error deleteing the coach');
+    }
+
 
 
     

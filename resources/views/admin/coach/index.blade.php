@@ -230,94 +230,104 @@
                                 </div><!-- .nk-tb-item -->
 
                                 @foreach ($coashes as $coash)
-                                    
-                                <div class="nk-tb-item">
-                                    <div class="nk-tb-col nk-tb-col-check">
-                                        <div class="custom-control custom-control-sm custom-checkbox notext">
-                                            <input type="checkbox" class="custom-control-input" id="cid1">
-                                            <label class="custom-control-label" for="cid1"></label>
-                                        </div>
-                                    </div>
-                                    <div class="nk-tb-col">
-                                        <a href="html/customer-details.html">
-                                            <div class="user-card">
-                                                <div class="user-avatar xs bg-primary">
-                                                    <img class="w-full h-full" src="{{asset('storage/images/uploads/' . $coash->user->image) }}" alt="">
-                                                </div>
-                                                <div class="user-name">
-                                                    <span class="tb-lead">{{ $coash->user->firstname . $coash->user->lastname  }}<span
-                                                            class="dot dot-info d-lg-none ms-1"></span></span>
-                                                </div>
+                                    <div class="nk-tb-item">
+                                        <div class="nk-tb-col nk-tb-col-check">
+                                            <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                <input type="checkbox" class="custom-control-input" id="cid1">
+                                                <label class="custom-control-label" for="cid1"></label>
                                             </div>
-                                        </a>
-                                    </div>
-                                    <div class="nk-tb-col tb-col-sm">
-                                        <span class="sub-text">{{ $coash->user->email }}</span>
-                                    </div>
-                                    <div class="nk-tb-col tb-col-md">
-                                        <span class="sub-text">+342 545-5639</span>
-                                    </div>
-                                    <div class="nk-tb-col tb-col-lg">
-                                        <span class="sub-text">Reakitt</span>
-                                    </div>
-                                    <div class="nk-tb-col tb-col-xxl">
-                                        <span class="sub-text">02 Dec 2021, 02:34 am</span>
-                                    </div>
-                                    <div class="nk-tb-col tb-col-lg">
-                                        <span class="tb-status text-info">Inactive</span>
-                                    </div>
-                                    <div class="nk-tb-col nk-tb-col-tools">
-                                        <ul class="nk-tb-actions gx-1">
-                                            <li class="nk-tb-action-hidden">
-                                                <a href="#" class="btn btn-trigger btn-icon"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Details">
-                                                    <em class="icon ni ni-eye-fill"></em>
-                                                </a>
-                                            </li>
-                                            <li class="nk-tb-action-hidden">
-                                                <a href="#" class="btn btn-trigger btn-icon"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Send Email">
-                                                    <em class="icon ni ni-mail-fill"></em>
-                                                </a>
-                                            </li>
-                                            <li class="nk-tb-action-hidden">
-                                                <a href="#" class="btn btn-trigger btn-icon"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Suspend">
-                                                    <em class="icon ni ni-cross-fill-c"></em>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="drodown">
-                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger"
-                                                        data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <ul class="link-list-opt no-bdr">
-                                                            <li><a href="#"><em
-                                                                        class="icon ni ni-eye"></em><span>View
-                                                                        Details</span></a></li>
-                                                            <li><a href="#"><em
-                                                                        class="icon ni ni-mail"></em><span>Send
-                                                                        Mail</span></a></li>
-                                                            <li><a href="#"><em
-                                                                        class="icon ni ni-cart"></em><span>Orders</span></a>
-                                                            </li>
-                                                            <li><a href="#"><em
-                                                                        class="icon ni ni-na"></em><span>Suspend</span></a>
-                                                            </li>
-                                                        </ul>
+                                        </div>
+                                        <div class="nk-tb-col">
+                                            <a href="html/customer-details.html">
+                                                <div class="user-card">
+                                                    <div class="user-avatar xs bg-primary">
+                                                        <img class="w-full h-full"
+                                                            src="{{ asset('storage/images/uploads/' . $coash->user->image) }}"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="user-name">
+                                                        <span
+                                                            class="tb-lead">{{ $coash->user->firstname . $coash->user->lastname }}<span
+                                                                class="dot dot-info d-lg-none ms-1"></span></span>
                                                     </div>
                                                 </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div><!-- .nk-tb-item -->
+                                            </a>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-sm">
+                                            <span class="sub-text">{{ $coash->user->email }}</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md">
+                                            <span class="sub-text">{{ $coash->specialization }}</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-lg">
+                                            <span class="sub-text">{{ $coash->gender }}</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-xxl">
+                                            <span class="sub-text">{{ $coash->cin }}</span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-lg">
+                                            <span class="tb-status text-info">{{ $coash->status }}</span>
+                                        </div>
+                                        <div class="nk-tb-col nk-tb-col-tools">
+                                            <ul class="nk-tb-actions gx-1">
+                                                <li class="nk-tb-action-hidden">
+                                                    <a href="#" class="btn btn-trigger btn-icon"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Details">
+                                                        <em class="icon ni ni-eye-fill"></em>
+                                                    </a>
+                                                </li>
+                                                <li class="nk-tb-action-hidden">
+                                                    <a href="#" class="btn btn-trigger btn-icon"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Send Email">
+                                                        <em class="icon ni ni-mail-fill"></em>
+                                                    </a>
+                                                </li>
+                                                <li class="nk-tb-action-hidden">
+                                                    <form action="{{route('coach.destroy',['coach' => $coash]) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
 
+                                                        <button onclick="return confirm('Do you really want to Delete ?');" type="submit"  class="btn btn-trigger btn-icon"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Suspend">
+                                                            <em class="icon ni ni-cross-fill-c"></em>
+                                                        </button>
+
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <div class="drodown">
+                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-trigger"
+                                                            data-bs-toggle="dropdown"><em
+                                                                class="icon ni ni-more-h"></em></a>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <ul class="link-list-opt no-bdr">
+                                                                <li><a href="#"><em
+                                                                            class="icon ni ni-eye"></em><span>View
+                                                                            Details</span></a></li>
+                                                                <li><a href="#"><em
+                                                                            class="icon ni ni-mail"></em><span>Send
+                                                                            Mail</span></a></li>
+                                                                <li><a href="#"><em
+                                                                            class="icon ni ni-cart"></em><span>Orders</span></a>
+                                                                </li>
+                                                                <li><a href="#"><em
+                                                                            class="icon ni ni-na"></em><span>Suspend</span></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .nk-tb-item -->
                                 @endforeach
 
                             </div><!-- .nk-tb-list -->
                         </div><!-- .card-inner -->
                         <div class="card-inner">
-                                    {{ $coashes->links() }}
+                            {{ $coashes->links() }}
                         </div><!-- .card-inner -->
                     </div><!-- .card-inner-group -->
                 </div><!-- .card -->

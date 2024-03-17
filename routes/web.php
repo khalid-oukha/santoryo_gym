@@ -1,12 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\backoffice\Coachs\CoachController;
+use App\Http\Controllers\frontoffice\HomeController;
+use App\Http\Controllers\StatisticsController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,7 @@ use App\Http\Controllers\backoffice\Coachs\CoachController;
 */
 
 // Home Routes...
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('',[HomeController::class, 'index'])->name('home');
 
 // Authentication Routes...
 

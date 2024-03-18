@@ -8,4 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'title',
+        'coach_id',
+        'category_id',
+        'duration',
+        'price',
+        'start_at',
+        'status',
+        'description',
+        'image'
+    ];
+
+    public function Category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function Coach()
+    {
+        return $this->belongsTo(Coach::class);
+    }
 }

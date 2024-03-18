@@ -15,7 +15,8 @@ class CoachController extends Controller
     public function index()
     {
         $coashes = Coach::paginate(10);
-        return view("admin/coach/index", compact("coashes"));
+        $nbr_coachs = Coach::count();
+        return view("admin/coach/index", compact("coashes","nbr_coachs"));
     }
 
     public function create()

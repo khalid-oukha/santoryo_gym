@@ -4,10 +4,13 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\backoffice\Categories\CategoryController;
 use App\Http\Controllers\backoffice\Coachs\CoachController;
+use App\Http\Controllers\backoffice\Lessons\LessonController;
 use App\Http\Controllers\frontoffice\HomeController;
 use App\Http\Controllers\StatisticsController;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -51,3 +54,5 @@ Route::prefix('admin')->middleware(['is_admin'])->group(function () {
 
 });
 Route::resource('coach', CoachController::class);
+Route::resource('lesson', LessonController::class);
+Route::resource('category', CategoryController::class);

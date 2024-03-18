@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->integer('duration')->comment('Duration in minutes');
             $table->decimal('price', 8, 2);
+            $table->dateTime('start_at');
             $table->enum('status', ['planned', 'completed', 'canceled'])->default('planned');
             $table->timestamps();
             $table->text('description');

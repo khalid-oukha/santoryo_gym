@@ -1,5 +1,5 @@
                 <!-- main header @s -->
-                <div class="nk-header nk-header-fixed nk-header-fluid is-light">
+                <div class="nk-header nk-header-fixed nk-header-fluid is-light ">
                     <div class="container-fluid">
                         <div class="nk-header-wrap">
                             <div class="nk-menu-trigger d-xl-none ms-n1">
@@ -187,7 +187,8 @@
                                                         </div>
                                                         <div class="nk-notification-content">
                                                             <div class="nk-notification-text">You have requested to
-                                                                <span>Widthdrawl</span></div>
+                                                                <span>Widthdrawl</span>
+                                                            </div>
                                                             <div class="nk-notification-time">2 hrs ago</div>
                                                         </div>
                                                     </div>
@@ -209,7 +210,8 @@
                                                         </div>
                                                         <div class="nk-notification-content">
                                                             <div class="nk-notification-text">You have requested to
-                                                                <span>Widthdrawl</span></div>
+                                                                <span>Widthdrawl</span>
+                                                            </div>
                                                             <div class="nk-notification-time">2 hrs ago</div>
                                                         </div>
                                                     </div>
@@ -231,7 +233,8 @@
                                                         </div>
                                                         <div class="nk-notification-content">
                                                             <div class="nk-notification-text">You have requested to
-                                                                <span>Widthdrawl</span></div>
+                                                                <span>Widthdrawl</span>
+                                                            </div>
                                                             <div class="nk-notification-time">2 hrs ago</div>
                                                         </div>
                                                     </div>

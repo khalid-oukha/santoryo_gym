@@ -22,4 +22,8 @@ class Coach extends Model
     public function user(){
         return $this->belongsTo(User::class,'id');
     }
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
 }

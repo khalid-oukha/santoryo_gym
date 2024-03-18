@@ -6,9 +6,9 @@
             <div class="nk-block-head nk-block-head-sm">
                 <div class="nk-block-between">
                     <div class="nk-block-head-content">
-                        <h3 class="nk-block-title page-title">Customers List</h3>
+                        <h3 class="nk-block-title page-title">Coach List</h3>
                         <div class="nk-block-des text-soft">
-                            <p>You have total 1,261 users.</p>
+                            <p>You have total {{ $nbr_coachs }} Coach.</p>
                         </div>
                     </div><!-- .nk-block-head-content -->
                     <div class="nk-block-head-content">
@@ -247,7 +247,7 @@
                                                     </div>
                                                     <div class="user-name">
                                                         <span
-                                                            class="tb-lead">{{ $coash->user->firstname . '' . $coash->user->lastname }}<span
+                                                            class="tb-lead">{{ $coash->user->firstname . ' ' . $coash->user->lastname }}<span
                                                                 class="dot dot-info d-lg-none ms-1"></span></span>
                                                     </div>
                                                 </div>

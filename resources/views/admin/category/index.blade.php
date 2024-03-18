@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- content @s
-                        -->
+                                        -->
         <div class="nk-content ">
             <div class="container-fluid">
                 <div class="nk-content-inner">
@@ -59,7 +59,8 @@
                                                                 class="sub-text">Description</span></div>
                                                         <div class="nk-tb-col tb-col-sm"><span class="sub-text">Slug</span>
                                                         </div>
-                                                        <div class="nk-tb-col"><span class="sub-text">Total Lessons </span></div>
+                                                        <div class="nk-tb-col"><span class="sub-text">Total Lessons </span>
+                                                        </div>
                                                         <div class="nk-tb-col nk-tb-col-tools text-end"></div>
                                                     </div><!-- .nk-tb-item -->
 
@@ -75,8 +76,8 @@
                                                             </div>
                                                             <div class="nk-tb-col tb-col-sm">
                                                                 <span class="tb-product">
-                                                                    <img src="{{asset('storage/images/' . $category->image) }}" alt=""
-                                                                        class="thumb">
+                                                                    <img src="{{ asset('storage/images/' . $category->image) }}"
+                                                                        alt="" class="thumb">
                                                                 </span>
                                                             </div>
                                                             <div class="nk-tb-col">
@@ -99,8 +100,8 @@
                                                                 <ul class="nk-tb-actions gx-1">
                                                                     <li class="nk-tb-action-hidden">
                                                                         <a class="btn btn-trigger btn-icon"
-                                                                            data-bs-toggle="modal" href="#editCategory"
-                                                                            data-bs-placement="top" title="Edit">
+                                                                            href="{{ route('category.edit', $category->id) }}"
+                                                                            title="Edit">
                                                                             <em class="icon ni ni-edit-fill"></em>
                                                                         </a>
                                                                     </li>
@@ -119,12 +120,26 @@
                                                                                     class="icon ni ni-more-h"></em></a>
                                                                             <div class="dropdown-menu dropdown-menu-end">
                                                                                 <ul class="link-list-opt no-bdr">
-                                                                                    <li><a data-bs-toggle="modal"
-                                                                                            href="#editCategory"><em
+                                                                                    <li>
+
+                                                                                        <a
+                                                                                            href="{{ route('category.edit', $category) }}"><em
                                                                                                 class="icon ni ni-edit-fill"></em><span>Edit
-                                                                                                Category</span></a></li>
-                                                                                    <li><a href="#"><em
-                                                                                                class="icon ni ni-trash-fill"></em><span>Trash</span></a>
+                                                                                                Category</span></a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <form class="mx-2"
+                                                                                            action="{{ route('category.destroy', $category) }}"
+                                                                                            method="POST">
+                                                                                            @csrf
+                                                                                            @method('DELETE')
+                                                                                            <button
+                                                                                                onclick="return confirm('Do you really want to Delete ?');"
+                                                                                                type="submit">
+                                                                                                <em
+                                                                                                    class="icon ni ni-trash-fill"></em><span>Trash</span></button>
+                                                                                        </form>
+
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>

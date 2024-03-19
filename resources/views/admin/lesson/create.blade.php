@@ -71,9 +71,7 @@
                                                             <label class="form-label">Lesson start Date</label>
 
                                                             <div class="form-control-wrap">
-                                                                <div class="form-icon form-icon-right">
-                                                                    <em class="icon ni ni-calendar-alt"></em>
-                                                                </div>
+
                                                                 <input name="start_date" type="date"
                                                                     class="form-control form-control-md form-control-outlined "
                                                                     id="outlined-date-picker">

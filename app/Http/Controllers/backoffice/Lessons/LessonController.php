@@ -9,6 +9,7 @@ use App\Models\Coach;
 use App\Models\Lesson;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LessonController extends Controller
 {
@@ -17,8 +18,9 @@ class LessonController extends Controller
      */
     public function index()
     {
-        $lessons = Lesson::paginate(10);
-        return view('admin.lesson.index', compact('lessons'));
+        $lessons = Lesson::orderBy('start_at', 'desc')->paginate(10);
+        $total = Lesson::count();
+        return view('admin.lesson.index', compact('lessons','total'));
     }
 
     /**
@@ -77,6 +79,10 @@ class LessonController extends Controller
     public function edit(string $id)
     {
         //
+        $lesson = Lesson::find($id);
+        $categories = Category::all();
+        $coaches = Coach::all();
+        return view('admin.lesson.edit', compact('lesson', 'categories', 'coaches'));
     }
 
     /**
@@ -84,7 +90,43 @@ class LessonController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $lesson = Lesson::find($id);
+        if ($lesson) {
+            $data = $request->validate([
+                'title' => 'string|max:255',
+                'description' => 'string',
+                'category_id' => 'exists:categories,id',
+                'coach_id' => 'exists:coaches,id',
+                'price' => 'numeric',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            ]);
+
+            $startDateTime = Carbon::parse($request->start_date . ' ' . $request->start_time);
+            $data['start_at'] = $startDateTime;
+
+            if ($request->hasFile('image')) {
+
+                if ($lesson->image) {
+                    Storage::delete('public/images/lessons/' . $lesson->image);
+                }
+                
+                $title = str_replace(' ', '_', trim($request->title));
+                $fileName = time() . '_' . $title . '.' . $request->image->extension();
+
+                $storedPath = $request->image->storeAs('public/images/lessons', $fileName);
+
+                if ($storedPath) {
+                    $data['image'] = $fileName;
+                } else {
+                    return back()->withInput()->with('error', 'Failed to upload the image.');
+                }
+            }
+
+            $lesson->update($data);
+            return redirect()->route('lesson.index')->with('success', 'Lesson updated successfully.');
+        } else {
+            return redirect()->route('lesson.index')->with('error', 'Failed to update the lesson.');
+        }
     }
 
     /**
@@ -93,5 +135,12 @@ class LessonController extends Controller
     public function destroy(string $id)
     {
         //
+        $lesson = Lesson::find($id);
+        if ($lesson) {
+            $lesson->delete();
+            return redirect()->route('lesson.index')->with('success', 'Lesson deleted successfully.');
+        } else {
+            return redirect()->route('lesson.index')->with('error', 'Failed to delete the lesson.');
+        }
     }
 }

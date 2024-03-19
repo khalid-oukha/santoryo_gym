@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
             $table->text('description');
             $table->string('image')->nullable();
-
+            $table->integer('capacity');
             $table->foreign('coach_id')->references('id')->on('coaches')
                 ->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

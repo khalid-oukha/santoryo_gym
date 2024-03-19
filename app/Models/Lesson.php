@@ -17,7 +17,9 @@ class Lesson extends Model
         'start_at',
         'status',
         'description',
-        'image'
+        'image',
+        'capacity',
+
     ];
 
     public function Category()

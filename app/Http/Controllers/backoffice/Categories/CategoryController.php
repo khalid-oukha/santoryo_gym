@@ -92,6 +92,7 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         $category = Category::findOrFail($id);
+        Storage::delete('public/images/' . $category->image);
         if ($category->delete()) {
             return redirect()->route('category.index')->with('success', 'Category deleted successfully.');
         } else {

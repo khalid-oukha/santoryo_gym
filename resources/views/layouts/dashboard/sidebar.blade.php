@@ -45,8 +45,8 @@
                                 </a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="#" class="nk-menu-link nk-menu-switch" data-target="navError">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-alert-c"></em></span>
+                                <a href="html/apps/calendar.html" class="nk-menu-link" title="Calendar">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-calendar"></em></span>
                                 </a>
                             </li>
                             <li class="nk-menu-hr"></li>
@@ -168,11 +168,42 @@
                                 <a href="{{ route('category.index') }}" class="nk-menu-link"><span
                                         class="nk-menu-text">Categories List</span></a>
                             </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/manufacturer-ledger.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Manufacturer Ledger</span></a>
-                            </li>
+
                         </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
+
+                    <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
+                            <span class="nk-menu-text">Offers</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href="html/pharmacy/income-list.html" class="nk-menu-link"><span
+                                        class="nk-menu-text">Add Offer</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="html/pharmacy/expense-list.html" class="nk-menu-link"><span
+                                        class="nk-menu-text">List Of Offers</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="html/pharmacy/invoice-list.html" class="nk-menu-link"><span
+                                        class="nk-menu-text">Offer Cards</span></a>
+                            </li>
+
+                        </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
+                    <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-star"></em></span>
+                            <span class="nk-menu-text">Features</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href="{{ route('feature.index') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Feature List</span></a>
+                            </li>
+                        </ul>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
@@ -222,30 +253,7 @@
                             </li>
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                            <span class="nk-menu-text">Finance</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/income-list.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Income</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/expense-list.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Expence</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/invoice-list.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Invoice List</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/invoice-details.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Invoice Details</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
+
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>

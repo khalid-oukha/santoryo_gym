@@ -6,8 +6,11 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\backoffice\Categories\CategoryController;
 use App\Http\Controllers\backoffice\Coachs\CoachController;
+use App\Http\Controllers\backoffice\Feature\FeatureController;
 use App\Http\Controllers\backoffice\Lessons\LessonController;
+use App\Http\Controllers\backoffice\Offers\OfferController;
 use App\Http\Controllers\frontoffice\HomeController;
+use App\Http\Controllers\frontoffice\PricingController;
 use App\Http\Controllers\StatisticsController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,11 +51,16 @@ Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('
 
 
 Route::prefix('admin')->middleware(['is_admin'])->group(function () {
-        Route::get('/coachs', [StatisticsController::class, 'index'])->name('index.statistics');
-        // Coash Routes...
-        // Route::get('/coachs',[CoachController::class, 'index'])->name('coash.index');
+
+
 
 });
 Route::resource('coach', CoachController::class);
 Route::resource('lesson', LessonController::class);
 Route::resource('category', CategoryController::class);
+
+
+route::get('offers', [PricingController::class, 'index'] )->name('pricing.index');
+
+Route::resource('offer', OfferController::class);
+Route::resource('feature', FeatureController::class);

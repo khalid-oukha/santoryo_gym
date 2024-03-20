@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backoffice\Offers;
 
-use App\Models\Offer;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
@@ -12,7 +12,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.offers.index');
     }
 
     /**
@@ -34,7 +34,7 @@ class OfferController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Offer $offer)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +42,7 @@ class OfferController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Offer $offer)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +50,7 @@ class OfferController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Offer $offer)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +58,7 @@ class OfferController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Offer $offer)
+    public function destroy(string $id)
     {
         //
     }

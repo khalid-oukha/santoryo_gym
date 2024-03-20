@@ -1,0 +1,74 @@
+<?php
+
+namespace App\Http\Controllers\backoffice\Feature;
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Feature\StoreFeatureRequest;
+use App\Models\Feature;
+use Illuminate\Http\Request;
+
+class FeatureController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {   
+        $features = Feature::all();
+        return view('admin.feature.index',compact('features'));
+    }
+
+
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreFeatureRequest $request)
+    {
+        $data = $request->validated();
+        $feature = Feature::create($data);
+        if ($feature) {
+            return redirect()->route('feature.index')->with('success', 'Feature created successfully.');
+        } else {
+            return back()->withInput()->with('error', 'Failed to create the feature.');
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        
+        $feature = Feature::find($id);
+        return view('admin.feature.edit',compact('feature'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        $feature = Feature::find($id);
+        $feature->update($request->all());
+        return redirect()->route('feature.index')->with('success', 'Feature updated successfully.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $feature = Feature::find($id);
+        $feature->delete();
+        return redirect()->route('feature.index')->with('success', 'Feature deleted successfully.');
+    }
+}

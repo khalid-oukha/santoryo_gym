@@ -9,7 +9,7 @@ class Offer extends Model
 {
     use HasFactory;
     protected $table = "offers";
-    protected $fillable = ['name','description','price','duration','image'];
+    protected $fillable = ['title','description','price','months_valid','image'];
 
     public function features()
     {

@@ -179,16 +179,12 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="html/pharmacy/income-list.html" class="nk-menu-link"><span
+                                <a href="{{ route('offer.create') }}" class="nk-menu-link"><span
                                         class="nk-menu-text">Add Offer</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/pharmacy/expense-list.html" class="nk-menu-link"><span
+                                <a href="{{ route('offer.index') }}" class="nk-menu-link"><span
                                         class="nk-menu-text">List Of Offers</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/invoice-list.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Offer Cards</span></a>
                             </li>
 
                         </ul><!-- .nk-menu-sub -->

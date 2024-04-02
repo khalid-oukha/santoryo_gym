@@ -1,4 +1,5 @@
 # Santoryo Gym Management System
+![Capture d'écran 2024-04-02 150303](https://github.com/khalid-oukha/santoryo_gym/assets/144746719/b30e4093-ee94-482b-a38a-d253168f9196)
 
 Santoryo is a web application designed to help gym owners manage their facilities, memberships, clients, and schedules efficiently. This project was built using Laravel, PHP, MySQL, Tailwind CSS, JavaScript, and HTML.
 
@@ -9,6 +10,7 @@ Santoryo Gym Management System is the result of my dedication and hard work duri
 This application aims to address the challenges faced by gym owners and managers in efficiently managing their operations. From simplifying membership management to facilitating client communication and schedule organization, Santoryo offers a comprehensive solution tailored to the needs of the fitness industry.
 
 ## Screenshots
+![screencapture-127-0-0-1-8000-2024-04-02-14_22_47](https://github.com/khalid-oukha/santoryo_gym/assets/144746719/39eea418-bbe8-45c2-9a2c-6376e34a236f)
 
 # Features
 

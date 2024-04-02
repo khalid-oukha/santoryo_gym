@@ -12,6 +12,7 @@ use App\Http\Controllers\backoffice\Offers\OfferController;
 use App\Http\Controllers\frontoffice\HomeController;
 use App\Http\Controllers\frontoffice\PricingController;
 use App\Http\Controllers\lessons\lessonsListController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StatisticsController;
 use Illuminate\Support\Facades\Route;
 
@@ -69,3 +70,5 @@ route::get('lessonsAll', [lessonsListController::class, 'index'] )->name('lesson
 
 
 
+// Route::get('/',         [PaymentController::class, 'index'])->name('stripe.index');
+Route::post('/payment', [PaymentController::class, 'payment']);

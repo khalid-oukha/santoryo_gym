@@ -9,7 +9,10 @@ class Offer extends Model
 {
     use HasFactory;
     protected $table = "offers";
-    protected $fillable = [
-        "","","","","","","",
-    ] ;
+    protected $fillable = ['title','description','price','months_valid','image'];
+
+    public function features()
+    {
+        return $this->belongsToMany(Feature::class);
+    }
 }

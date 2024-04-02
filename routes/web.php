@@ -1,12 +1,22 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\StatisticsController;
+use App\Http\Controllers\backoffice\Categories\CategoryController;
 use App\Http\Controllers\backoffice\Coachs\CoachController;
+use App\Http\Controllers\backoffice\Feature\FeatureController;
+use App\Http\Controllers\backoffice\Lessons\LessonController;
+use App\Http\Controllers\backoffice\Offers\OfferController;
+use App\Http\Controllers\frontoffice\HomeController;
+use App\Http\Controllers\frontoffice\PricingController;
+use App\Http\Controllers\lessons\lessonsListController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\StatisticsController;
+use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +30,7 @@ use App\Http\Controllers\backoffice\Coachs\CoachController;
 */
 
 // Home Routes...
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('',[HomeController::class, 'index'])->name('home');
 
 // Authentication Routes...
 
@@ -45,9 +53,22 @@ Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('
 
 
 Route::prefix('admin')->middleware(['is_admin'])->group(function () {
-        Route::get('/coachs', [StatisticsController::class, 'index'])->name('index.statistics');
-        // Coash Routes...
-        // Route::get('/coachs',[CoachController::class, 'index'])->name('coash.index');
+
+
 
 });
 Route::resource('coach', CoachController::class);
+Route::resource('lesson', LessonController::class);
+Route::resource('category', CategoryController::class);
+Route::resource('offer', OfferController::class);
+Route::resource('feature', FeatureController::class);
+
+
+route::get('offers', [PricingController::class, 'index'] )->name('pricing.index');
+route::get('lessonsAll', [lessonsListController::class, 'index'] )->name('lessonsList.index');
+
+
+
+
+// Route::get('/',         [PaymentController::class, 'index'])->name('stripe.index');
+Route::post('/payment', [PaymentController::class, 'payment']);

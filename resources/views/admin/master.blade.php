@@ -1,9 +1,10 @@
 @include('layouts.dashboard.start_html')
-<body class="nk-body ui-rounder npc-default has-sidebar ">
+<body class="nk-body bg-lighter npc-general has-sidebar ">
     <div class="nk-app-root">
+        <div class="nk-main ">
+
         @include('layouts.dashboard.sidebar')
         <!-- main @s -->
-        <div class="nk-main ">
             <!-- wrap @s -->
             <div class="nk-wrap ">
                 @include('layouts.dashboard.navbar')
@@ -15,6 +16,9 @@
                     </div>
                 </div>
                 <!-- content @e -->
+
+                @include('layouts.dashboard.footer')
+
             </div>
             <!-- wrap @e -->
         </div>

@@ -12,14 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('coaches', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->primary();
+            $table->unsignedBigInteger('id')->primary();
             $table->string('cin');
             $table->string('specialization');
             $table->timestamps();
             $table->text('description');
             $table->enum('status', ['avaliable', 'active'])->default('avaliable');
             $table->enum('gender', ['male', 'female'])->default('male');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->softDeletes();
+
+            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

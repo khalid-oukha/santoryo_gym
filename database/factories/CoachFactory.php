@@ -17,7 +17,7 @@ class CoachFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => \App\Models\User::factory(),
+            'id' => \App\Models\User::factory(),
             'cin' => $this->faker->regexify('PA[0-9]{6}'), // Moroccan CIN format
             'specialization' => $this->faker->randomElement(['Football', 'Basketball', 'Swimming', 'Athletics']),
             'description' => $this->faker->paragraph(),

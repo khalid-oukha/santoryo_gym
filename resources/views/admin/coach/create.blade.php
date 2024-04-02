@@ -23,8 +23,21 @@
                             </div>
                         </div>
                         <div class="card card-bordered">
+                            @if ($errors->any())
+                                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                                    role="alert">
+                                    <strong class="font-bold">Whoops!</strong>
+                                    <span class="block sm:inline">There were some problems with your input.</span>
+                                    <ul class="list-disc mt-2 ml-4">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="card-inner">
-                                <form action="{{ route('coach.store') }}" enctype="multipart/form-data" method="POST" class="form-validate">
+                                <form action="{{ route('coach.store') }}" enctype="multipart/form-data" method="POST"
+                                    class="form-validate">
                                     @csrf
                                     @method('POST')
                                     <div class="row g-gs">
@@ -39,7 +52,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-label" for="fv-full-name">First  Name</label>
+                                                <label class="form-label" for="fv-full-name">First Name</label>
                                                 <div class="form-control-wrap">
                                                     <input type="text" class="form-control" id="fv-full-name"
                                                         name="firstname" required>
@@ -53,21 +66,18 @@
                                                     <div class="form-icon form-icon-right">
                                                         <em class="icon ni ni-mail"></em>
                                                     </div>
-                                                    <input type="text" class="form-control" id="fv-email"
-                                                        name="email" required>
+                                                    <input type="text" class="form-control" id="fv-email" name="email"
+                                                        required>
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-email">Password</label>
                                                 <div class="form-control-wrap">
-                                                    <div class="form-icon form-icon-right">
-                                                        <em class="icon ni ni-mail"></em>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="fv-email"
-                                                        name="password" required>
+
+                                                    <input type="password"  class="form-control" id="fv-email"
+                                                        name="password" >
                                                 </div>
                                             </div>
                                         </div>
@@ -79,7 +89,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text" id="fv-phone">CIN</span>
                                                         </div>
-                                                        <input type="cin" class="form-control" required>
+                                                        <input name="cin" type="cin" class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,23 +98,25 @@
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-phone">Sex / Gender</label>
                                                 <div class="form-control-wrap">
-                                                    <ul  class="custom-control-group">
+                                                    <ul class="custom-control-group">
                                                         <li>
                                                             <div
                                                                 class="custom-control custom-radio custom-control-pro no-control">
-                                                                <input name="gender" checked type="radio" class="custom-control-input"
-                                                                    name="fv-sex"  id="sex-male" required>
-                                                                <label  class="custom-control-label"
-                                                                    for="sex-male">Male</label>
+                                                                <input name="gender" checked type="radio"
+                                                                    class="custom-control-input" value="male"
+                                                                    id="sex-male" required>
+                                                                <label class="custom-control-label"
+                                                                    for="sex-male">male</label>
                                                             </div>
                                                         </li>
                                                         <li>
                                                             <div
                                                                 class="custom-control custom-radio custom-control-pro no-control">
-                                                                <input name="gender" type="radio" class="custom-control-input"
-                                                                    name="fv-sex" id="sex-female" required>
+                                                                <input name="gender" type="radio"
+                                                                    class="custom-control-input" value="female"
+                                                                    id="sex-female" required>
                                                                 <label class="custom-control-label"
-                                                                    for="sex-female">Female</label>
+                                                                    for="sex-female">female</label>
                                                             </div>
                                                         </li>
                                                     </ul>
@@ -126,7 +138,7 @@
                                                 <label class="form-label" for="fv-message">description</label>
                                                 <div class="form-control-wrap">
                                                     <textarea class="form-control form-control-sm" id="fv-message" name="description" placeholder="Write your message"
-                                                        required></textarea>
+                                                        required>lorem</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,15 +146,17 @@
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-image">Upload Image</label>
                                                 <div class="form-control-wrap">
-                                                    <input name="image" type="file" class="form-control form-control-sm" id="fv-image"  accept="image/*" required>
+                                                    <input name="image" type="file"
+                                                        class="form-control form-control-sm" id="fv-image"
+                                                         required>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-lg btn-primary">Save
-                                                    Submit
+                                                <button type="submit" class="text-gray-300 btn btn-lg bg-dark-400  ">Save
+                                                    Submit 
                                                 </button>
                                             </div>
                                         </div>
@@ -150,9 +164,9 @@
                                 </form>
                             </div>
                         </div>
-                    </div><!-- .nk-block -->
+                    </div>
 
-                </div><!-- .components-preview -->
+                </div>
             </div>
         </div>
     </div>

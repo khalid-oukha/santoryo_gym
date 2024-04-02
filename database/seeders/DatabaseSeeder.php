@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             ManagerSeeder::class,
             CoachSeeder::class,
-            CategoriesSeeder::class,
+            // CategoriesSeeder::class,
             OfferSeeder::class,
             SubscriptionSeeder::class,
             LessonSeeder::class,

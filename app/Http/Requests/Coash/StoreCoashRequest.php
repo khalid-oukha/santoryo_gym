@@ -29,7 +29,6 @@ class StoreCoashRequest extends FormRequest
             'cin' => 'required|string|regex:/^[a-zA-Z]{2}[0-9]{6}$/',
             "specialization" => "required|string",
             "description" => "required|string",
-            "status" => "required|in:avaliable,active",
             "gender" => "required|in:male,female",
             "image" => 'required|image|mimes:jpeg,png,jpg,gif',
         ];

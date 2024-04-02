@@ -11,5 +11,13 @@ class Category extends Model
     public $table="categories";
     protected $fillable = [
         "name",
+        "description",
+        "slug",
+        "image",
     ] ;
+
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
 }

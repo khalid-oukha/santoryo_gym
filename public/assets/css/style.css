@@ -2,6 +2,10 @@
     background: rgb(12, 10, 9);
     background: linear-gradient(90deg, rgba(12, 10, 9, 0.9697128851540616) 21%, rgba(0, 80, 3, 0.9613095238095238) 100%);
 }
+.customgradientopacity {
+    background: rgb(12, 10, 9);
+    background: linear-gradient(90deg, rgba(12, 10, 9, 0.393) 21%, rgba(0, 80, 3, 0.607) 100%);
+}
 
 .darkgradient {
     background: rgb(12, 10, 9);

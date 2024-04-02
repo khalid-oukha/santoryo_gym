@@ -11,10 +11,19 @@ class Coach extends Model
     protected $table = 'coaches';
     protected $fillable = [
         "cin",
+        "id",
         "specialization",
         "description",
         "status",
         "gender",
         "image"
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class,'id');
+    }
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
 }

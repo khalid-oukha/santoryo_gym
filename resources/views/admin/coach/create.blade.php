@@ -71,16 +71,13 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-email">Password</label>
                                                 <div class="form-control-wrap">
-                                                    <div class="form-icon form-icon-right">
-                                                        <em class="icon ni ni-mail"></em>
-                                                    </div>
-                                                    <input type="password" class="form-control" id="fv-email"
-                                                        name="password" required>
+
+                                                    <input type="password"  class="form-control" id="fv-email"
+                                                        name="password" >
                                                 </div>
                                             </div>
                                         </div>

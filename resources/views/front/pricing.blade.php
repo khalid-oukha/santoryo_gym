@@ -15,7 +15,7 @@
             class="px-4 sm:px-6 lg:px-8 customgradientopacity  dark:bg-gray-800 flex relative z-20 items-center overflow-hidden">
             <div class="flex my-16  relative   justify-center z-25 items-center flex-col w-1/2 py-5 mx-auto">
                 <h2 class="font-bold text-4xl text-white pb-3 text-center">Elevate Your Workout Journey with Expert</h2>
-                <span class="font-bold text-4xl pb-3 text-orange-100">Coaches</span>
+                <span class="font-bold text-4xl pb-3 text-orange-100">Pricing</span>
                 <p class="text-gray-400 text-center">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni voluptatibus libero quaerat dignissimos
                     vero
@@ -63,7 +63,7 @@
 
                         <button
                             class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                            Choose Basic
+                            subscription
                         </button>
                     </div>
                 @endforeach

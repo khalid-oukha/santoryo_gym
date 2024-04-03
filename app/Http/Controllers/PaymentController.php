@@ -64,6 +64,6 @@ class PaymentController extends Controller
 
         // Flash success message
 
-        return redirect()->route('home');
+        return view('success');
     }
 }

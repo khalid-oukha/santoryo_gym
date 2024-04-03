@@ -1,51 +1,41 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title')
+    pricing
+@endsection
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+@section('css')
+@endsection
 
-    <title>Laravel Shopping Cart</title>
-</head>
+@section('content')
+    <main class=" customgradient  relative overflow-hidden ">
+        <img class="absolute inset-0 object-cover w-full h-full" src="{{ asset('assets/images/pricnig.png') }}" alt=""
+            srcset="">
+        <div
+            class="px-4 sm:px-6 lg:px-8 customgradientopacity  dark:bg-gray-800 flex relative z-20 items-center overflow-hidden">
+            <div class="flex my-16  relative   justify-center z-25 items-center flex-col w-1/2 py-5 mx-auto">
+                <h2 class="font-bold text-4xl text-white pb-3 text-center">Welcome to Santoryo Gym: Your Journey to Fitness
+                    Begins Here!</h2>
 
-<body>
-    <div class="container">
-        <div class="row my-5">
-            <div class="col-md-6 mx-auto">
-                <div class="card">
-                    <div class="card-body">
-                        <h1>Thanks for your order!</h1>
-                        <p>
-                            We appreciate your business!
-                            If you have any questions,
-                            please conact us.
-                        </p>
-                    </div>
+                <svg viewBox="0 0 24 24" class="text-green-100 w-16 h-16 mx-auto my-6">
+                    <path fill="currentColor"
+                        d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z">
+                    </path>
+                </svg>
+                <h3 class="md:text-2xl text-base text-gray-200 font-semibold text-center">Payment Done!</h3>
+                <p class="text-gray-300 my-2">Thank you for completing your secure online payment.</p>
+                <p class="text-gray-300 "> Have a great day! </p>
+                <div class="py-10 text-center">
+                    <a href="" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                        Get Your Pass Now
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    </main>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-                                                                                                                                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-                                                                                                                                        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-                                                                                                                                    </script>
-                                                                                                                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-                                                                                                                                        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-                                                                                                                                    </script>
-                                                                                                                                    -->
-</body>
+@endsection
 
-</html>
+@section('scripts')
+@endsection

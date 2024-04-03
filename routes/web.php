@@ -14,6 +14,7 @@ use App\Http\Controllers\frontoffice\PricingController;
 use App\Http\Controllers\lessons\lessonsListController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StatisticsController;
+use App\Http\Controllers\StripePaymentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -71,4 +72,10 @@ route::get('lessonsAll', [lessonsListController::class, 'index'] )->name('lesson
 
 
 // Route::get('/',         [PaymentController::class, 'index'])->name('stripe.index');
-Route::post('/payment', [PaymentController::class, 'payment']);
+// Route::controller(StripePaymentController::class)->group(function(){
+//     Route::get('stripe', 'stripe');
+//     Route::post('stripe', 'stripePost')->name('stripe.post');
+// });
+
+Route::post('pay', [PaymentController::class, 'pay'])->name('pay.order');
+Route::get('success', [PaymentController::class, 'success'])->name('pay.success');

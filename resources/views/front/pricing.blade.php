@@ -44,7 +44,7 @@
                                 <p class="mt-4 text-gray-300 dark:text-gray-300">Essentail Features</p>
                                 <h4 class="mt-2 text-gray-600 line-through dark:text-gray-400">
                                     {{ $offer->price + 20 . ',00' }} DH</h4>
-                                <h4  class="mt-2 text-4xl font-semibold text-gray-200 dark:text-gray-100">{{ $offer->price }}
+                                <h4 class="mt-2 text-4xl font-semibold text-gray-200 dark:text-gray-100">{{ $offer->price }}
                                     DH</h4>
                                 <p class="mt-4 text-gray-300 dark:text-gray-300">/per {{ $offer->months_valid }} month</p>
                             </div>
@@ -65,11 +65,24 @@
 
 
                             </div>
-
-                            <button type="submit"
-                                class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                                subscription
-                            </button>
+                            @if (auth()->check())
+                                @if ($hasActiveSubscription)
+                                    <button type="submit"
+                                        class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                                        Upgrade Memebership
+                                    </button>
+                                @else
+                                    <button type="submit"
+                                        class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                                        subscription
+                                    </button>
+                                @endif
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                                    subscription
+                                </a>
+                            @endif
                         </div>
                     </form>
                 @endforeach

@@ -53,7 +53,7 @@ class PaymentController extends Controller
         // Calculate end date based on offer validity
         $endDate = now()->addMonths($offer->months_valid);
 
-        // Create a new subscription record
+
         Subscription::create([
             'offer_id' => $offerId,
             'user_id' => $userId,

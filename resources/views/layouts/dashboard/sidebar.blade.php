@@ -113,7 +113,7 @@
                 <h5 class="title font-extrabold text-gray-300 text-lg">S A N T O R Y O</h5>
                 <ul class="nk-menu">
                     <li class="nk-menu-item">
-                        <a href="html/pharmacy/index.html" class="nk-menu-link">
+                        <a href="{{ route('statistics.index') }}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
                             <span class="nk-menu-text">Dashboard</span>
                         </a>
@@ -201,87 +201,7 @@
                             </li>
                         </ul>
                     </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-repeat"></em></span>
-                            <span class="nk-menu-text">Return</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/add-wastage-return.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Add Wastage Return</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/wastage-return.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Wastage Return List</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/add-manufacturer-return.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Add Manufacture Return</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/manufacturer-return.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Manufacturer Return List</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-user-circle-fill"></em></span>
-                            <span class="nk-menu-text">Human resource</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/member.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Member</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/members-profile-regular.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Members Profile</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/attendence.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Attendence</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/salary.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Salary</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
 
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
-                            <span class="nk-menu-text">Report</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/sales-report.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Sales Report</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/purchase-report.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Purchase Report</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/stock-report.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Stock Report</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item">
-                        <a href="html/pharmacy/support.html" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-msg-fill"></em></span>
-                            <span class="nk-menu-text">Support</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item">
-                        <a href="html/pharmacy/general-settings.html" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
-                            <span class="nk-menu-text">Setting</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
                 </ul><!-- .nk-menu -->
             </div>
             <div class="nk-menu-content" data-content="navHospital">

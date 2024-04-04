@@ -9,12 +9,12 @@ use App\Http\Controllers\backoffice\Coachs\CoachController;
 use App\Http\Controllers\backoffice\Feature\FeatureController;
 use App\Http\Controllers\backoffice\Lessons\LessonController;
 use App\Http\Controllers\backoffice\Offers\OfferController;
+use App\Http\Controllers\backoffice\statistics\StatisticsController;
 use App\Http\Controllers\frontoffice\HomeController;
 use App\Http\Controllers\frontoffice\PricingController;
 use App\Http\Controllers\frontoffice\ProfileController;
 use App\Http\Controllers\lessons\lessonsListController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\StripePaymentController;
 use Illuminate\Support\Facades\Route;
 
@@ -82,3 +82,4 @@ Route::post('pay', [PaymentController::class, 'pay'])->name('pay.order');
 Route::get('success', [PaymentController::class, 'success'])->name('pay.success');
 
 Route::get('profile',[ProfileController::class, 'index'])->name('profile.index');
+Route::get('statistics',[StatisticsController::class, 'index'])->name('statistics.index');

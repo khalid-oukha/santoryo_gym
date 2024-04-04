@@ -6,17 +6,25 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Category\CategoryRequest;
 use App\Http\Requests\Category\UpdateCategoryRequest;
 use App\Models\Category;
+use App\Repositories\Interfaces\CategoryRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
+
+    protected $categoryRepository;
+
+    public function __construct(CategoryRepositoryInterface $categoryRepository)
+    {
+        $this->categoryRepository = $categoryRepository;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::paginate(5);
+        $categories = $this->categoryRepository->paginate();
         $total_lessons = Category::whereHas('lessons')->count();
         return view("admin.category.index", compact("categories", 'total_lessons'));
     }
@@ -36,7 +44,8 @@ class CategoryController extends Controller
         $request->image->storeAs('public/images', $fileName);
         $data['image'] = $fileName;
 
-        $category = Category::create($data);
+        $category = $this->categoryRepository->create($data);
+
         if ($category) {
             return redirect()->route('category.index')->with('success', 'Category created successfully.');
         } else {
@@ -65,9 +74,7 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, string $id)
     {
-        $category = Category::findOrFail($id);
-
-        // dd($request);
+        $category = $this->categoryRepository->find($id);
         $data = $request->validated();
 
 
@@ -82,7 +89,7 @@ class CategoryController extends Controller
             $data['image'] = $fileName;
         }
 
-        $category->update($data);
+        $category = $this->categoryRepository->update($id, $data);
         return redirect()->route('category.index')->with('success', 'Category updated successfully.');
     }
 
@@ -93,7 +100,7 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
         Storage::delete('public/images/' . $category->image);
-        if ($category->delete()) {
+        if ($this->categoryRepository->delete($id)) {
             return redirect()->route('category.index')->with('success', 'Category deleted successfully.');
         } else {
             return back()->with('error', 'Failed to delete the category.');

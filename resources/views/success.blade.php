@@ -26,7 +26,7 @@
                 <p class="text-gray-300 my-2">Thank you for completing your secure online payment.</p>
                 <p class="text-gray-300 "> Have a great day! </p>
                 <div class="py-10 text-center">
-                    <a href="" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                    <a href="{{ route('profile.index') }}" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
                         Get Your Pass Now
                     </a>
                 </div>

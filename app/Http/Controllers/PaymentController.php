@@ -16,7 +16,7 @@ class PaymentController extends Controller
     public function pay(Request $request)
     {
 
-        Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
         $offer = Offer::findOrFail($request->offer_id);
         // Store the offer ID in the session
         IlluminateSession::put('offer_id', $offer->id);
@@ -40,17 +40,10 @@ class PaymentController extends Controller
 
     public function success()
     {
-        // Retrieve offer ID from the session or request data
-        // $offerId = $request->session()->get('offer_id');
+
         $offerId = IlluminateSession::get('offer_id');
-        // dd($offerId);
-        // Retrieve user ID from the authenticated user
         $userId = auth()->id();
-
-        // Retrieve offer details from the database
         $offer = Offer::findOrFail($offerId);
-
-        // Calculate end date based on offer validity
         $endDate = now()->addMonths($offer->months_valid);
 
 

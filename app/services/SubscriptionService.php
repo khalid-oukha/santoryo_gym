@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 class SubscriptionService
 {
+
+
     /**
      * Check if the authenticated user has an active subscription.
      *
@@ -14,6 +16,9 @@ class SubscriptionService
      */
     public static function hasActiveSubscription(): bool
     {
+        if (!Auth::check()) {
+            return false;
+        }
         $user = auth()->user();
 
         $subscription = Subscription::where('user_id', $user->id)

@@ -66,22 +66,25 @@
 
                             </div>
                             @if (auth()->check())
-                                @if ($hasActiveSubscription)
                                     <button type="submit"
                                         class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                                        @if ($hasActiveSubscription)
+
                                         Upgrade Memebership
+                                        @else
+                                        subscription4
+                                        @endif
                                     </button>
-                                @else
-                                    <button type="submit"
-                                        class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                                        subscription
-                                    </button>
-                                @endif
+
+                                
                             @else
-                                <a href="{{ route('login') }}"
-                                    class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                                <div 
+                                class="w-full px-4 py-2 mt-10  font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                                <a href="{{ route('login') }}" class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
                                     subscription
+
                                 </a>
+                                </div>
                             @endif
                         </div>
                     </form>

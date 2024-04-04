@@ -11,6 +11,7 @@ use App\Http\Controllers\backoffice\Lessons\LessonController;
 use App\Http\Controllers\backoffice\Offers\OfferController;
 use App\Http\Controllers\frontoffice\HomeController;
 use App\Http\Controllers\frontoffice\PricingController;
+use App\Http\Controllers\frontoffice\ProfileController;
 use App\Http\Controllers\lessons\lessonsListController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StatisticsController;
@@ -79,3 +80,5 @@ route::get('lessonsAll', [lessonsListController::class, 'index'] )->name('lesson
 
 Route::post('pay', [PaymentController::class, 'pay'])->name('pay.order');
 Route::get('success', [PaymentController::class, 'success'])->name('pay.success');
+
+Route::get('profile',[ProfileController::class, 'index'])->name('profile.index');

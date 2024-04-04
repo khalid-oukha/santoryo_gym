@@ -10,6 +10,7 @@ use App\Http\Controllers\backoffice\Feature\FeatureController;
 use App\Http\Controllers\backoffice\Lessons\LessonController;
 use App\Http\Controllers\backoffice\Offers\OfferController;
 use App\Http\Controllers\backoffice\statistics\StatisticsController;
+use App\Http\Controllers\backoffice\subscription\SubscriptionController;
 use App\Http\Controllers\frontoffice\HomeController;
 use App\Http\Controllers\frontoffice\PricingController;
 use App\Http\Controllers\frontoffice\ProfileController;
@@ -83,3 +84,7 @@ Route::get('success', [PaymentController::class, 'success'])->name('pay.success'
 
 Route::get('profile',[ProfileController::class, 'index'])->name('profile.index');
 Route::get('statistics',[StatisticsController::class, 'index'])->name('statistics.index');
+
+
+//subscription
+Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');

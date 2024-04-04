@@ -50,6 +50,9 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function Subscription(){
+        return $this->hasMany(Subscription::class);
+    }
     public static function getEmailChecked($email){
         return self::where('email', $email)->first();
     }
@@ -57,6 +60,7 @@ class User extends Authenticatable
     public static function getTokenSingle($token){
         return self::where('remember_token', $token)->first();
     }
+
 
     public function roles(){
         return $this->belongsToMany(Role::class,'role_user', 'user_id', 'role_id');

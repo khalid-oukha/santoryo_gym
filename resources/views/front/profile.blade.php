@@ -23,7 +23,7 @@
                     </div>
                     <div class="flex flex-col pt-4 mx-auto my-auto sm:pt-0 sm:mx-0">
                         <div class="flex flex-col mx-auto sm:flex-row sm:mx-0 ">
-                            <h2 class="flex pr-4 text-xl font-light text-gray-100 sm:text-3xl">AlexNoah7</h2>
+                            <h2 class="flex pr-4 text-xl font-light text-gray-100 sm:text-3xl">{{ auth()->user()->firstname . ' ' . auth()->user()->lastname  }}</h2>
                             <div class="flex">
                                 <a
                                     class="flex items-center px-1 text-sm font-medium text-gray-100 bg-transparent border border-gray-200 rounded outline-none sm:ml-2 hover:bg-blue-600 hover:text-white focus:outline-none hover:border-blue-700">Edit
@@ -44,8 +44,8 @@
                     </div>
                 </div>
                 <div class="w-full pt-5">
-                    <h1 class="text-lg font-semibold text-gray-100 sm:text-xl">Alexander Noah</h1>
-                    <p class="text-sm text-gray-300 md:text-base">Fotografer</p>
+                    <h1 class="text-lg font-semibold text-gray-100 sm:text-xl">{{ auth()->user()->firstname . ' ' . auth()->user()->lastname  }}</h1>
+                    <p class="text-sm text-gray-300 md:text-base">Memeber</p>
                     <p class="text-sm text-gray-100 md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Cupiditate, quam?</p>
                 </div>
@@ -60,15 +60,10 @@
         <div class="relative ">
             <div class="absolute inset-0 h-1/2 customgradient"></div>
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
+                <div class="max-w-lg  mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
                     <div class="flex-1  bg-gray-900 px-6 py-8 lg:p-12">
-                        <h3 class="text-2xl font-extrabold text-white sm:text-3xl">Exclusive
-                            Offer</h3>
-                        <p class="mt-6 text-base text-gray-300">Limited time offer: Get
-                            access to our premium service with exclusive
-                            features. This package includes access to both our web and mobile applications. Take
-                            advantage of this offer
-                            now and enjoy lifetime benefits.</p>
+                        <h3 class="text-2xl font-extrabold text-white sm:text-3xl">{{ $offer[0]->title }}</h3>
+                        <p class="mt-6 text-base text-gray-300">{{ $offer[0]->description }}</p>
                         <div class="mt-8">
                             <div class="flex items-center">
                                 <h4
@@ -116,30 +111,34 @@
                     </div>
                     <div
                         class="py-8 px-6 text-center bg-gray-900 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
-                        <p class="text-lg leading-6 font-medium text-white">Limited Time
-                            Offer</p>
+                        <p class="text-lg leading-6 font-medium text-white">Membership expired on</p>
                         <div class="">
                             <span style="opacity:0.5"
-                                class="font-mono text-xl md:text-lg font-medium text-gray-400 ">$</span>
-                            <span style="opacity:0.5" class="h1 line-through text-gray-600">199.99</span><span
-                                class="line-through relative text-gray-600 text-center text-sm mb-4">/mo</span>
-                            <span class="text-red-600 text-sm">Special promotion</span>
+                                class="font-mono text-xl md:text-lg font-medium text-gray-400 ">{{ $subscriptions[0]->end_date }}</span>
+                                @if ($subscriptions[0]->status == 'active')
+                                    <span class="text-green-600 text-sm">{{$subscriptions[0]->status}}</span>
+
+                                @else
+                            <span class="text-red-600 text-sm">{{$subscriptions[0]->status}}</span>
+                                @endif
                         </div>
                         <div class="mt-4 flex items-center justify-center text-5xl font-extrabold text-white">
-                            <span>$99.99</span>
-                            <span class="ml-3 text-xl font-medium text-gray-400">USD</span>
+                            <span>{{ $offer[0]->price }}</span>
+                            <span class="ml-3 text-xl font-medium text-gray-400">DH</span>
                         </div>
                         <div class="mt-6">
                             <div class="rounded-md shadow"><a href="https://example.com/checkout"
                                     class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-700 hover:bg-gray-600">Get
-                                    Exclusive Access</a></div>
+                                    Get your Pass</a></div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
-            
+
         </div>
-        
+
     </div>
 
 @endsection

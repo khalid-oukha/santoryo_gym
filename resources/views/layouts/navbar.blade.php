@@ -22,7 +22,7 @@
                         d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                 </svg>
             </li>
-            <li><a class="text-sm text-orange-100 font-bold" href="#">About Us</a></li>
+            <li><a class="text-sm text-orange-100 font-bold" href="{{ route('profile.index') }}">Profile</a></li>
             <li class="text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
                     class="w-4 h-4 current-fill" viewBox="0 0 24 24">

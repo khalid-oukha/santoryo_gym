@@ -175,21 +175,44 @@
                 </ul><!-- .nk-menu -->
             </div>
             <div class="nk-menu-content" data-content="navHospital">
-                <h5 class="title">Hospital Manegment</h5>
+                <h5 class="title">MemberShip Manegment</h5>
                 <ul class="nk-menu">
+
                     <li class="nk-menu-item">
                         <a href="html/hospital/index.html" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
                             <span class="nk-menu-text">Dashboard</span>
                         </a>
                     </li><!-- .nk-menu-item -->
+
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                            <span class="nk-menu-text">Finance</span>
+                            <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
+                            <span class="nk-menu-text">Report</span>
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
+                                <a href="{{ route('income.index') }}" class="nk-menu-link"><span class="nk-menu-text">Sales Report</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="html/pharmacy/purchase-report.html" class="nk-menu-link"><span class="nk-menu-text">Purchase Report</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="html/pharmacy/stock-report.html" class="nk-menu-link"><span class="nk-menu-text">Stock Report</span></a>
+                            </li>
+                        </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
+                    <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
+                            <span class="nk-menu-text">Subscriptions</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('subscription.index') }}" class="nk-menu-link"><span
+                                            class="nk-menu-text">Subscription List</span></a>
+                                </li>
                                 <a href="html/hospital/income-list.html" class="nk-menu-link"><span
                                         class="nk-menu-text">Income</span></a>
                             </li>
@@ -197,10 +220,7 @@
                                 <a href="html/hospital/expense-list.html" class="nk-menu-link"><span
                                         class="nk-menu-text">Expense</span></a>
                             </li>
-                            <li class="nk-menu-item">
-                                <a href="{{ route('subscription.index') }}" class="nk-menu-link"><span
-                                        class="nk-menu-text">Invoice List</span></a>
-                            </li>
+
                             <li class="nk-menu-item">
                                 <a href="html/hospital/invoice-details.html" class="nk-menu-link"><span
                                         class="nk-menu-text">Invoice Details</span></a>

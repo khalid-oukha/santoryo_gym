@@ -88,3 +88,6 @@ Route::get('statistics',[StatisticsController::class, 'index'])->name('statistic
 
 //subscription
 Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
+
+
+Route::get('search/Subscription', [SubscriptionController::class, 'search'])->name('subscription.search');

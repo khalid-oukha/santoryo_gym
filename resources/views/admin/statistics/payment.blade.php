@@ -56,8 +56,8 @@
                                         <div class="card-inner d-flex flex-column h-100">
                                             <div class="card-title-group mb-3">
                                                 <div class="card-title">
-                                                    <h6 class="title">Most Sold Medicine</h6>
-                                                    <p>In last 30 days most sold medicine.</p>
+                                                    <h6 class="title">Most Sold Plans</h6>
+                                                    <p>In last 30 days most sold Plans.</p>
                                                 </div>
                                                 <div class="card-tools mt-n1 me-n1">
                                                     <div class="drodown">

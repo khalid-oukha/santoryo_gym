@@ -50,6 +50,9 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function Lessons(){
+        return $this->belongsToMany(Lesson::class, 'lesson_user');
+    }
     public function Subscription(){
         return $this->hasOne(Subscription::class);
     }

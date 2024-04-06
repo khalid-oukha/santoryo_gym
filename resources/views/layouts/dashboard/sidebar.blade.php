@@ -192,7 +192,7 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('income.index') }}" class="nk-menu-link"><span class="nk-menu-text">Sales Report</span></a>
+                                <a href="{{ route('income.index') }}" class="nk-menu-link"><span class="nk-menu-text">Payments Report</span></a>
                             </li>
                             <li class="nk-menu-item">
                                 <a href="html/pharmacy/purchase-report.html" class="nk-menu-link"><span class="nk-menu-text">Purchase Report</span></a>

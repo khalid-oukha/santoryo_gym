@@ -227,35 +227,35 @@
                                         <div class="card-inner">
                                             <div class="card-title-group mb-2">
                                                 <div class="card-title">
-                                                    <h6 class="title">Store Statistics</h6>
+                                                    <h6 class="title">Santoryo Statistics</h6>
                                                 </div>
                                             </div>
                                             <ul class="nk-store-statistics">
                                                 <li class="item">
                                                     <div class="info">
-                                                        <div class="title">Orders</div>
-                                                        <div class="count">1,795</div>
+                                                        <div class="title">active Subscriptions</div>
+                                                        <div class="count">{{ $totalActiveSubscribers }}</div>
                                                     </div>
                                                     <em class="icon bg-primary-dim ni ni-bag"></em>
                                                 </li>
                                                 <li class="item">
                                                     <div class="info">
-                                                        <div class="title">Customers</div>
-                                                        <div class="count">2,327</div>
+                                                        <div class="title">Users</div>
+                                                        <div class="count">{{ $totalUsers }}</div>
                                                     </div>
                                                     <em class="icon bg-info-dim ni ni-users"></em>
                                                 </li>
                                                 <li class="item">
                                                     <div class="info">
-                                                        <div class="title">Products</div>
-                                                        <div class="count">674</div>
+                                                        <div class="title">Offers</div>
+                                                        <div class="count">{{ $totalOffers }}</div>
                                                     </div>
                                                     <em class="icon bg-pink-dim ni ni-box"></em>
                                                 </li>
                                                 <li class="item">
                                                     <div class="info">
                                                         <div class="title">Categories</div>
-                                                        <div class="count">68</div>
+                                                        <div class="count">{{ $totalCategories }}</div>
                                                     </div>
                                                     <em class="icon bg-purple-dim ni ni-server"></em>
                                                 </li>

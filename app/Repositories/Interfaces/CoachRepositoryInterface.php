@@ -1,7 +1,7 @@
 <?php
 namespace App\Repositories\Interfaces;
 
-interface CategoryRepositoryInterface
+interface CoachRepositoryInterface
 {
     public function paginate($perPage = 5);
     public function find($id);

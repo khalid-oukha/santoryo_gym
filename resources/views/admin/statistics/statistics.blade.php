@@ -12,7 +12,7 @@
                                 <div class="nk-block-head-content">
                                     <h3 class="nk-block-title page-title">Dashboard</h3>
                                     <div class="nk-block-des text-soft">
-                                        <p>Welcome to DashLite Dashboard Template.</p>
+                                        <p>Welcome to Santoryo .</p>
                                     </div>
                                 </div><!-- .nk-block-head-content -->
                                 <div class="nk-block-head-content">
@@ -54,19 +54,17 @@
                                             <div class="card-inner">
                                                 <div class="card-title-group">
                                                     <div class="card-title">
-                                                        <h6 class="title">Today Orders</h6>
+                                                        <h6 class="title">Today Subscribers</h6>
                                                     </div>
                                                 </div>
                                                 <div class="data">
                                                     <div class="data-group">
-                                                        <div class="amount">1,945</div>
+                                                        <div class="amount">{{ $todaySubscribers }}</div>
                                                         <div class="nk-ecwg6-ck">
                                                             <canvas class="ecommerce-line-chart-s3" id="todayOrders"></canvas>
                                                         </div>
                                                     </div>
-                                                    <div class="info"><span class="change up text-danger"><em
-                                                                class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs.
-                                                            last week</span></div>
+
                                                 </div>
                                             </div><!-- .card-inner -->
                                         </div><!-- .nk-ecwg -->
@@ -83,14 +81,12 @@
                                                 </div>
                                                 <div class="data">
                                                     <div class="data-group">
-                                                        <div class="amount">$2,338</div>
+                                                        <div class="amount">{{ $todayRevenue }} MAD</div>
                                                         <div class="nk-ecwg6-ck">
                                                             <canvas class="ecommerce-line-chart-s3" id="todayRevenue"></canvas>
                                                         </div>
                                                     </div>
-                                                    <div class="info"><span class="change down text-danger"><em
-                                                                class="icon ni ni-arrow-long-down"></em>2.34%</span><span> vs.
-                                                            last week</span></div>
+
                                                 </div>
                                             </div><!-- .card-inner -->
                                         </div><!-- .nk-ecwg -->
@@ -102,20 +98,18 @@
                                             <div class="card-inner">
                                                 <div class="card-title-group">
                                                     <div class="card-title">
-                                                        <h6 class="title">Today Customers</h6>
+                                                        <h6 class="title">Today Users</h6>
                                                     </div>
                                                 </div>
                                                 <div class="data">
                                                     <div class="data-group">
-                                                        <div class="amount">847</div>
+                                                        <div class="amount">{{ $todayUsers }}</div>
                                                         <div class="nk-ecwg6-ck">
                                                             <canvas class="ecommerce-line-chart-s3"
                                                                 id="todayCustomers"></canvas>
                                                         </div>
                                                     </div>
-                                                    <div class="info"><span class="change up text-danger"><em
-                                                                class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs.
-                                                            last week</span></div>
+
                                                 </div>
                                             </div><!-- .card-inner -->
                                         </div><!-- .nk-ecwg -->
@@ -127,19 +121,17 @@
                                             <div class="card-inner">
                                                 <div class="card-title-group">
                                                     <div class="card-title">
-                                                        <h6 class="title">Today Visitors</h6>
+                                                        <h6 class="title">Today Reservations</h6>
                                                     </div>
                                                 </div>
                                                 <div class="data">
                                                     <div class="data-group">
-                                                        <div class="amount">23,485</div>
+                                                        <div class="amount">{{ $todayReservations }}</div>
                                                         <div class="nk-ecwg6-ck">
                                                             <canvas class="ecommerce-line-chart-s3" id="todayVisitors"></canvas>
                                                         </div>
                                                     </div>
-                                                    <div class="info"><span class="change down text-danger"><em
-                                                                class="icon ni ni-arrow-long-down"></em>2.34%</span><span> vs.
-                                                            last week</span></div>
+
                                                 </div>
                                             </div><!-- .card-inner -->
                                         </div><!-- .nk-ecwg -->

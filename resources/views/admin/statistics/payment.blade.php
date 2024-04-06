@@ -32,7 +32,8 @@
                                                 </div>
                                                 <div class="data">
                                                     <div class="amount">{{ $totalYearlyIncome }} DH</div>
-                                                    <div class="info"><strong>{{ $totalLastYearIncome }}</strong> in last Year</div>
+                                                    <div class="info"><strong>{{ $totalLastYearIncome }}</strong> in last Year
+                                                    </div>
                                                 </div>
                                                 <div class="data">
                                                     <h6 class="sub-title">This Month so far</h6>
@@ -74,51 +75,18 @@
                                                 </div>
                                             </div>
                                             <div class="progress-list gy-3">
+                                                @foreach($offerPaymentsPercentages as $item)
+
                                                 <div class="progress-wrap">
                                                     <div class="progress-text">
-                                                        <div class="progress-label">Zimax</div>
-                                                        <div class="progress-amount">98%</div>
+                                                        <div class="progress-label">{{ $item['name'] }}</div>
+                                                        <div class="progress-amount">{{ $item['percentage'] }}%</div>
                                                     </div>
                                                     <div class="progress progress-md">
-                                                        <div class="progress-bar" data-progress="58"></div>
+                                                        <div class="progress-bar" data-progress="{{ $item['percentage'] }}"></div>
                                                     </div>
                                                 </div>
-                                                <div class="progress-wrap">
-                                                    <div class="progress-text">
-                                                        <div class="progress-label">Oxidin</div>
-                                                        <div class="progress-amount">73%</div>
-                                                    </div>
-                                                    <div class="progress progress-md">
-                                                        <div class="progress-bar bg-warning" data-progress="43"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="progress-wrap">
-                                                    <div class="progress-text">
-                                                        <div class="progress-label">Med-1008</div>
-                                                        <div class="progress-amount">43%</div>
-                                                    </div>
-                                                    <div class="progress progress-md">
-                                                        <div class="progress-bar bg-azure" data-progress="33"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="progress-wrap">
-                                                    <div class="progress-text">
-                                                        <div class="progress-label">Ceevit</div>
-                                                        <div class="progress-amount">29%</div>
-                                                    </div>
-                                                    <div class="progress progress-md">
-                                                        <div class="progress-bar bg-pink" data-progress="29"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="progress-wrap">
-                                                    <div class="progress-text">
-                                                        <div class="progress-label">DON A</div>
-                                                        <div class="progress-amount">18.49%</div>
-                                                    </div>
-                                                    <div class="progress progress-md">
-                                                        <div class="progress-bar bg-orange" data-progress="18.49"></div>
-                                                    </div>
-                                                </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -194,308 +162,51 @@
                                                                         for="uid"></label>
                                                                 </div>
                                                             </div>
-                                                            <div class="nk-tb-col"><span>Medicine Name</span></div>
-                                                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Total
-                                                                    Sales Amount</span></div>
+                                                            <div class="nk-tb-col"><span>Member</span></div>
+                                                            <div class="nk-tb-col tb-col-md"><span class="sub-text">amount</span></div>
                                                             <div class="nk-tb-col tb-col-lg"><span
-                                                                    class="sub-text">Categtory</span></div>
-                                                            <div class="nk-tb-col"><span>Sales Quantity</span></div>
+                                                                    class="sub-text">Method</span></div>
+                                                            <div class="nk-tb-col"><span>date</span></div>
                                                         </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid1">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid1"></label>
+
+                                                        @foreach ($payments as $payment)
+                                                            <div class="nk-tb-item">
+                                                                <div class="nk-tb-col nk-tb-col-check">
+                                                                    <div
+                                                                        class="custom-control custom-control-sm custom-checkbox notext">
+                                                                        <input type="checkbox" class="custom-control-input"
+                                                                            id="uid1">
+                                                                        <label class="custom-control-label"
+                                                                            for="uid1"></label>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">Zimax</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">2000.55 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Tablet</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>100box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid2">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid2"></label>
+                                                                <div class="nk-tb-col">
+                                                                    <a href="html/pharmacy/medicine-details.html">
+                                                                        <span class="tb-product">
+                                                                            <span class="title">{{ $payment->user->firstname . ' ' . $payment->user->firstname }}</span>
+                                                                        </span>
+                                                                    </a>
                                                                 </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">Oxidon</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">3200.00 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Tablet</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>252box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid3">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid3"></label>
+                                                                <div class="nk-tb-col tb-col-md">
+                                                                    <span class="tb-amount">{{ $payment->amount }} <span
+                                                                            class="currency">MAD</span></span>
                                                                 </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">MED-1008</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">4500.00 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Inhealer</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>552box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid4">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid4"></label>
+                                                                <div class="nk-tb-col tb-col-lg ">
+                                                                    <span>{{ $payment->payment_method }}</span>
                                                                 </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">Ceevit</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">3400.00 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Vitamin</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>444box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid5">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid5"></label>
+
+                                                                <div class="nk-tb-col">
+                                                                    <span>{{ $payment->created_at }}</span>
                                                                 </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">DON A</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">2100.00 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Tablet</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>230box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid6">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid6"></label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">Pantonix</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">1200.00 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Tablet</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>800box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid7">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid7"></label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">Isoniazid</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">3200.00 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Syrup</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>3200box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid8">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid8"></label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">EC Plus</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">1200.00 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Vitamin</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>2200box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid9">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid9"></label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">Acetylsalicylic Acid</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">1000.00 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Syrup</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>350box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col nk-tb-col-check">
-                                                                <div
-                                                                    class="custom-control custom-control-sm custom-checkbox notext">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="uid10">
-                                                                    <label class="custom-control-label"
-                                                                        for="uid10"></label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <a href="html/pharmacy/medicine-details.html">
-                                                                    <span class="tb-product">
-                                                                        <span class="title">Voltaren</span>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-amount">8766.00 <span
-                                                                        class="currency">USD</span></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span>Syrup</span>
-                                                            </div>
-                                                            <div class="nk-tb-col">
-                                                                <span>300box</span>
-                                                            </div>
-                                                        </div><!-- .nk-tb-item -->
+                                                            </div><!-- .nk-tb-item -->
+                                                        @endforeach
+
+
                                                     </div>
                                                 </div><!-- .card-inner -->
                                                 <div class="card-inner">
-                                                    <ul class="pagination justify-content-center justify-content-md-start">
-                                                        <li class="page-item"><a class="page-link" href="#">Prev</a>
-                                                        </li>
-                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                        <li class="page-item"><span class="page-link"><em
-                                                                    class="icon ni ni-more-h"></em></span></li>
-                                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                                        <li class="page-item"><a class="page-link" href="#">Next</a>
-                                                        </li>
-                                                    </ul><!-- .pagination -->
+
+                                                    {{ $payments->links() }}
                                                 </div><!-- .card-inner -->
                                             </div><!-- .card-inner-group -->
                                         </div><!-- .card -->

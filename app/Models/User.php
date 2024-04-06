@@ -53,6 +53,11 @@ class User extends Authenticatable
     public function Subscription(){
         return $this->hasOne(Subscription::class);
     }
+
+    public function Payment(){
+        return $this->hasMany(Payment::class);
+    }
+
     public static function getEmailChecked($email){
         return self::where('email', $email)->first();
     }

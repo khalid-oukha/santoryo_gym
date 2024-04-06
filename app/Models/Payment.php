@@ -5,16 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subscription extends Model
+class Payment extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'offer_id',
-        'user_id',
-        'start_date',
-        'end_date',
-    ];
+    protected $fillable = ['user_id', 'offer_id', 'payment_method', 'amount'];
 
     public function user()
     {

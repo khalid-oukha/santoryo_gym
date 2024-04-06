@@ -9,6 +9,9 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        return view('front.profile');
+        $subscriptions = auth()->user()->subscription()->with('offer')->get();
+        $offer = $subscriptions->pluck('offer');
+        // dd($offer);
+        return view('front.profile', compact('subscriptions', 'offer'));
     }
 }

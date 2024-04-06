@@ -10,11 +10,13 @@ use App\Http\Controllers\backoffice\Feature\FeatureController;
 use App\Http\Controllers\backoffice\Lessons\LessonController;
 use App\Http\Controllers\backoffice\Offers\OfferController;
 use App\Http\Controllers\backoffice\statistics\StatisticsController;
+use App\Http\Controllers\backoffice\subscription\SubscriptionController;
 use App\Http\Controllers\frontoffice\HomeController;
 use App\Http\Controllers\frontoffice\PricingController;
 use App\Http\Controllers\frontoffice\ProfileController;
 use App\Http\Controllers\lessons\lessonsListController;
-use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\payment\PaymentController;
+use App\Http\Controllers\payment\PaymentHistoricController;
 use App\Http\Controllers\StripePaymentController;
 use Illuminate\Support\Facades\Route;
 
@@ -81,5 +83,14 @@ route::get('lessonsAll', [lessonsListController::class, 'index'] )->name('lesson
 Route::post('pay', [PaymentController::class, 'pay'])->name('pay.order');
 Route::get('success', [PaymentController::class, 'success'])->name('pay.success');
 
+Route::get('income',[PaymentHistoricController::class, 'index'])->name('income.index');
+
 Route::get('profile',[ProfileController::class, 'index'])->name('profile.index');
 Route::get('statistics',[StatisticsController::class, 'index'])->name('statistics.index');
+
+
+//subscription
+Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
+
+
+Route::get('search/Subscription', [SubscriptionController::class, 'search'])->name('subscription.search');

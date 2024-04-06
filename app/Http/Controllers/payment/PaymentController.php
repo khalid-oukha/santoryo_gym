@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\payment;
 
 use App\Http\Controllers\Controller;
 use App\Models\Offer;
+use App\Models\Payment;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Stripe\Checkout\Session;
@@ -53,6 +54,13 @@ class PaymentController extends Controller
             'start_date' => now(),
             'end_date' => $endDate,
             'status' => 'active'
+        ]);
+
+        Payment::create([
+            'user_id' => $userId,
+            'offer_id' => $offerId,
+            'payment_method' => 'stripe',
+            'amount' => $offer->price
         ]);
 
         // Flash success message

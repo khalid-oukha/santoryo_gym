@@ -31,4 +31,9 @@ class Lesson extends Model
     {
         return $this->belongsTo(Coach::class);
     }
+
+    public function Users()
+    {
+        return $this->belongsToMany(User::class, 'lesson_user');
+    }
 }

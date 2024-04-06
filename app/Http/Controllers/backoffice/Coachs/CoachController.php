@@ -7,14 +7,21 @@ use App\Http\Requests\Coash\CoachUpdateRequest;
 use App\Http\Requests\Coash\StoreCoashRequest;
 use App\Models\Coach;
 use App\Models\User;
+use App\Repositories\Interfaces\CoachRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class CoachController extends Controller
 {
+    protected $coachRepository;
+
+    public function __construct(CoachRepositoryInterface $coachRepository)
+    {
+        $this->coachRepository = $coachRepository;
+    }
     public function index()
     {
-        $coashes = Coach::paginate(10);
+        $coashes = $this->coachRepository->paginate();
         $nbr_coachs = Coach::count();
         return view("admin/coach/index", compact("coashes", "nbr_coachs"));
     }
@@ -69,11 +76,11 @@ class CoachController extends Controller
 
     public function destroy(Coach $coach)
     {
-        $coach->delete();
+        $coach = $this->coachRepository->delete($coach->id);
         if ($coach) {
-            redirect()->route('coach.index')->with('success', 'Coach deleted successfully ');
+            return redirect()->route('coach.index')->with('success', 'Coach deleted successfully ');
         }
-        redirect()->back()->with('error', 'there is an error deleteing the coach');
+        return redirect()->back()->with('error', 'there is an error deleteing the coach');
     }
 
 

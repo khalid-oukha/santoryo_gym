@@ -32,4 +32,21 @@ class SubscriptionService
             return false;
         }
     }
+
+    public static function hasSubscription()
+    {
+        if (!Auth::check()) {
+            return false;
+        }
+
+        $user = auth()->user();
+        $subscription = Subscription::where('user_id', $user->id)->first();
+
+        if ($subscription) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

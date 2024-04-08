@@ -280,222 +280,45 @@
                                                 <div class="nk-tb-col"><span>Amount</span></div>
                                                 <div class="nk-tb-col"><span class="d-none d-sm-inline">Status</span></div>
                                             </div>
-                                            <div class="nk-tb-item">
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-lead"><a href="#">#95954</a></span>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-sm">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar sm bg-purple-dim">
-                                                            <span>AB</span>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <span class="tb-lead">Abu Bin Ishtiyak</span>
+                                            @foreach ($latestSubscribers as $latestSubscriber)
+                                                <div class="nk-tb-item">
+                                                    <div class="nk-tb-col">
+                                                        <span class="tb-lead"><a href="#">{{ $latestSubscriber->id }}</a></span>
+                                                    </div>
+                                                    <div class="nk-tb-col tb-col-sm">
+                                                        <div class="user-card">
+                                                            <div class="user-avatar sm bg-purple-dim">
+                                                                <span>{{ strtoupper(substr($latestSubscriber->user->firstname, 0, 1)) . strtoupper(substr($latestSubscriber->user->lastname, 0, 1)) }}
+                                                                </span>
+                                                            </div>
+                                                            <div class="user-name">
+                                                                <span class="tb-lead">{{ $latestSubscriber->user->firstname . ' ' . $latestSubscriber->user->lastname }}</span>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-md">
-                                                    <span class="tb-sub">02/11/2020</span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-sub tb-amount">4,596.75 <span>USD</span></span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="badge badge-dot badge-dot-xs bg-success">Paid</span>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-item">
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-lead"><a href="#">#95850</a></span>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-sm">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar sm bg-azure-dim">
-                                                            <span>DE</span>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <span class="tb-lead">Desiree Edwards</span>
-                                                        </div>
+                                                    <div class="nk-tb-col tb-col-md">
+                                                        <span class="tb-sub">{{ $latestSubscriber->created_at }}</span>
+                                                    </div>
+                                                    <div class="nk-tb-col">
+                                                        <span class="tb-sub tb-amount">{{ $latestSubscriber->offer->price }} <span>MAD</span></span>
+                                                    </div>
+                                                    <div class="nk-tb-col">
+                                                        @if ($latestSubscriber->status == 'active')
+                                                            <span class="badge badge-dot badge-dot-xs bg-success">{{ $latestSubscriber->status }}</span>
+
+                                                        @else
+                                                        <span class="badge badge-dot badge-dot-xs bg-danger">{{ $latestSubscriber->status }}</span>
+
+                                                        @endif
                                                     </div>
                                                 </div>
-                                                <div class="nk-tb-col tb-col-md">
-                                                    <span class="tb-sub">02/02/2020</span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-sub tb-amount">596.75 <span>USD</span></span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="badge badge-dot badge-dot-xs bg-danger">Canceled</span>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-item">
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-lead"><a href="#">#95812</a></span>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-sm">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar sm bg-warning-dim">
-                                                            <img src="./images/avatar/b-sm.jpg" alt="">
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <span class="tb-lead">Blanca Schultz</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-md">
-                                                    <span class="tb-sub">02/01/2020</span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-sub tb-amount">199.99 <span>USD</span></span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="badge badge-dot badge-dot-xs bg-success">Paid</span>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-item">
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-lead"><a href="#">#95256</a></span>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-sm">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar sm bg-purple-dim">
-                                                            <span>NL</span>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <span class="tb-lead">Naomi Lawrence</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-md">
-                                                    <span class="tb-sub">01/29/2020</span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-sub tb-amount">1099.99 <span>USD</span></span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="badge badge-dot badge-dot-xs bg-success">Paid</span>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-item">
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-lead"><a href="#">#95135</a></span>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-sm">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar sm bg-success-dim">
-                                                            <span>CH</span>
-                                                        </div>
-                                                        <div class="user-name">
-                                                            <span class="tb-lead">Cassandra Hogan</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-tb-col tb-col-md">
-                                                    <span class="tb-sub">01/29/2020</span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="tb-sub tb-amount">1099.99 <span>USD</span></span>
-                                                </div>
-                                                <div class="nk-tb-col">
-                                                    <span class="badge badge-dot badge-dot-xs bg-warning">Due</span>
-                                                </div>
-                                            </div>
+                                            @endforeach
+
+
                                         </div>
                                     </div><!-- .card -->
                                 </div>
-                                <div class="col-xxl-4 col-md-8 col-lg-6">
-                                    <div class="card h-100">
-                                        <div class="card-inner">
-                                            <div class="card-title-group mb-2">
-                                                <div class="card-title">
-                                                    <h6 class="title">Top products</h6>
-                                                </div>
-                                                <div class="card-tools">
-                                                    <div class="dropdown">
-                                                        <a href="#"
-                                                            class="dropdown-toggle link link-light link-sm dropdown-indicator"
-                                                            data-bs-toggle="dropdown">Weekly</a>
-                                                        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
-                                                            <ul class="link-list-opt no-bdr">
-                                                                <li><a href="#"><span>Daily</span></a></li>
-                                                                <li><a href="#" class="active"><span>Weekly</span></a>
-                                                                </li>
-                                                                <li><a href="#"><span>Monthly</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ul class="nk-top-products">
-                                                <li class="item">
-                                                    <div class="thumb">
-                                                        <img src="./images/product/a.png" alt="">
-                                                    </div>
-                                                    <div class="info">
-                                                        <div class="title">Pink Fitness Tracker</div>
-                                                        <div class="price">$99.00</div>
-                                                    </div>
-                                                    <div class="total">
-                                                        <div class="amount">$990.00</div>
-                                                        <div class="count">10 Sold</div>
-                                                    </div>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumb">
-                                                        <img src="./images/product/b.png" alt="">
-                                                    </div>
-                                                    <div class="info">
-                                                        <div class="title">Purple Smartwatch</div>
-                                                        <div class="price">$99.00</div>
-                                                    </div>
-                                                    <div class="total">
-                                                        <div class="amount">$990.00</div>
-                                                        <div class="count">10 Sold</div>
-                                                    </div>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumb">
-                                                        <img src="./images/product/c.png" alt="">
-                                                    </div>
-                                                    <div class="info">
-                                                        <div class="title">Black Mi Band Smartwatch</div>
-                                                        <div class="price">$99.00</div>
-                                                    </div>
-                                                    <div class="total">
-                                                        <div class="amount">$990.00</div>
-                                                        <div class="count">10 Sold</div>
-                                                    </div>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumb">
-                                                        <img src="./images/product/d.png" alt="">
-                                                    </div>
-                                                    <div class="info">
-                                                        <div class="title">Black Headphones</div>
-                                                        <div class="price">$99.00</div>
-                                                    </div>
-                                                    <div class="total">
-                                                        <div class="amount">$990.00</div>
-                                                        <div class="count">10 Sold</div>
-                                                    </div>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumb">
-                                                        <img src="./images/product/e.png" alt="">
-                                                    </div>
-                                                    <div class="info">
-                                                        <div class="title">iPhone 7 Headphones</div>
-                                                        <div class="price">$99.00</div>
-                                                    </div>
-                                                    <div class="total">
-                                                        <div class="amount">$990.00</div>
-                                                        <div class="count">10 Sold</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div><!-- .card-inner -->
-                                    </div><!-- .card -->
-                                </div><!-- .col -->
+
                             </div><!-- .row -->
                         </div><!-- .nk-block -->
                     </div>

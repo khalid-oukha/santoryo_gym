@@ -33,52 +33,7 @@
     </main>
 
     <section class=" darkgradient w-full h-full  relative overflow-hidden ">
-        <div>
-            <div class="flex justify-center">
-                <div class="flex items">
-                    <div class="m-2 max-w-screen-md flex justify-center">
-                        <div class="rounded-xl    p-6 shadow-lg">
-                            <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                                <div class="flex flex-col">
-                                    <label for="name" class="text-gray-300 text-sm font-medium">Title</label>
-                                    <input type="text" id="name" placeholder="raspberry juice"
-                                        class="mt-2 block w-full rounded-md border  px-2 py-2 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
-                                </div>
 
-            
-                                <div class="flex flex-col">
-                                    <label for="date" class="text-gray-300 text-sm font-medium">Date of Lesson</label>
-                                    <input type="date" id="date"
-                                        class="mt-2 block w-full rounded-md border  px-2 py-2 shadow-sm outline-none focus:border-primary-400 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
-                                </div>
-            
-                                <div class="flex flex-col">
-                                    <label for="status" class="text-gray-300 text-sm font-medium">Category</label>
-            
-                                    <select id="status"
-                                        class="mt-2 block w-full rounded-md border  px-2 py-2 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                                        <option>Dispached Out</option>
-                                        <option>In Warehouse</option>
-                                        <option>Being Brought In</option>
-                                    </select>
-                                </div>
-                                            
-                                <div class="flex flex-col">
-                                    <label for="status" class="text-gray-300 text-sm font-medium">Search</label>
-            
-                                    <button
-                                    class="active:scale-95 mt-2 rounded-lg bg-primary-400 px-8 py-2 font-medium text-white outline-none focus:ring hover:opacity-90">Search</button>
-                                </div>
-
-
-                            </div>
-            
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="flex items-center justify-center">
 
             <div class="grid grid-cols-1 lg:w-3/4 gap-5 lg:grid-cols-3 lg:gap-10  ">
@@ -147,7 +102,7 @@
                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-primary-400 -rotate-12"></span>
                                         <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-200 -rotate-12"></span>
-                                        <span class="relative">Order now</span>
+                                        <span class="relative">Reserve now</span>
                                     </a>
                                 </div>
 

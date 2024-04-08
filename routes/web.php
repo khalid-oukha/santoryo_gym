@@ -14,6 +14,7 @@ use App\Http\Controllers\backoffice\subscription\SubscriptionController;
 use App\Http\Controllers\frontoffice\HomeController;
 use App\Http\Controllers\frontoffice\PricingController;
 use App\Http\Controllers\frontoffice\ProfileController;
+use App\Http\Controllers\frontoffice\ReservationController;
 use App\Http\Controllers\lessons\lessonsListController;
 use App\Http\Controllers\payment\PaymentController;
 use App\Http\Controllers\payment\PaymentHistoricController;
@@ -94,3 +95,6 @@ Route::get('subscription', [SubscriptionController::class, 'index'])->name('subs
 
 
 Route::get('search/Subscription', [SubscriptionController::class, 'search'])->name('subscription.search');
+
+//reservation lesson
+Route::get('reservation/{id}', [ReservationController::class, 'reservation'])->name('lesson.reservation');

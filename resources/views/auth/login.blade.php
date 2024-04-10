@@ -90,6 +90,6 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('js/loginValidation.js') }}"></script>
+    <script src="{{ asset('js/auth/loginValidation.js') }}"></script>
 
 @endsection

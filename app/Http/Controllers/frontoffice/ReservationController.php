@@ -4,17 +4,24 @@ namespace App\Http\Controllers\frontoffice;
 
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
+use App\Services\ReservationService;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
     //
-    public function reservation(Lesson $lesson)
+    public function reservation(string $id)
     {
+        $lesson = Lesson::findOrFail($id);
+
         $user = auth()->user();
+        if (ReservationService::alreadyReservedLesson($lesson->id)) {
+            return back()->with('error', 'You have already reserved this lesson.');
+        }
         $lesson->users()->attach($user->id);
+        return back()->with('success', 'Lesson reserved successfully.');
     }
 
-    
+
 
 }

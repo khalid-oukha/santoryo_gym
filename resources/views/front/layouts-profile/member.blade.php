@@ -98,15 +98,10 @@
         <li class="md:border-t md:border-gray-700 md:-mt-px md:text-gray-400">
             <a class="inline-block p-3" href="#">
                 <i class="text-xl fas fa-th-text-gray-200 large md:text-xs"></i>
-                <span class="hidden text-gray-200 md:inline">Pending</span>
+                <span class="hidden text-gray-200 md:inline">Reservations</span>
             </a>
         </li>
-        <li>
-            <a class="inline-block p-3" href="#">
-                <i class="text-xl text-white far fa-square md:text-xs"></i>
-                <span class="hidden text-green-500 md:inline">accepted</span>
-            </a>
-        </li>
+
 
     </ul>
 

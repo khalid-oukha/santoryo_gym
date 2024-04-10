@@ -33,7 +33,19 @@
     </main>
 
     <section class=" darkgradient w-full h-full  relative overflow-hidden ">
+        @if (session()->has('error'))
+            <div
+                class="alert alert-danger bg-red-700 text-white rounded-md my-4 px-4 py-3 shadow-md w-full max-w-sm mx-auto">
+                {{ session()->get('error') }}
+            </div>
+        @endif
 
+        @if (session()->has('success'))
+            <div
+                class="alert alert-success bg-green-600 text-white rounded-md my-4 px-4 py-3 shadow-md w-full max-w-sm mx-auto">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         <div class="flex items-center justify-center">
 
             <div class="grid grid-cols-1 lg:w-3/4 gap-5 lg:grid-cols-3 lg:gap-10  ">
@@ -82,27 +94,16 @@
 
                                 </div>
                                 <div class="flex items-center mt-4 justify-between text-gray-100">
+
                                     <a href="#_" class="relative px-6 py-2 font-medium text-white group">
                                         <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-gray-500 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-gray-800 group-hover:bg-primary-300 group-hover:-skew-x-12"></span>
-                                        <span
-                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-primary-400 -rotate-12"></span>
-                                        <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-200 -rotate-12"></span>
-                                        <span class="relative">About class</span>
-                                    </a>
-                                    <a href="#_" class="relative px-6 py-2 font-medium text-white group">
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-primary-300 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-primary-100 group-hover:bg-primary-300 group-hover:-skew-x-12"></span>
-                                        <span
-                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-primary-400 -rotate-12"></span>
-                                        <span
-                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-200 -rotate-12"></span>
-                                        <span class="relative">Reserve now</span>
+                                        <div class="flex items-center mt-4 justify-between text-gray-100">
+                                            <a href="#_"
+                                                class="relative px-6 bg-green-500 py-2 font-medium text-white group {{ in_array($lesson->id, $userReservations) ? 'disabled opacity-50 cursor-not-allowed' : '' }}">
+                                                <span class="relative">Reserve Now</span>
+                                            </a>
+                                        </div>
                                     </a>
                                 </div>
 

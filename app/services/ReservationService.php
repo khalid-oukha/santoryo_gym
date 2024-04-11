@@ -32,4 +32,12 @@ class ReservationService
             return false;
         }
     }
+
+    public static function AvalaibleSeats(int $lesson_id): int
+    {
+        $lesson = Lesson::findOrFail($lesson_id);
+        $reserved = $lesson->users()->count();
+        $seats = $lesson->capacity;
+        return $seats - $reserved;
+    }
 }

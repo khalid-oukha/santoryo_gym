@@ -99,7 +99,7 @@
                                         <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-200 -rotate-12"></span>
                                         <div class="flex items-center mt-4 justify-between text-gray-100">
-                                            <a href="#_"
+                                            <a href="{{ route('lesson.reservation',$lesson) }}"
                                                 class="relative px-6 bg-green-500 py-2 font-medium text-white group {{ in_array($lesson->id, $userReservations) ? 'disabled opacity-50 cursor-not-allowed' : '' }}">
                                                 <span class="relative">Reserve Now</span>
                                             </a>

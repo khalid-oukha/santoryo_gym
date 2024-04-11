@@ -18,6 +18,11 @@ class ReservationController extends Controller
         if (ReservationService::alreadyReservedLesson($lesson->id)) {
             return back()->with('error', 'You have already reserved this lesson.');
         }
+
+        if (ReservationService::AvalaibleSeats($lesson->id) == 0) {
+            return back()->with('error', 'No available seats for this lesson.');
+        }
+        
         $lesson->users()->attach($user->id);
         return back()->with('success', 'Lesson reserved successfully.');
     }

@@ -2,7 +2,7 @@
 
 *.blade.php diff=html
 # *.css diff=css
-*.html diff=html
+# *.html diff=html
 *.md diff=markdown
 *.php diff=php
 
@@ -13,6 +13,6 @@ CHANGELOG.md export-ignore
 
 *.php linguist-language=PHP
 *.css linguist-language=none
-*.html linguist-language=HTML
+*.html linguist-language=none
 *.md linguist-language=Markdown
 *.blade.php linguist-language=HTML

@@ -35,67 +35,56 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Home Routes...
-Route::get('',[HomeController::class, 'index'])->name('home');
+Route::get('', [HomeController::class, 'index'])->name('home');
 
 // Authentication Routes...
 
-Route::get('/login', [LoginController::class,'showLoginForm'])->name('loginform');
-Route::post('/login', [LoginController::class,'login'])->name('login');
-Route::post('/logout', [LoginController::class,'logout'])->name('logout');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('loginform');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Registration Routes...
-Route::get('/register', [RegisterController::class,'showRegistrationForm'])->name('registerform');
-Route::post('/register', [RegisterController::class,'register'])->name('register');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('registerform');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 // Password Reset Routes...
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget.passwordform');
 Route::post('/password/email', [ForgotPasswordController::class, 'ResetPasswordRequest'])->name('forgetpassword.request');
-Route::get('reset/{token}', [ResetPasswordController::class,'reset'])->name('password.reset');
-Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('password.postReset');
+Route::get('reset/{token}', [ResetPasswordController::class, 'reset'])->name('password.reset');
+Route::post('/reset', [ResetPasswordController::class, 'GetnewPassword'])->name('password.postReset');
 
 
 // dashboard Routes...
 
 
-Route::prefix('admin')->middleware(['is_admin'])->group(function () {
+Route::middleware(['is_admin'])->group(function () {
+
+    Route::resource('coach', CoachController::class);
+    Route::resource('lesson', LessonController::class);
+    Route::resource('category', CategoryController::class);
+    Route::resource('offer', OfferController::class);
+    Route::resource('feature', FeatureController::class);
+
+    //subscription
+    Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
+    Route::get('search/Subscription', [SubscriptionController::class, 'search'])->name('subscription.search');
 
 
-
+    Route::get('statistics', [StatisticsController::class, 'index'])->name('statistics.index');
+    Route::get('income', [PaymentHistoricController::class, 'index'])->name('income.index');
 });
-Route::resource('coach', CoachController::class);
-Route::resource('lesson', LessonController::class);
-Route::resource('category', CategoryController::class);
-Route::resource('offer', OfferController::class);
-Route::resource('feature', FeatureController::class);
+
+Route::middleware('auth')->group(function () {
 
 
-route::get('offers', [PricingController::class, 'index'] )->name('pricing.index');
-route::get('lessonsAll', [lessonsListController::class, 'index'] )->name('lessonsList.index');
+    Route::post('pay', [PaymentController::class, 'pay'])->name('pay.order');
+    Route::get('success', [PaymentController::class, 'success'])->name('pay.success');
+    Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
 
+    //reservation lesson
+    Route::get('reservation/{id}', [ReservationController::class, 'reservation'])->name('lesson.reservation');
+    Route::get('cancelReservation/{id}', [ReservationController::class, 'cancel'])->name('reservation.cancel');
+});
 
-
-
-// Route::get('/',         [PaymentController::class, 'index'])->name('stripe.index');
-// Route::controller(StripePaymentController::class)->group(function(){
-//     Route::get('stripe', 'stripe');
-//     Route::post('stripe', 'stripePost')->name('stripe.post');
-// });
-
-Route::post('pay', [PaymentController::class, 'pay'])->name('pay.order');
-Route::get('success', [PaymentController::class, 'success'])->name('pay.success');
-
-Route::get('income',[PaymentHistoricController::class, 'index'])->name('income.index');
-
-Route::get('profile',[ProfileController::class, 'index'])->name('profile.index');
-Route::get('statistics',[StatisticsController::class, 'index'])->name('statistics.index');
-
-
-//subscription
-Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
-
-
-Route::get('search/Subscription', [SubscriptionController::class, 'search'])->name('subscription.search');
-
-//reservation lesson
-Route::get('reservation/{id}', [ReservationController::class, 'reservation'])->name('lesson.reservation');
-Route::get('cancelReservation/{id}', [ReservationController::class, 'cancel'])->name('reservation.cancel');
+route::get('offers', [PricingController::class, 'index'])->name('pricing.index');
+route::get('lessonsAll', [lessonsListController::class, 'index'])->name('lessonsList.index');

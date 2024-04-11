@@ -22,10 +22,10 @@ class DatabaseSeeder extends Seeder
             // CategoriesSeeder::class,
             OfferSeeder::class,
             SubscriptionSeeder::class,
-            LessonSeeder::class,
-            LessonUserSeeder::class,
-            EmployeeSeeder::class,
-            TransactionSeeder::class,
+            // LessonSeeder::class,
+            // LessonUserSeeder::class,
+            // EmployeeSeeder::class,
+            // TransactionSeeder::class,
 
 
 

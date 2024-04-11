@@ -14,7 +14,7 @@ class ProfileController extends Controller
     {
         $hasSubscription = SubscriptionService::hasSubscription();
         $reservations = $this->UserReservations();
-        // dd($reservation);
+        // dd($reservations);
         $subscriptions = auth()->user()->subscription()->with('offer')->get();
         $offer = $subscriptions->pluck('offer');
         return view('front.profile', compact('subscriptions', 'offer', 'hasSubscription', 'reservations'));
@@ -27,5 +27,7 @@ class ProfileController extends Controller
         ->get();
 
     }
+
+
 
 }

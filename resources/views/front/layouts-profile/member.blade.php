@@ -196,21 +196,7 @@
                 <td class="px-4 py-3">
                     <div class="flex items-center space-x-4 text-sm">
 
-                        <a href="" onclick="return confirm('Do you really want to Accept this event ?');">
-                            <div
-                                class="inline-flex items-center px-1 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800">
-                                <button
-                                    class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-green-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                                    aria-label="Edit">
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <a href="">
+                        <a href="{{ route('reservation.cancel',$reservation) }}" onclick="return confirm('Do you really want to cancel  this reservation ?');">
                             <div
                                 class="inline-flex items-center px-1 py-1 rounded-full gap-x-2 text-red-500 bg-red-100/60 dark:bg-gray-800">
                                 <button
@@ -224,7 +210,6 @@
                                 </button>
                             </div>
                         </a>
-
                     </div>
                 </td>
 

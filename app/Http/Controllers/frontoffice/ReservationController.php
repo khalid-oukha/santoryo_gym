@@ -22,6 +22,10 @@ class ReservationController extends Controller
         return back()->with('success', 'Lesson reserved successfully.');
     }
 
-
+    public function cancel(Lesson $lesson)
+    {
+        auth()->user()->lessons()->detach($lesson->id);
+        return redirect()->back();
+    }
 
 }

@@ -98,3 +98,4 @@ Route::get('search/Subscription', [SubscriptionController::class, 'search'])->na
 
 //reservation lesson
 Route::get('reservation/{id}', [ReservationController::class, 'reservation'])->name('lesson.reservation');
+Route::get('cancelReservation/{id}', [ReservationController::class, 'cancel'])->name('reservation.cancel');

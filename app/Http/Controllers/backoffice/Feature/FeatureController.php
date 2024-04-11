@@ -5,16 +5,25 @@ namespace App\Http\Controllers\backoffice\Feature;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Feature\StoreFeatureRequest;
 use App\Models\Feature;
+use App\Repositories\Interfaces\FeatureRepositoryInterface;
 use Illuminate\Http\Request;
 
 class FeatureController extends Controller
 {
+    protected $featureRepository;
+
+    public function __construct(FeatureRepositoryInterface $featureRepository)
+    {
+        $this->featureRepository = $featureRepository;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {   
-        $features = Feature::all();
+    {
+        // $features = Feature::all();
+        $features = $this->featureRepository->all();
         return view('admin.feature.index',compact('features'));
     }
 
@@ -26,7 +35,7 @@ class FeatureController extends Controller
     public function store(StoreFeatureRequest $request)
     {
         $data = $request->validated();
-        $feature = Feature::create($data);
+        $feature = $this->featureRepository->create($data);
         if ($feature) {
             return redirect()->route('feature.index')->with('success', 'Feature created successfully.');
         } else {
@@ -39,7 +48,8 @@ class FeatureController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $feature = Feature::find($id);
+        return view('admin.feature.show',compact('feature'));
     }
 
     /**
@@ -47,8 +57,9 @@ class FeatureController extends Controller
      */
     public function edit(string $id)
     {
-        
-        $feature = Feature::find($id);
+
+        // $feature = Feature::find($id);
+        $feature = $this->featureRepository->find($id);
         return view('admin.feature.edit',compact('feature'));
     }
 
@@ -57,8 +68,7 @@ class FeatureController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $feature = Feature::find($id);
-        $feature->update($request->all());
+        $feature = $this->featureRepository->update($id,$request->all());
         return redirect()->route('feature.index')->with('success', 'Feature updated successfully.');
     }
 
@@ -67,8 +77,7 @@ class FeatureController extends Controller
      */
     public function destroy(string $id)
     {
-        $feature = Feature::find($id);
-        $feature->delete();
+        $this->featureRepository->delete($id);
         return redirect()->route('feature.index')->with('success', 'Feature deleted successfully.');
     }
 }

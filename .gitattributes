@@ -1,18 +1,9 @@
-* text=auto eol=lf
-
 *.blade.php diff=html
-# *.css diff=css
-# *.html diff=html
-*.md diff=markdown
-*.php diff=php
+*.css linguist-language=none
+*.html linguist-language=none
+*.md linguist-language=Markdown
+*.php linguist-language=PHP
 
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
-
-
-*.php linguist-language=PHP
-*.css linguist-language=none
-*.html linguist-language=none
-*.md linguist-language=Markdown
-*.blade.php linguist-language=HTML

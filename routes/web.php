@@ -57,7 +57,7 @@ Route::post('/reset', [ResetPasswordController::class, 'GetnewPassword'])->name(
 // dashboard Routes...
 
 
-Route::middleware(['is_admin'])->group(function () {
+Route::middleware(['auth','is_admin'])->group(function () {
 
     Route::resource('coach', CoachController::class);
     Route::resource('lesson', LessonController::class);
@@ -73,6 +73,9 @@ Route::middleware(['is_admin'])->group(function () {
     Route::get('statistics', [StatisticsController::class, 'index'])->name('statistics.index');
     Route::get('income', [PaymentHistoricController::class, 'index'])->name('income.index');
 });
+
+
+
 
 Route::middleware('auth')->group(function () {
 

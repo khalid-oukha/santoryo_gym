@@ -36,7 +36,9 @@
                             @csrf
                             @method('POST')
                             <div class="mb-4 md:flex md:justify-between">
-                                <div class="mb-4 md:mr-2 md:mb-0">
+                                <div class="form mb-4 md:mr-2 md:mb-0">
+                                    <span id="firstname-message" class="text-red-500 text-xs italic mb-2"></span>
+
                                     <label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white"
                                         for="firstName">
                                         First Name
@@ -45,7 +47,9 @@
                                         class="w-full px-3 py-2 text-sm leading-tight text-gray-800 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                         id="firstName" type="text" placeholder="First Name" name="firstname" />
                                 </div>
-                                <div class="md:ml-2">
+                                <div class="form md:ml-2">
+                                    <span id="lastname-message" class="text-red-500 text-xs italic mb-2"></span>
+
                                     <label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white"
                                         for="lastName">
                                         Last Name
@@ -55,7 +59,8 @@
                                         id="lastName" type="text" placeholder="Last Name" name="lastname" />
                                 </div>
                             </div>
-                            <div class="mb-4">
+                            <div class="form mb-4">
+                                <span id="email-message" class="text-red-500 text-xs italic "></span>
                                 <label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white" for="email">
                                     Email
                                 </label>
@@ -63,26 +68,19 @@
                                     class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-800 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                     id="email" type="email" placeholder="Email" name="email" />
                             </div>
-                            <div class="mb-4 md:flex md:justify-between">
+                            <div class="form mb-4 md:flex md:justify-between">
                                 <div class="mb-4 md:mr-2 md:mb-0">
                                     <label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white"
                                         for="password">
                                         Password
                                     </label>
+                                    <span id="password-message" class="text-red-500 text-xs italic "> </span>
                                     <input
                                         class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-800 dark:text-white border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                         id="password" type="password" placeholder="******************" name="password" />
-                                    <p class="text-xs italic text-red-500">Please choose a password.</p>
+
                                 </div>
-                                <div class="md:ml-2">
-                                    <label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white"
-                                        for="c_password">
-                                        Confirm Password
-                                    </label>
-                                    <input
-                                        class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-800 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                        id="c_password" type="password" placeholder="******************" />
-                                </div>
+
                             </div>
                             <div class="mb-6 text-center">
                                 <button
@@ -113,4 +111,5 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('js/auth/signupValidation.js') }}"></script>
 @endsection

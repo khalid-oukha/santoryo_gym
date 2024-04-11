@@ -33,52 +33,19 @@
     </main>
 
     <section class=" darkgradient w-full h-full  relative overflow-hidden ">
-        <div>
-            <div class="flex justify-center">
-                <div class="flex items">
-                    <div class="m-2 max-w-screen-md flex justify-center">
-                        <div class="rounded-xl    p-6 shadow-lg">
-                            <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                                <div class="flex flex-col">
-                                    <label for="name" class="text-gray-300 text-sm font-medium">Title</label>
-                                    <input type="text" id="name" placeholder="raspberry juice"
-                                        class="mt-2 block w-full rounded-md border  px-2 py-2 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
-                                </div>
-
-            
-                                <div class="flex flex-col">
-                                    <label for="date" class="text-gray-300 text-sm font-medium">Date of Lesson</label>
-                                    <input type="date" id="date"
-                                        class="mt-2 block w-full rounded-md border  px-2 py-2 shadow-sm outline-none focus:border-primary-400 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
-                                </div>
-            
-                                <div class="flex flex-col">
-                                    <label for="status" class="text-gray-300 text-sm font-medium">Category</label>
-            
-                                    <select id="status"
-                                        class="mt-2 block w-full rounded-md border  px-2 py-2 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                                        <option>Dispached Out</option>
-                                        <option>In Warehouse</option>
-                                        <option>Being Brought In</option>
-                                    </select>
-                                </div>
-                                            
-                                <div class="flex flex-col">
-                                    <label for="status" class="text-gray-300 text-sm font-medium">Search</label>
-            
-                                    <button
-                                    class="active:scale-95 mt-2 rounded-lg bg-primary-400 px-8 py-2 font-medium text-white outline-none focus:ring hover:opacity-90">Search</button>
-                                </div>
-
-
-                            </div>
-            
-
-                        </div>
-                    </div>
-                </div>
+        @if (session()->has('error'))
+            <div
+                class="alert alert-danger bg-red-700 text-white rounded-md my-4 px-4 py-3 shadow-md w-full max-w-sm mx-auto">
+                {{ session()->get('error') }}
             </div>
-        </div>
+        @endif
+
+        @if (session()->has('success'))
+            <div
+                class="alert alert-success bg-green-600 text-white rounded-md my-4 px-4 py-3 shadow-md w-full max-w-sm mx-auto">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         <div class="flex items-center justify-center">
 
             <div class="grid grid-cols-1 lg:w-3/4 gap-5 lg:grid-cols-3 lg:gap-10  ">
@@ -127,27 +94,16 @@
 
                                 </div>
                                 <div class="flex items-center mt-4 justify-between text-gray-100">
+
                                     <a href="#_" class="relative px-6 py-2 font-medium text-white group">
                                         <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-gray-500 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-gray-800 group-hover:bg-primary-300 group-hover:-skew-x-12"></span>
-                                        <span
-                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-primary-400 -rotate-12"></span>
-                                        <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-200 -rotate-12"></span>
-                                        <span class="relative">About class</span>
-                                    </a>
-                                    <a href="#_" class="relative px-6 py-2 font-medium text-white group">
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-primary-300 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-primary-100 group-hover:bg-primary-300 group-hover:-skew-x-12"></span>
-                                        <span
-                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-primary-400 -rotate-12"></span>
-                                        <span
-                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-200 -rotate-12"></span>
-                                        <span class="relative">Order now</span>
+                                        <div class="flex items-center mt-4 justify-between text-gray-100">
+                                            <a href="{{ route('lesson.reservation',$lesson) }}"
+                                                class="relative px-6 bg-green-500 py-2 font-medium text-white group {{ in_array($lesson->id, $userReservations) ? 'disabled opacity-50 cursor-not-allowed' : '' }}">
+                                                <span class="relative">Reserve Now</span>
+                                            </a>
+                                        </div>
                                     </a>
                                 </div>
 

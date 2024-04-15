@@ -57,7 +57,7 @@ Route::post('/reset', [ResetPasswordController::class, 'GetnewPassword'])->name(
 // dashboard Routes...
 
 
-Route::middleware(['is_admin'])->group(function () {
+Route::middleware(['is_admin','auth'])->group(function () {
 
     Route::resource('coach', CoachController::class);
     Route::resource('lesson', LessonController::class);

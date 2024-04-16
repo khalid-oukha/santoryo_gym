@@ -47,8 +47,6 @@
                                         </ul>
                                         <div class="pricing-action flex justify-center align-bottom ">
 
-                                                    <button type="submit" class="btn btn-outline-info"><em
-                                                        class="icon ni ni-edit-fill"></em></button>
                                             <form action="{{ route('offer.destroy', $offer) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')

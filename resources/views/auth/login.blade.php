@@ -14,7 +14,7 @@
 
 
             <div class="w-full bg-dark-200 p-8 lg:w-1/2">
-                <h2 class="text-2xl font-semibold text-gray-200 text-center">Brand</h2>
+                <h2 class="text-2xl font-semibold text-gray-200 text-center">Santoryo</h2>
                 <p class="text-xl text-gray-300 text-center">Welcome back!</p>
                 <a href="#"
                     class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-orange-100">

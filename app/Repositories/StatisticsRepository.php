@@ -69,9 +69,11 @@ class StatisticsRepository implements StatisticsRepositoryInterface
     public function latestSubscribers()
     {
 
-        $latestSubscribers = Subscription::latest()->take(5)->get();
-        if($latestSubscribers){
-            return $latestSubscribers;
-        }
+        return $latestSubscribers = Subscription::with(['offer' => function ($query) {
+            $query->withTrashed(); // Include soft deleted offers
+        }])
+        ->latest()
+        ->take(5)
+        ->get();
     }
 }

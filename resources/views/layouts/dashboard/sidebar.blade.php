@@ -135,6 +135,22 @@
 
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
+
+                    <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-home-fill"></em></span>
+                            <span class="nk-menu-text">Categories</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href="{{ route('category.index') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Categories List</span></a>
+                            </li>
+
+                        </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
+
+
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-note-add-fill-c"></em></span>
@@ -152,46 +168,46 @@
 
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-home-fill"></em></span>
-                            <span class="nk-menu-text">Categories</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="{{ route('category.index') }}" class="nk-menu-link"><span
-                                        class="nk-menu-text">Categories List</span></a>
-                            </li>
-
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-
                 </ul><!-- .nk-menu -->
             </div>
             <div class="nk-menu-content" data-content="navHospital">
                 <h5 class="title">MemberShip Manegment</h5>
                 <ul class="nk-menu">
-
-                    <li class="nk-menu-item">
-                        <a href="html/hospital/index.html" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
-                            <span class="nk-menu-text">Dashboard</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
-
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
-                            <span class="nk-menu-text">Report</span>
+                            <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
+                            <span class="nk-menu-text">Offers</span>
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('income.index') }}" class="nk-menu-link"><span
-                                        class="nk-menu-text">Payments Report</span></a>
+                                <a href="{{ route('offer.create') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Add Offer</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{ route('offer.index') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">List Of Offers</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{ route('offer.suspend') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Suspend Offers</span></a>
                             </li>
 
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
+                    <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-star"></em></span>
+                            <span class="nk-menu-text">Features</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href="{{ route('feature.index') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Feature List</span></a>
+                            </li>
+                        </ul>
+                    </li><!-- .nk-menu-item -->
+
+
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
@@ -209,40 +225,6 @@
 
                 </ul><!-- .nk-menu-sub -->
                 </li><!-- .nk-menu-item -->
-                <li class="nk-menu-item has-sub">
-                    <a href="#" class="nk-menu-link nk-menu-toggle">
-                        <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                        <span class="nk-menu-text">Offers</span>
-                    </a>
-                    <ul class="nk-menu-sub">
-                        <li class="nk-menu-item">
-                            <a href="{{ route('offer.create') }}" class="nk-menu-link"><span
-                                    class="nk-menu-text">Add Offer</span></a>
-                        </li>
-                        <li class="nk-menu-item">
-                            <a href="{{ route('offer.index') }}" class="nk-menu-link"><span
-                                    class="nk-menu-text">List Of Offers</span></a>
-                        </li>
-                        <li class="nk-menu-item">
-                            <a href="{{ route('offer.suspend') }}" class="nk-menu-link"><span
-                                    class="nk-menu-text">Suspend Offers</span></a>
-                        </li>
-
-                    </ul><!-- .nk-menu-sub -->
-                </li><!-- .nk-menu-item -->
-                <li class="nk-menu-item has-sub">
-                    <a href="#" class="nk-menu-link nk-menu-toggle">
-                        <span class="nk-menu-icon"><em class="icon ni ni-star"></em></span>
-                        <span class="nk-menu-text">Features</span>
-                    </a>
-                    <ul class="nk-menu-sub">
-                        <li class="nk-menu-item">
-                            <a href="{{ route('feature.index') }}" class="nk-menu-link"><span
-                                    class="nk-menu-text">Feature List</span></a>
-                        </li>
-                    </ul>
-                </li><!-- .nk-menu-item -->
-
 
                 <li class="nk-menu-item">
                     <a href="html/hospital/settings.html" class="nk-menu-link">

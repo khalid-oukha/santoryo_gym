@@ -27,11 +27,11 @@
                         trainers, and vibrant community are here to inspire and guide you on your fitness journey.
                     </p>
                     <div class="flex flex-col sm:flex-row items-start sm:items-center">
-                        <a href="#"
+                        <a href="{{ route('pricing.index') }}"
                             class="uppercase py-2 px-4 rounded-lg bg-orange-100 border-2 border-transparent text-white text-md mr-0 sm:mr-4 mb-2 sm:mb-0 hover:bg-pink-400">
                             Get started
                         </a>
-                        <a href="#"
+                        <a href=""
                             class="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-orange-100 text-orange-100 dark:text-white hover:bg-pink-500 hover:text-white text-md">
                             Read more
                         </a>
@@ -97,7 +97,7 @@
 
             <div class="grid grid-cols-1 lg:w-3/4 gap-5 lg:grid-cols-3 lg:gap-10  ">
                 @foreach ($lessons as $lesson)
-                    
+
                 <div class="">
                     <div class="max-w-sm  shadow-lg rounded-lg overflow-hidden my-4">
                         <img class="w-full h-56 object-cover object-center" src="{{ asset('storage/images/lessons/' . $lesson->image) }}"
@@ -141,28 +141,10 @@
 
                             </div>
                             <div class="flex items-center mt-4 justify-between text-gray-100">
-                                <a href="#_" class="relative px-6 py-2 font-medium text-white group">
-                                    <span
-                                        class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-gray-500 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
-                                    <span
-                                        class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-gray-800 group-hover:bg-primary-300 group-hover:-skew-x-12"></span>
-                                    <span
-                                        class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-primary-400 -rotate-12"></span>
-                                    <span
-                                        class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-200 -rotate-12"></span>
-                                    <span class="relative">About class</span>
-                                </a>
-                                <a href="#_" class="relative px-6 py-2 font-medium text-white group">
-                                    <span
-                                        class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-primary-300 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
-                                    <span
-                                        class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-primary-100 group-hover:bg-primary-300 group-hover:-skew-x-12"></span>
-                                    <span
-                                        class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-primary-400 -rotate-12"></span>
-                                    <span
-                                        class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-200 -rotate-12"></span>
-                                    <span class="relative">Order now</span>
-                                </a>
+                                <a href="{{ route('lesson.reservation',$lesson) }}"
+                                class="relative px-6 bg-green-500 py-2 font-medium text-white group {{ in_array($lesson->id, $userReservations) ? 'disabled opacity-50 cursor-not-allowed' : '' }}">
+                                <span class="relative">Reserve Now</span>
+                            </a>
                             </div>
 
                         </div>
@@ -204,12 +186,12 @@
                     atque expedita?
                 </p>
             </div>
-    
+
             <div class="flex relative items-center justify-center">
-    
+
                 <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-10 px-16 ">
                     @foreach ($coachs as $coach)
-                        
+
                     <div class="">
                         <div class="max-w-sm border border-red-900 shadow-lg rounded-lg overflow-hidden my-4">
                             <img class="w-full h-56 object-cover object-center" src="{{ asset('storage/images/uploads/' . $coach->user->image) }}"

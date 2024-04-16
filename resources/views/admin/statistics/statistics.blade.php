@@ -280,6 +280,8 @@
                                                 <div class="nk-tb-col"><span>Amount</span></div>
                                                 <div class="nk-tb-col"><span class="d-none d-sm-inline">Status</span></div>
                                             </div>
+                                            @if (!empty( $latestSubscribers))
+
                                             @foreach ($latestSubscribers as $latestSubscriber)
                                                 <div class="nk-tb-item">
                                                     <div class="nk-tb-col">
@@ -313,6 +315,7 @@
                                                     </div>
                                                 </div>
                                             @endforeach
+                                            @endif
 
 
                                         </div>

@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use App\Models\Feature;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Offer extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $table = "offers";
     protected $fillable = ['title','description','price','months_valid','image'];
 

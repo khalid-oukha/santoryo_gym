@@ -10,6 +10,7 @@ use App\Http\Controllers\backoffice\Feature\FeatureController;
 use App\Http\Controllers\backoffice\Lessons\LessonController;
 use App\Http\Controllers\backoffice\Offers\OfferController;
 use App\Http\Controllers\backoffice\statistics\StatisticsController;
+use App\Http\Controllers\backoffice\subscription\PrintController;
 use App\Http\Controllers\backoffice\subscription\SubscriptionController;
 use App\Http\Controllers\frontoffice\HomeController;
 use App\Http\Controllers\frontoffice\PricingController;
@@ -67,7 +68,9 @@ Route::middleware(['is_admin','auth'])->group(function () {
 
     //subscription
     Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
+    Route::get('subscription/create', [SubscriptionController::class, 'create'])->name('subscription.create');
     Route::get('search/Subscription', [SubscriptionController::class, 'search'])->name('subscription.search');
+    route::post('subscription/store', [SubscriptionController::class, 'store'])->name('subscription.store');
 
 
     Route::get('statistics', [StatisticsController::class, 'index'])->name('statistics.index');
@@ -88,3 +91,5 @@ Route::middleware('auth')->group(function () {
 
 route::get('offers', [PricingController::class, 'index'])->name('pricing.index');
 route::get('lessonsAll', [lessonsListController::class, 'index'])->name('lessonsList.index');
+
+route::get('membership_print',[PrintController::class, 'print'])->name('membership.print');

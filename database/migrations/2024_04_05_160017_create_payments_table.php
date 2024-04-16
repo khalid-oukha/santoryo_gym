@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('offer_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('offer_id')->references('id')->on('offers');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('offer_id')->references('id')->on('offers')->onDelete('cascade');
             $table->string('payment_method');
             $table->decimal('amount', 8, 2);
             $table->timestamps();

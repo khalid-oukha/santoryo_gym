@@ -23,7 +23,8 @@
                                                 data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <ul class="link-list-opt no-bdr">
-                                                    <li><a href="#"><span>Add New</span></a></li>
+                                                    <li><a href="{{ route('subscription.create') }}"><span>Add New</span></a></li>
+                                                    <li><a href="{{ route('subscription.create') }}"><span>Add New</span></a></li>
                                                     <li><a href="#"><span>Import</span></a></li>
                                                 </ul>
                                             </div>
@@ -132,7 +133,7 @@
                                                     </td>
                                                     <td class="tb-tnx-amount is-alt">
                                                         <div class="tb-tnx-total">
-                                                            <span class="amount">{{ $subscription->offer->price }} DH</span>
+                                                            <span class="amount">{{ $subscription->offer->price * 10 }} DH</span>
                                                         </div>
                                                         @if ($subscription->status == 'ended')
                                                             <div class="tb-tnx-status"><span
@@ -145,7 +146,7 @@
                                                     </td>
                                                     <td class="tb-odr-action">
                                                         <div class="tb-odr-btns d-none d-sm-inline">
-                                                            <a href="html/invoice-print.html" target="_blank"
+                                                            <a href="{{ route('membership.print') }}" target="_blank"
                                                                 class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em
                                                                     class="icon ni ni-printer-fill"></em></a>
 

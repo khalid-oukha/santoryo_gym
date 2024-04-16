@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('price', 5, 2);
             $table->integer('months_valid');
             $table->string('image')->nullable();
+            $table->softDeletes(); 
             $table->timestamps();
         });
     }

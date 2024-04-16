@@ -57,7 +57,7 @@
                                                             <label class="form-label" for="default-05">Price</label>
                                                             <div class="form-control-wrap">
                                                                 <div class="form-text-hint">
-                                                                    <span class="overline-title">DH</span>
+                                                                    <span class="overline-title">$</span>
                                                                 </div>
                                                                 <input type="text" name="price" class="form-control"
                                                                     id="default-05" placeholder="Input placeholder">

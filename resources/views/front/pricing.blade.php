@@ -43,8 +43,8 @@
                                 <p class="text-2xl font-semibold text-gray-200 dark:text-gray-100">{{ $offer->title }}</p>
                                 <p class="mt-4 text-gray-300 dark:text-gray-300">Essentail Features</p>
                                 <h4 class="mt-2 text-gray-600 line-through dark:text-gray-400">
-                                    {{ $offer->price + 20 . ',00' }} DH</h4>
-                                <h4 class="mt-2 text-4xl font-semibold text-gray-200 dark:text-gray-100">{{ $offer->price }}
+                                    {{( $offer->price * 10) + 20 }} DH</h4>
+                                <h4 class="mt-2 text-4xl font-semibold text-gray-200 dark:text-gray-100">{{ $offer->price * 10  }}
                                     DH</h4>
                                 <p class="mt-4 text-gray-300 dark:text-gray-300">/per {{ $offer->months_valid }} month</p>
                             </div>
@@ -72,7 +72,7 @@
 
                                         Upgrade Memebership
                                         @else
-                                        subscription4
+                                        subscription
                                         @endif
                                     </button>
 

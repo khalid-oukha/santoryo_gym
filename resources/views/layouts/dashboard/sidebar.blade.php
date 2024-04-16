@@ -2,8 +2,8 @@
     <div class="nk-sidebar-bar bg-dark">
         <div class="nk-apps-brand">
             <a href="html/index.html" class="logo-link">
-                <img class="logo-light logo-img" src="{{ asset('assets/images/icon.png') }}" srcset="{{ asset('assets/images/icon.png') }}"
-                    alt="logo">
+                <img class="logo-light logo-img" src="{{ asset('assets/images/icon.png') }}"
+                    srcset="{{ asset('assets/images/icon.png') }}" alt="logo">
                 <img class="logo-dark logo-img" src="{{ asset('assets/images/icon.png') }}"
                     srcset="/images/logo-dark-small2x.png 2x" alt="logo-dark">
             </a>
@@ -132,10 +132,7 @@
                                 <a href="{{ route('coach.index') }}" class="nk-menu-link"><span
                                         class="nk-menu-text">Coach List</span></a>
                             </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/customer-ledger.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Suspend Coachs</span></a>
-                            </li>
+
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item has-sub">
@@ -152,10 +149,7 @@
                                 <a href="{{ route('lesson.index') }}" class="nk-menu-link"><span
                                         class="nk-menu-text">Lessons List</span></a>
                             </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/medicine-details.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Lessons Historic</span></a>
-                            </li>
+
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item has-sub">
@@ -192,14 +186,10 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="{{ route('income.index') }}" class="nk-menu-link"><span class="nk-menu-text">Payments Report</span></a>
+                                <a href="{{ route('income.index') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Payments Report</span></a>
                             </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/purchase-report.html" class="nk-menu-link"><span class="nk-menu-text">Purchase Report</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/stock-report.html" class="nk-menu-link"><span class="nk-menu-text">Stock Report</span></a>
-                            </li>
+
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item has-sub">
@@ -209,132 +199,75 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <li class="nk-menu-item">
-                                    <a href="{{ route('subscription.index') }}" class="nk-menu-link"><span
-                                            class="nk-menu-text">Subscription List</span></a>
-                                </li>
-                                <a href="html/hospital/income-list.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Income</span></a>
-                            </li>
                             <li class="nk-menu-item">
-                                <a href="html/hospital/expense-list.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Expense</span></a>
+                                <a href="{{ route('subscription.index') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Subscription List</span></a>
                             </li>
+                            <a href="html/hospital/income-list.html" class="nk-menu-link"><span
+                                    class="nk-menu-text">Income</span></a>
+                    </li>
 
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/invoice-details.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Invoice Details</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
-                            <span class="nk-menu-text">Offers</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="{{ route('offer.create') }}" class="nk-menu-link"><span
-                                        class="nk-menu-text">Add Offer</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="{{ route('offer.index') }}" class="nk-menu-link"><span
-                                        class="nk-menu-text">List Of Offers</span></a>
-                            </li>
+                </ul><!-- .nk-menu-sub -->
+                </li><!-- .nk-menu-item -->
+                <li class="nk-menu-item has-sub">
+                    <a href="#" class="nk-menu-link nk-menu-toggle">
+                        <span class="nk-menu-icon"><em class="icon ni ni-coin-alt-fill"></em></span>
+                        <span class="nk-menu-text">Offers</span>
+                    </a>
+                    <ul class="nk-menu-sub">
+                        <li class="nk-menu-item">
+                            <a href="{{ route('offer.create') }}" class="nk-menu-link"><span
+                                    class="nk-menu-text">Add Offer</span></a>
+                        </li>
+                        <li class="nk-menu-item">
+                            <a href="{{ route('offer.index') }}" class="nk-menu-link"><span
+                                    class="nk-menu-text">List Of Offers</span></a>
+                        </li>
 
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-star"></em></span>
-                            <span class="nk-menu-text">Features</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="{{ route('feature.index') }}" class="nk-menu-link"><span
-                                        class="nk-menu-text">Feature List</span></a>
-                            </li>
-                        </ul>
-                    </li><!-- .nk-menu-item -->
+                    </ul><!-- .nk-menu-sub -->
+                </li><!-- .nk-menu-item -->
+                <li class="nk-menu-item has-sub">
+                    <a href="#" class="nk-menu-link nk-menu-toggle">
+                        <span class="nk-menu-icon"><em class="icon ni ni-star"></em></span>
+                        <span class="nk-menu-text">Features</span>
+                    </a>
+                    <ul class="nk-menu-sub">
+                        <li class="nk-menu-item">
+                            <a href="{{ route('feature.index') }}" class="nk-menu-link"><span
+                                    class="nk-menu-text">Feature List</span></a>
+                        </li>
+                    </ul>
+                </li><!-- .nk-menu-item -->
 
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-plus-medi-fill"></em></span>
-                            <span class="nk-menu-text">Doctors / Nurses</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/doctor-nurse-add.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Add Doctor / Nurses</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/doctor-nurse-list.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Doctors / Nurses</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
 
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
-                            <span class="nk-menu-text">Monitor Hospital</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/birth-report.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Birth Report</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/blood-bank.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Blood Bank</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/inventory-items.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Inventory Items Reports</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-panel-fill"></em></span>
-                            <span class="nk-menu-text">Misc Pages</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/bed-group.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Bed Group</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/bed-allotment.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Bed Allotment</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/department.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Department</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/hospital/death-report.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Death Report</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item">
-                        <a href="html/hospital/user-profile.html" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-user-fill"></em></span>
-                            <span class="nk-menu-text">User Profile</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item">
-                        <a href="html/hospital/settings.html" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
-                            <span class="nk-menu-text">Setting</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
+                <li class="nk-menu-item">
+                    <a href="html/hospital/settings.html" class="nk-menu-link">
+                        <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
+                        <span class="nk-menu-text">Setting</span>
+                    </a>
+                </li><!-- .nk-menu-item -->
                 </ul><!-- .nk-menu -->
             </div>
             <div class="nk-menu-content menu-active" data-content="navDashboards">
                 <h5 class="title">Dashboards</h5>
                 <ul class="nk-menu">
+                    <li class="nk-menu-item has-sub">
+                        <a href="#" class="nk-menu-link nk-menu-toggle">
+                            <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
+                            <span class="nk-menu-text">Users</span>
+                        </a>
+                        <ul class="nk-menu-sub">
+                            <li class="nk-menu-item">
+                                <a href="{{ route('coach.create') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Add User</span></a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{{ route('coach.index') }}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Users List</span></a>
+                            </li>
+
+                        </ul><!-- .nk-menu-sub -->
+                    </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
                         <a href="html/index.html" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>

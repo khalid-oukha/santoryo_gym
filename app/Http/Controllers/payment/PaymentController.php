@@ -28,7 +28,7 @@ class PaymentController extends Controller
                     'product_data' => [
                         'name' => $offer->title,
                     ],
-                    'unit_amount' => $offer->price * 10,
+                    'unit_amount' => $offer->price * 100,
                 ],
                 'quantity' => 1,
             ]],
@@ -62,8 +62,6 @@ class PaymentController extends Controller
             'payment_method' => 'stripe',
             'amount' => $offer->price
         ]);
-
-        // Flash success message
 
         return view('success');
     }

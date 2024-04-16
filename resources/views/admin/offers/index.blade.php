@@ -31,7 +31,7 @@
                                                     <span class="sub-text">Number of months</span>
                                                 </div>
                                                 <div class="col-6">
-                                                    <span class="h4 fw-500">{{ $offer->price . ' ' }}DH</span>
+                                                    <span class="h4 fw-500">{{ $offer->price * 10 . ' ' }}DH</span>
                                                     <span class="sub-text">Price</span>
                                                 </div>
                                             </div>

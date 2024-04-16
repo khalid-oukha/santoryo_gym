@@ -36,7 +36,6 @@ class StatisticsController extends Controller
         $totalOffers = $this->statisticsRepository->totalOffers();
 
         $latestSubscribers = $this->statisticsRepository->latestSubscribers();
-
         return view('admin.statistics.statistics', compact('todaySubscribers', 'todayRevenue','todayUsers','todayReservations','totalSubscribers','totalCategories','totalUsers','totalActiveSubscribers','totalOffers','latestSubscribers'));
     }
 

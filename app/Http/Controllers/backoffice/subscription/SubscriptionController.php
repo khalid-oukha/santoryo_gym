@@ -23,6 +23,17 @@ class SubscriptionController extends Controller
         return view('admin.subscription.index', compact('subscriptions'));
     }
 
+
+    public function create()
+    {
+        return view('admin.subscription.create');
+    }
+
+    public function store(Request $request)
+    {
+        // $this->subscriptionRepository->store($request);
+        return redirect()->route('subscription.index');
+    }
     public function search(Request $request)
     {
         $input = $request->input('search');

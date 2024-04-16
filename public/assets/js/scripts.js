@@ -136,7 +136,7 @@
     NioApp.Passcode('.passcode-switch');
   };
 
-  // Toastr Message @v1.0 
+  // Toastr Message @v1.0
   NioApp.Toast = function (msg, ttype, opt) {
     var ttype = ttype ? ttype : 'info',
       msi = '',
@@ -604,20 +604,6 @@
     });
   };
 
-  // Dark Mode Switch @since v2.0
-  NioApp.ModeSwitch = function () {
-    var toggle = $('.dark-switch');
-    if ($body.hasClass('dark-mode')) {
-      toggle.addClass('active');
-    } else {
-      toggle.removeClass('active');
-    }
-    toggle.on('click', function (e) {
-      e.preventDefault();
-      $(this).toggleClass('active');
-      $body.toggleClass('dark-mode');
-    });
-  };
 
   // Knob @v1.0
   NioApp.Knob = function (elm, opt) {

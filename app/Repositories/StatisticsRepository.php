@@ -70,7 +70,7 @@ class StatisticsRepository implements StatisticsRepositoryInterface
     {
 
         return $latestSubscribers = Subscription::with(['offer' => function ($query) {
-            $query->withTrashed(); // Include soft deleted offers
+            $query->withTrashed(); 
         }])
         ->latest()
         ->take(5)

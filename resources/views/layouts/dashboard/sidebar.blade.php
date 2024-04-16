@@ -223,6 +223,10 @@
                             <a href="{{ route('offer.index') }}" class="nk-menu-link"><span
                                     class="nk-menu-text">List Of Offers</span></a>
                         </li>
+                        <li class="nk-menu-item">
+                            <a href="{{ route('offer.suspend') }}" class="nk-menu-link"><span
+                                    class="nk-menu-text">Suspend Offers</span></a>
+                        </li>
 
                     </ul><!-- .nk-menu-sub -->
                 </li><!-- .nk-menu-item -->

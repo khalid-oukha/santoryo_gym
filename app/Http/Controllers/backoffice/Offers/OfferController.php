@@ -50,6 +50,10 @@ class OfferController extends Controller
         }
     }
 
+    public function suspendOffersList(){
+        $offers = Offer::onlyTrashed()->paginate(10);
+        return view('admin.offers.suspend',compact('offers'));
+    }
     /**
      * Display the specified resource.
      */
@@ -83,5 +87,6 @@ class OfferController extends Controller
         return redirect()->route('offer.index')->with('success','Offer deleted successfully');
     }
 
-    
+
+
 }

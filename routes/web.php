@@ -64,6 +64,8 @@ Route::middleware(['is_admin','auth'])->group(function () {
     Route::resource('lesson', LessonController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('offer', OfferController::class);
+    route::get('offers/suspend', [OfferController::class, 'suspendOffersList'])->name('offer.suspend');
+    route::get('offers/restore/{id}', [OfferController::class, 'restore'])->name('offer.restore');
     Route::resource('feature', FeatureController::class);
 
     //subscription

@@ -7,7 +7,9 @@ class SubscriptionRepository implements SubscriptionRepositoryInterface
 {
     public function paginate($perPage = 10)
     {
-        $subscription = Subscription::with('user')
+        $subscription = Subscription::with(['user','offer' => function ($query) {
+            $query->withTrashed();
+        }])
         ->orderBy('status')
         ->latest()
         ->paginate($perPage);

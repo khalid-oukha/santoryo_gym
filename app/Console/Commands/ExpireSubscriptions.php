@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Subscription;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class ExpireSubscriptions extends Command
 {
@@ -29,6 +30,7 @@ class ExpireSubscriptions extends Command
         //
         Subscription::whereDate('end_date', '<=', today())
             ->update(['status' => 'ended']);
+            Log::info('status updated : ' . now());
 
     }
 }

@@ -10,6 +10,7 @@ use App\Http\Controllers\backoffice\Feature\FeatureController;
 use App\Http\Controllers\backoffice\Lessons\LessonController;
 use App\Http\Controllers\backoffice\Offers\OfferController;
 use App\Http\Controllers\backoffice\statistics\StatisticsController;
+use App\Http\Controllers\backoffice\statistics\TodaysSubscriptionsController;
 use App\Http\Controllers\backoffice\subscription\PrintController;
 use App\Http\Controllers\backoffice\subscription\SubscriptionController;
 use App\Http\Controllers\frontoffice\HomeController;
@@ -60,13 +61,23 @@ Route::post('/reset', [ResetPasswordController::class, 'GetnewPassword'])->name(
 
 Route::middleware(['is_admin','auth'])->group(function () {
 
+     //Coach
     Route::resource('coach', CoachController::class);
+    //Lesson
     Route::resource('lesson', LessonController::class);
+    //Category
     Route::resource('category', CategoryController::class);
+    //Offer
     Route::resource('offer', OfferController::class);
     route::get('offers/suspend', [OfferController::class, 'suspendOffersList'])->name('offer.suspend');
     route::get('offers/restore/{id}', [OfferController::class, 'restore'])->name('offer.restore');
+    //Feature
     Route::resource('feature', FeatureController::class);
+
+    //statistics
+    route::get('statistics/raport', [TodaysSubscriptionsController::class, 'IncomePerDay'])->name('dayIncome.Raport');
+    Route::get('statistics', [StatisticsController::class, 'index'])->name('statistics.index');
+    Route::get('income', [PaymentHistoricController::class, 'index'])->name('income.index');
 
     //subscription
     Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
@@ -75,8 +86,7 @@ Route::middleware(['is_admin','auth'])->group(function () {
     route::post('subscription/store', [SubscriptionController::class, 'store'])->name('subscription.store');
 
 
-    Route::get('statistics', [StatisticsController::class, 'index'])->name('statistics.index');
-    Route::get('income', [PaymentHistoricController::class, 'index'])->name('income.index');
+
 });
 
 Route::middleware('auth')->group(function () {

@@ -202,7 +202,7 @@
                                                         <span class="tb-sub">{{ $latestSubscriber->created_at }}</span>
                                                     </div>
                                                     <div class="nk-tb-col">
-                                                        <span class="tb-sub tb-amount">{{ $latestSubscriber->offer->price }} <span>MAD</span></span>
+                                                        <span class="tb-sub tb-amount">{{ $latestSubscriber->offer->price * 10 }} <span>MAD</span></span>
                                                     </div>
                                                     <div class="nk-tb-col">
                                                         @if ($latestSubscriber->status == 'active')

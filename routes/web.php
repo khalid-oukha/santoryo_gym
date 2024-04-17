@@ -9,6 +9,7 @@ use App\Http\Controllers\backoffice\Coachs\CoachController;
 use App\Http\Controllers\backoffice\Feature\FeatureController;
 use App\Http\Controllers\backoffice\Lessons\LessonController;
 use App\Http\Controllers\backoffice\Offers\OfferController;
+use App\Http\Controllers\backoffice\roles\RoleController;
 use App\Http\Controllers\backoffice\statistics\StatisticsController;
 use App\Http\Controllers\backoffice\statistics\TodaysSubscriptionsController;
 use App\Http\Controllers\backoffice\subscription\PrintController;
@@ -105,3 +106,5 @@ route::get('offers', [PricingController::class, 'index'])->name('pricing.index')
 route::get('lessonsAll', [lessonsListController::class, 'index'])->name('lessonsList.index');
 
 route::get('membership_print',[PrintController::class, 'print'])->name('membership.print');
+
+route::resource('role', RoleController::class);

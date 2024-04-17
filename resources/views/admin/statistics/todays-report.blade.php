@@ -35,6 +35,7 @@
                                 <tr>
                                     <th class="w-150px">Payment ID</th>
                                     <th class="w-60">Method</th>
+                                    <th>date</th>
                                     <th>Months</th>
                                     <th>Price</th>
                                 </tr>
@@ -44,7 +45,9 @@
                                 @foreach ($TodaysIncome as $income)
                                 <tr>
                                     <td>{{ $income->id }}</td>
+
                                     <td>{{ $income->payment_method }}</td>
+                                    <td>{{ $income->created_at->format('d/m/Y') }}</td>
                                     <td>{{ $income->offer->months_valid }}</td>
                                     <td>{{ number_format($income->amount * 10, 2) }} MAD</td>
                                 </tr>

@@ -15,7 +15,7 @@ class ExpireMembershipSoon extends Command
      *
      * @var string
      */
-    protected $signature = 'expire-membership-soon';
+    protected $signature = 'notify:mail';
 
     /**
      * The console command description.
@@ -30,13 +30,17 @@ class ExpireMembershipSoon extends Command
     public function handle()
     {
         // $emails = Subscription::where('expires_at', '>=', now()->rem)->pluck('email');
-        $subscriptions = Subscription::whereDate('end_date', Carbon::tomorrow())->get();
-        $emails = $subscriptions->pluck('email');
+        $subscriptions = Subscription::with('user')
+        ->whereDate('end_date', Carbon::tomorrow())
+        ->get();
+
+        $emails = $subscriptions->pluck('user.email');
 
         foreach ($emails as $email) {
-            Mail::to($email)->send(new SubscriptionExpiringSoon());
+            Mail::to($email)->send(new SubscriptionExpiringSoon($subscriptions->first()));
         }
 
+        $this->info('Membership expiring soon emails sent');
 
 
     }

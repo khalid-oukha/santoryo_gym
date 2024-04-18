@@ -5,6 +5,8 @@ namespace App\Http\Controllers\frontoffice;
 use App\Http\Controllers\Controller;
 use App\Models\Coach;
 use App\Models\Lesson;
+use App\Models\Subscription;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

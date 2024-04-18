@@ -7,7 +7,7 @@
         <div class="invoice invoice-print">
             <div class="invoice-wrap">
                 <div class="invoice-brand text-center">
-                    <img src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="">
+                    <img src="{{ asset('assets/images/logo1-01.png') }}" srcset="./images/logo-dark2x.png 2x" alt="">
                 </div>
                 <div class="invoice-head">
                     <div class="invoice-contact">
@@ -28,73 +28,36 @@
                         </ul>
                     </div>
                 </div><!-- .invoice-head -->
-                <div class="invoice-bills">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th class="w-150px">Item ID</th>
-                                    <th class="w-60">Description</th>
-                                    <th>Price</th>
-                                    <th>Qty</th>
-                                    <th>Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>24108054</td>
-                                    <td>Dashlite - Conceptual App Dashboard - Regular License</td>
-                                    <td>$40.00</td>
-                                    <td>5</td>
-                                    <td>$200.00</td>
-                                </tr>
-                                <tr>
-                                    <td>24108054</td>
-                                    <td>6 months premium support</td>
-                                    <td>$25.00</td>
-                                    <td>1</td>
-                                    <td>$25.00</td>
-                                </tr>
-                                <tr>
-                                    <td>23604094</td>
-                                    <td>Invest Management Dashboard - Regular License</td>
-                                    <td>$131.25</td>
-                                    <td>1</td>
-                                    <td>$131.25</td>
-                                </tr>
-                                <tr>
-                                    <td>23604094</td>
-                                    <td>6 months premium support</td>
-                                    <td>$78.75</td>
-                                    <td>1</td>
-                                    <td>$78.75</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td colspan="2">Subtotal</td>
-                                    <td>$435.00</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td colspan="2">Processing fee</td>
-                                    <td>$10.00</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td colspan="2">TAX</td>
-                                    <td>$43.50</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td colspan="2">Grand Total</td>
-                                    <td>$478.50</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+            <!-- content @s -->
+            <div class="nk-content nk-content-fluid">
+                <div class="container-xl wide-xl">
+                    <div class="nk-content-inner">
+                        <div class="nk-content-body">
+                            <div class="">
+                                <div class="card card-bordered pricing text-center">
+                                    <div class="pricing-body">
+                                        <div class="pricing-media">
+                                            <img src="./images/icons/plan-s1.svg" alt="">
+                                        </div>
+                                        <div class="pricing-title w-220px mx-auto">
+                                            <h5 class="title">Starter</h5>
+                                            <span class="sub-text">If you are a small business amn please select this plan</span>
+                                        </div>
+                                        <div class="pricing-amount">
+                                            <div class="amount">$99 <span>/yr</span></div>
+                                            <span class="bill">1 User, Billed Yearly</span>
+                                        </div>
+                                        <div class="pricing-action">
+                                            <a href="#" class="btn btn-primary">Select Plan</a>
+                                        </div>
+                                    </div>
+                                </div><!-- .pricing -->
+                            </div><!-- .col -->
+                        </div>
                     </div>
-                </div><!-- .invoice-bills -->
+                </div>
+            </div>
+            <!-- content @e -->
             </div><!-- .invoice-wrap -->
         </div><!-- .invoice -->
     </div><!-- .nk-block -->

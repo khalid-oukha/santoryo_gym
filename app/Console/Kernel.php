@@ -21,6 +21,8 @@ class Kernel extends ConsoleKernel
         //     Log::info('I was here @ ' . now());
         // })->everyMinute();
         $schedule->command('subscriptions:expire')->daily()->at('22:12');
+        $schedule->command('expire-membership-soon')->daily()->at('22:12');
+
     }
 
     /**

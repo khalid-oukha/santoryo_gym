@@ -2,6 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\Subscription;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,13 +14,18 @@ use Illuminate\Queue\SerializesModels;
 class SubscriptionExpiringSoon extends Mailable
 {
     use Queueable, SerializesModels;
+    protected Subscription $subscription;
+
+
+
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($subscription)
     {
         //
+        $this->subscription = $subscription;
     }
 
     /**
@@ -37,9 +44,11 @@ class SubscriptionExpiringSoon extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            markdown: 'mail.membershipReminder',
+            with: [
+                'end_date' => $this->subscription->end_date,
+            ],
         );
-
     }
 
     /**
@@ -50,5 +59,10 @@ class SubscriptionExpiringSoon extends Mailable
     public function attachments(): array
     {
         return [];
+    }
+    public function build()
+    {
+        return $this->subject('Subscription Expiring Soon')
+                    ->markdown('mail.membershipReminder', ['end_date' => $this->subscription->end_date]);
     }
 }

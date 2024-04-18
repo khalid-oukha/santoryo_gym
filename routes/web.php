@@ -96,7 +96,7 @@ Route::middleware('auth')->group(function () {
     Route::post('pay', [PaymentController::class, 'pay'])->name('pay.order');
     Route::get('success', [PaymentController::class, 'success'])->name('pay.success');
     Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
-
+    route::resource('role', RoleController::class);
     //reservation lesson
     Route::get('reservation/{id}', [ReservationController::class, 'reservation'])->name('lesson.reservation');
     Route::get('cancelReservation/{id}', [ReservationController::class, 'cancel'])->name('reservation.cancel');
@@ -107,4 +107,3 @@ route::get('lessonsAll', [lessonsListController::class, 'index'])->name('lessons
 
 route::get('membership_print',[PrintController::class, 'print'])->name('membership.print');
 
-route::resource('role', RoleController::class);

@@ -43,7 +43,7 @@
                                         for="firstName">
                                         First Name
                                     </label>
-                                    <input
+                                    <input value="{{ old('firstname') }}"
                                         class="w-full px-3 py-2 text-sm leading-tight text-gray-800 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                         id="firstName" type="text" placeholder="First Name" name="firstname" />
                                 </div>
@@ -54,7 +54,7 @@
                                         for="lastName">
                                         Last Name
                                     </label>
-                                    <input
+                                    <input value="{{ old('lastname') }}"
                                         class="w-full px-3 py-2 text-sm leading-tight text-gray-800 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                         id="lastName" type="text" placeholder="Last Name" name="lastname" />
                                 </div>
@@ -64,7 +64,7 @@
                                 <label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white" for="email">
                                     Email
                                 </label>
-                                <input
+                                <input value="{{ old('email') }}"
                                     class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-800 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                     id="email" type="email" placeholder="Email" name="email" />
                             </div>

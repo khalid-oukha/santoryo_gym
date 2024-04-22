@@ -89,7 +89,46 @@
             </div>
         </div>
 
-    </section>
+
+
+
+
+        <main class=" customgradient  relative overflow-hidden ">
+            <img class="absolute inset-0 object-cover w-full h-full" src="{{ asset('assets/images/herobg.png') }}" alt=""
+                srcset="">
+            <div class="px-4 sm:px-6 lg:px-8 customgradient dark:bg-gray-800 flex relative z-20 items-center overflow-hidden">
+                <div class="w-full mx-auto max-w-7xl">
+                    <div class="grid items-center gap-10 lg:grid-cols-2">
+                        <div class="text-white">
+                            <h2 class="text-white mb-6 py-8 text-3xl font-extrabold md:text-4xl">Experience Santoryo Gym Management System</h2>
+                            <p class="text-white" >Discover the comprehensive world of Santoryo Gym Management System, designed to streamline every aspect of your fitness center operations. Dive deep into our intuitive platform, where efficiency meets innovation.</p>
+                            
+                            <button
+                                class='bg-[#333] my-4 hover:bg-[#111] text-white flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8'>Learn
+                                more
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2"
+                                    viewBox="0 0 492.004 492.004">
+                                    <path
+                                        d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
+                                        data-original="#000000" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="grid gap-8 sm:grid-cols-2">
+                            @foreach ($latestCatgories as $latestCatgorie)
+                            <div class="text-center bg-white shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] transition-all rounded-xl p-16 relative">
+                                <img src="{{ asset("storage/images/$latestCatgorie->image") }}" class="absolute inset-0 w-full h-full object-cover rounded-xl" />
+                                <div class="absolute inset-0 flex flex-col justify-center items-center">
+                                    <h3 class="mt-8 mb-4 text-white  text-lg font-semibold">{{ $latestCatgorie->name }}</h3>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </main>
 
     <section class=" darkgradient w-full h-full  relative overflow-hidden ">
         <h2 class="flex justify-center font-bold text-4xl text-white  py-5"> Classes</h2>
@@ -156,7 +195,7 @@
         </div>
         <div class="flex justify-center py-8 items-center">
             <div>
-                <a href="#_" class="relative px-8 py-2 font-medium text-white group">
+                <a  href="{{ route('lessonsList.index') }}" class="relative px-8 py-2 font-medium text-white group">
                     <span
                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-orange-500 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
                     <span

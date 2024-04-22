@@ -16,7 +16,7 @@ class PricingController extends Controller
     public function index()
     {
         $hasActiveSubscription = $this->subscriptionService->hasActiveSubscription();
-        $offers  = Offer::latest()->take(2)->get();
+        $offers  = Offer::get();
         return view('front.pricing',compact('offers','hasActiveSubscription'));
     }
 

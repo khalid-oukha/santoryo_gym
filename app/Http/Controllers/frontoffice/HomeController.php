@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontoffice;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Coach;
 use App\Models\Lesson;
 use App\Models\Subscription;
@@ -21,11 +22,13 @@ class HomeController extends Controller
          ->orderBy('start_at', 'desc')->take(3)->get();
 
          $userReservations = [];
+
+         $latestCatgories = Category::latest()->take(4)->get();
          if (Auth::check()) {
              $user = auth()->user();
              $userReservations = $user->lessons()->pluck('id')->toArray();
          }
-         return view('front.home',compact('coachs','lessons','userReservations'));
+         return view('front.home',compact('coachs','lessons','userReservations','latestCatgories'));
 
     }
 

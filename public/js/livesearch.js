@@ -6,7 +6,6 @@ $.ajaxSetup({
 
 
 $(document).on('input', '#search-input', function (e) {
-    // e.preventDefault();
 
     var search = $('#search-input').val();
     console.log(search);

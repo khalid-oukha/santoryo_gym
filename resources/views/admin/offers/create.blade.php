@@ -47,7 +47,7 @@
                                                         <div class="form-group">
                                                             <label class="form-label" for="default-01">Title</label>
                                                             <div class="form-control-wrap">
-                                                                <input name="title" type="text" class="form-control"
+                                                                <input value="{{ old('title') }}" name="title" type="text" class="form-control"
                                                                     id="default-01" placeholder="Input placeholder">
                                                             </div>
                                                         </div>
@@ -59,7 +59,7 @@
                                                                 <div class="form-text-hint">
                                                                     <span class="overline-title">$</span>
                                                                 </div>
-                                                                <input type="text" name="price" class="form-control"
+                                                                <input value="{{ old('price') }}" type="text" name="price" class="form-control"
                                                                     id="default-05" placeholder="Input placeholder">
                                                             </div>
                                                         </div>
@@ -72,7 +72,7 @@
                                                                 <div class="form-text-hint">
                                                                     <span class="overline-title">member</span>
                                                                 </div>
-                                                                <input type="text" name="months_valid" class="form-control"
+                                                                <input value="{{ old('months_valid') }}" type="text" name="months_valid" class="form-control"
                                                                     id="default-05" placeholder="Input placeholder">
                                                             </div>
                                                         </div>
@@ -83,7 +83,7 @@
                                                         <div class="form-group">
                                                             <label class="form-label" for="default-textarea">description</label>
                                                             <div class="form-control-wrap">
-                                                                <textarea name="description" class="form-control no-resize" id="default-textarea">Descritpion</textarea>
+                                                                <textarea  name="description" class="form-control no-resize" id="default-textarea">Descritpion</textarea>
                                                             </div>
                                                         </div>
                                                     </div>

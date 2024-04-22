@@ -29,6 +29,7 @@ class ReservationController extends Controller
         }
 
         $lesson->users()->attach($user->id);
+        $lesson->reserved_seats += 1;
         return back()->with('success', 'Lesson reserved successfully.');
     }
 

@@ -17,7 +17,7 @@
                     <div class="flex mx-auto sm:mr-10 sm:m-0">
                         <div class="items-center justify-center w-20 h-20 m-auto mr-4 sm:w-32 sm:h-32">
                             <img alt="profil"
-                                src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                                src="{{ asset('images/avatar/profile.png') }}"
                                 class="object-cover w-20 h-20 mx-auto rounded-full sm:w-32 sm:h-32" />
                         </div>
                     </div>

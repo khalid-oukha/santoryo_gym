@@ -45,7 +45,7 @@
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-full-name">Last Name</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control" id="fv-full-name"
+                                                    <input value="{{ old('lastname') }}" type="text" class="form-control" id="fv-full-name"
                                                         name="lastname" required>
                                                 </div>
                                             </div>
@@ -54,7 +54,7 @@
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-full-name">First Name</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control" id="fv-full-name"
+                                                    <input value="{{ old('firstname') }}" type="text" class="form-control" id="fv-full-name"
                                                         name="firstname" required>
                                                 </div>
                                             </div>
@@ -66,7 +66,7 @@
                                                     <div class="form-icon form-icon-right">
                                                         <em class="icon ni ni-mail"></em>
                                                     </div>
-                                                    <input type="text" class="form-control" id="fv-email" name="email"
+                                                    <input value="{{ old('email') }}" type="text" class="form-control" id="fv-email" name="email"
                                                         required>
                                                 </div>
                                             </div>
@@ -89,7 +89,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text" id="fv-phone">CIN</span>
                                                         </div>
-                                                        <input name="cin" type="cin" class="form-control" required>
+                                                        <input value="{{ old('cin') }}" name="cin" type="cin" class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,7 +127,7 @@
                                             <div class="form-group">
                                                 <label class="form-label" for="fv-subject">specialization</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control" id="fv-subject"
+                                                    <input value="{{ old('specialization') }}" type="text" class="form-control" id="fv-subject"
                                                         name="specialization" required>
                                                 </div>
                                             </div>
@@ -156,7 +156,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <button type="submit" class="text-gray-300 btn btn-lg bg-dark-400  ">Save
-                                                    Submit 
+                                                    Submit
                                                 </button>
                                             </div>
                                         </div>

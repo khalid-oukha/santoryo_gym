@@ -49,32 +49,7 @@
                                                         data-target="search"><em class="icon ni ni-search"></em></a>
                                                 </li><!-- li -->
                                                 <li class="btn-toolbar-sep"></li><!-- li -->
-                                                <li>
-                                                    <div class="dropdown">
-                                                        <a href="#" class="btn btn-trigger btn-icon dropdown-toggle"
-                                                            data-bs-toggle="dropdown">
-                                                            <em class="icon ni ni-setting"></em>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
-                                                            <ul class="link-check">
-                                                                <li><span>Show</span></li>
-                                                                <li class="active"><a href="#">10</a></li>
-                                                                <li><a href="#">20</a></li>
-                                                                <li><a href="#">50</a></li>
-                                                            </ul>
-                                                            <ul class="link-check">
-                                                                <li><span>Order</span></li>
-                                                                <li class="active"><a href="#">DESC</a></li>
-                                                                <li><a href="#">ASC</a></li>
-                                                            </ul>
-                                                            <ul class="link-check">
-                                                                <li><span>Density</span></li>
-                                                                <li class="active"><a href="#">Regular</a></li>
-                                                                <li><a href="#">Compact</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div><!-- .dropdown -->
-                                                </li><!-- li -->
+
                                             </ul><!-- .btn-toolbar -->
                                         </div><!-- card-tools -->
                                         <div class="card-search search-wrap" data-search="search">

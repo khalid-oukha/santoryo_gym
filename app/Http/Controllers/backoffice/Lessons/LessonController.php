@@ -20,7 +20,8 @@ class LessonController extends Controller
     {
         $lessons = Lesson::orderBy('start_at', 'desc')->paginate(10);
         $total = Lesson::count();
-        return view('admin.lesson.index', compact('lessons','total'));
+        $categories = Category::get();
+        return view('admin.lesson.index', compact('lessons','total','categories'));
     }
 
     /**
@@ -109,7 +110,7 @@ class LessonController extends Controller
                 if ($lesson->image) {
                     Storage::delete('public/images/lessons/' . $lesson->image);
                 }
-                
+
                 $title = str_replace(' ', '_', trim($request->title));
                 $fileName = time() . '_' . $title . '.' . $request->image->extension();
 
@@ -142,5 +143,19 @@ class LessonController extends Controller
         } else {
             return redirect()->route('lesson.index')->with('error', 'Failed to delete the lesson.');
         }
+    }
+
+    public function cancel(Lesson $lesson)
+    {
+        $lesson->status = 'canceled';
+        $lesson->save();
+        return redirect()->route('lesson.index')->with('success', 'Lesson cancelled successfully.');
+    }
+
+    public function done(Lesson $lesson)
+    {
+        $lesson->status = 'completed';
+        $lesson->save();
+        return redirect()->route('lesson.index')->with('success', 'Lesson completed successfully.');
     }
 }

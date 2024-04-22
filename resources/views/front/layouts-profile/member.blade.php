@@ -9,6 +9,7 @@
                 <div class="flex-1 border-t-2  border-gray-600"></div>
             </div>
             <ul role="list" class="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+                @foreach ($features as $feature)
                 <li class="flex items-start lg:col-span-1">
                     <div class="flex-shrink-0"><svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -16,29 +17,10 @@
                                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                 clip-rule="evenodd"></path>
                         </svg></div>
-                    <p class="ml-3 text-sm  text-gray-300">Access to premium
-                        features</p>
+                    <p class="ml-3 text-sm  text-gray-300">{{$feature->name}}</p>
                 </li>
-                <li class="flex items-start lg:col-span-1">
-                    <div class="flex-shrink-0"><svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clip-rule="evenodd"></path>
-                        </svg></div>
-                    <p class="ml-3 text-sm text-gray-300">Mobile and web
-                        access</p>
-                </li>
-                <li class="flex items-start lg:col-span-1">
-                    <div class="flex-shrink-0"><svg class="h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clip-rule="evenodd"></path>
-                        </svg></div>
-                    <p class="ml-3 text-sm text-gray-300">Lifetime access
-                        with no additional costs</p>
-                </li>
+            @endforeach
+
             </ul>
         </div>
     </div>
@@ -74,22 +56,7 @@
 
 <div class="px-px md:px-3 bg-gray-900">
 
-    <!-- user following for mobile only -->
-    <ul class="flex justify-around p-2 space-x-8 text-sm leading-snug text-center text-gray-600 border-t md:hidden">
-        <li>
-            <span class="block font-semibold text-gray-200">136</span>
-            posts
-        </li>
 
-        <li>
-            <span class="block font-semibold text-gray-200">40.5k</span>
-            followers
-        </li>
-        <li>
-            <span class="block font-semibold text-gray-200">302</span>
-            following
-        </li>
-    </ul>
 
     <!-- insta freatures -->
     <ul

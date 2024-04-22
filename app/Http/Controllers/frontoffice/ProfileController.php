@@ -19,7 +19,8 @@ class ProfileController extends Controller
             $query->withTrashed();
         }])->get();
         $offer = $subscriptions->pluck('offer');
-        return view('front.profile', compact('subscriptions', 'offer', 'hasSubscription', 'reservations'));
+        $features = $offer->pluck('features')->flatten();
+        return view('front.profile', compact('subscriptions', 'offer', 'hasSubscription', 'reservations', 'features'));
     }
 
 

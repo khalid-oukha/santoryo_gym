@@ -104,7 +104,7 @@
                             <p class="text-white" >Discover the comprehensive world of Santoryo Gym Management System, designed to streamline every aspect of your fitness center operations. Dive deep into our intuitive platform, where efficiency meets innovation.</p>
                             
                             <button
-                                class='bg-[#333] hover:bg-[#111] text-white flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8'>Learn
+                                class='bg-[#333] my-4 hover:bg-[#111] text-white flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8'>Learn
                                 more
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2"
                                     viewBox="0 0 492.004 492.004">
@@ -195,7 +195,7 @@
         </div>
         <div class="flex justify-center py-8 items-center">
             <div>
-                <a href="#_" class="relative px-8 py-2 font-medium text-white group">
+                <a  href="{{ route('lessonsList.index') }}" class="relative px-8 py-2 font-medium text-white group">
                     <span
                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-orange-500 group-hover:bg-primary-100 group-hover:skew-x-12"></span>
                     <span

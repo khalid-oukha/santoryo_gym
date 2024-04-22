@@ -30,12 +30,16 @@ class ReservationController extends Controller
 
         $lesson->users()->attach($user->id);
         $lesson->reserved_seats += 1;
+        $lesson->save();
         return back()->with('success', 'Lesson reserved successfully.');
     }
 
-    public function cancel(Lesson $lesson)
+    public function cancel(string $id)
     {
+        $lesson = Lesson::findOrFail($id);
         auth()->user()->lessons()->detach($lesson->id);
+        $lesson->reserved_seats -= 1;
+        $lesson->save();
         return redirect()->back();
     }
 

@@ -162,7 +162,7 @@
                                     <td class="px-4 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
 
-                                            <a href="{{ route('reservation.cancel', $reservation) }}"
+                                            <a href="{{ route('reservation.cancel', $reservation->id) }}"
                                                 onclick="return confirm('Do you really want to cancel  this reservation ?');">
                                                 <div
                                                     class="inline-flex items-center px-1 py-1 rounded-full gap-x-2 text-red-500 bg-red-100/60 dark:bg-gray-800">

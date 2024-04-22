@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\backoffice\Categories\CategoryController;
 use App\Http\Controllers\backoffice\Coachs\CoachController;
 use App\Http\Controllers\backoffice\Feature\FeatureController;
+use App\Http\Controllers\backoffice\lessons\FilterLessonsController;
 use App\Http\Controllers\backoffice\Lessons\LessonController;
 use App\Http\Controllers\backoffice\Offers\OfferController;
 use App\Http\Controllers\backoffice\roles\RoleController;
@@ -66,6 +67,10 @@ Route::middleware(['is_admin','auth'])->group(function () {
     Route::resource('coach', CoachController::class);
     //Lesson
     Route::resource('lesson', LessonController::class);
+    Route::get('lessonCancel/{lesson}', [LessonController::class, 'cancel'])->name('lesson.cancel');
+    Route::get('lessonDone/{lesson}', [LessonController::class, 'done'])->name('lesson.done');
+    
+    
     //Category
     Route::resource('category', CategoryController::class);
     //Offer
@@ -86,17 +91,17 @@ Route::middleware(['is_admin','auth'])->group(function () {
     Route::get('search/Subscription', [SubscriptionController::class, 'search'])->name('subscription.search');
     route::post('subscription/store', [SubscriptionController::class, 'store'])->name('subscription.store');
 
-
+    //role
+    route::resource('role', RoleController::class);
+    route::get('membership_print',[PrintController::class, 'print'])->name('membership.print');
 
 });
 
 Route::middleware('auth')->group(function () {
 
-
     Route::post('pay', [PaymentController::class, 'pay'])->name('pay.order');
     Route::get('success', [PaymentController::class, 'success'])->name('pay.success');
     Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
-    route::resource('role', RoleController::class);
     //reservation lesson
     Route::get('reservation/{id}', [ReservationController::class, 'reservation'])->name('lesson.reservation');
     Route::get('cancelReservation/{id}', [ReservationController::class, 'cancel'])->name('reservation.cancel');
@@ -105,5 +110,4 @@ Route::middleware('auth')->group(function () {
 route::get('offers', [PricingController::class, 'index'])->name('pricing.index');
 route::get('lessonsAll', [lessonsListController::class, 'index'])->name('lessonsList.index');
 
-route::get('membership_print',[PrintController::class, 'print'])->name('membership.print');
-
+route::post('/lessons/filterbycategory',[FilterLessonsController::class , 'filterByCategory'])->name('filter.lessons');

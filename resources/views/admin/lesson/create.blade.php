@@ -46,7 +46,7 @@
                                                         <div class="form-group">
                                                             <label class="form-label" for="default-01">Title</label>
                                                             <div class="form-control-wrap">
-                                                                <input name="title" type="text" class="form-control"
+                                                                <input value="{{ old('title') }}" name="title" type="text" class="form-control"
                                                                     id="default-01" placeholder="Input placeholder">
                                                             </div>
                                                         </div>
@@ -58,7 +58,7 @@
                                                                 <div class="form-text-hint">
                                                                     <span class="overline-title">DH</span>
                                                                 </div>
-                                                                <input type="text" name="price" class="form-control"
+                                                                <input value="{{ old('price') }}" type="text" name="price" class="form-control"
                                                                     id="default-05" placeholder="Input placeholder">
                                                             </div>
                                                         </div>
@@ -72,7 +72,7 @@
 
                                                             <div class="form-control-wrap">
 
-                                                                <input name="start_date" type="date"
+                                                                <input value="{{ old('date') }}" name="start_date" type="date"
                                                                     class="form-control form-control-md form-control-outlined "
                                                                     id="outlined-date-picker">
 

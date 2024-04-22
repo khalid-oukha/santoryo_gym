@@ -161,65 +161,70 @@
                         <tbody class="bg-transparent divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
 
                             @foreach ($reservations as $reservation)
+                                <tr>
+                                    <td
+                                        class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                                        <div class="inline-flex items-center gap-x-3">
+                                            <input type="checkbox"
+                                                class="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700">
 
+                                            <div class="flex items-center gap-x-2">
 
-                            <tr>
-                                <td
-                                    class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
-                                    <div class="inline-flex items-center gap-x-3">
-                                        <input type="checkbox"
-                                            class="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700">
+                                                <h2 class="text-sm font-medium text-gray-200 dark:text-white ">
+                                                    {{ $reservation->title }}
 
-                                        <div class="flex items-center gap-x-2">
-
-                                            <h2 class="text-sm font-medium text-gray-200 dark:text-white ">
-                                                {{ $reservation->title }}
-
-                                            </h2>
+                                                </h2>
+                                            </div>
                                         </div>
-                                    </div>
+
+                                    </td>
+
+                                    <td class="px-4 py-4 text-sm text-gray-200 dark:text-gray-300 whitespace-nowrap">
+                                        {{ $reservation->coach->user->firstname . ' ' . $reservation->coach->user->lastname }}
+                                    </td>
+                                    <td class="px-4 py-4 text-sm text-gray-200 dark:text-gray-300 whitespace-nowrap">
+                                        {{ $reservation->start_at }}
+                                    </td>
+
+                                    <td class="px-4 py-4 text-sm text-gray-200  dark:text-gray-300 whitespace-nowrap">
+                                        <span
+                                            class="px-2 py-1 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full dark:bg-green-500 dark:text-green-100">
+                                            {{ $reservation->status }}
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-3">
+                                        <div class="flex items-center space-x-4 text-sm">
+
+                                            <a href="{{ route('reservation.cancel', $reservation) }}"
+                                                onclick="return confirm('Do you really want to cancel  this reservation ?');">
+                                                <div
+                                                    class="inline-flex items-center px-1 py-1 rounded-full gap-x-2 text-red-500 bg-red-100/60 dark:bg-gray-800">
+                                                    <button
+                                                        class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-red-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                        aria-label="Edit">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12"
+                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9 3L3 9M3 3L9 9" stroke="currentColor"
+                                                                stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            @endforeach
+
+                            @if ($reservations->isEmpty())
+                                <td class="text-white flex items-center justify-center" colspan="5">there are no reservations for now</td>
+                            @endif
+
+                        </tbody>
+                    </table>
                 </div>
-                </td>
-                <td class="px-4 py-4 text-sm text-gray-200 dark:text-gray-300 whitespace-nowrap">
-                    {{ $reservation->coach->user->firstname . ' ' . $reservation->coach->user->lastname }}
-                </td>
-                <td class="px-4 py-4 text-sm text-gray-200 dark:text-gray-300 whitespace-nowrap">
-                    {{ $reservation->start_at }}
-                </td>
-
-                <td class="px-4 py-4 text-sm text-gray-200  dark:text-gray-300 whitespace-nowrap">
-                    <span
-                        class="px-2 py-1 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full dark:bg-green-500 dark:text-green-100">
-                        {{ $reservation->status }}
-                    </span>
-                </td>
-                <td class="px-4 py-3">
-                    <div class="flex items-center space-x-4 text-sm">
-
-                        <a href="{{ route('reservation.cancel',$reservation) }}" onclick="return confirm('Do you really want to cancel  this reservation ?');">
-                            <div
-                                class="inline-flex items-center px-1 py-1 rounded-full gap-x-2 text-red-500 bg-red-100/60 dark:bg-gray-800">
-                                <button
-                                    class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-red-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                                    aria-label="Edit">
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                </td>
-
-                </tr>
-
-                @endforeach
-                </tbody>
-                </table>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>

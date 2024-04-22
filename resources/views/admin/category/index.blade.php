@@ -24,19 +24,10 @@
                                                     <div class="card-tools">
                                                         <div class="form-inline flex-nowrap gx-3">
                                                             <div class="form-wrap w-150px">
-                                                                <select class="form-select js-select2" data-search="off"
-                                                                    data-placeholder="Bulk Action">
-                                                                    <option value="">Bulk Action</option>
-                                                                    <option value="edit">Edit</option>
-                                                                    <option value="delete">Move To Trash</option>
-                                                                </select>
+
                                                             </div>
                                                             <div class="btn-wrap">
-                                                                <span class="d-none d-md-block"><button
-                                                                        class="btn btn-dim btn-outline-light disabled">Apply</button></span>
-                                                                <span class="d-md-none"><button
-                                                                        class="btn btn-dim btn-outline-light btn-icon disabled"><em
-                                                                            class="icon ni ni-arrow-right"></em></button></span>
+
                                                             </div>
                                                         </div><!-- .form-inline -->
                                                     </div><!-- .card-tools -->
@@ -185,7 +176,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <div class="form-control-wrap">
-                                                                <input type="text" name="name" class="form-control"
+                                                                <input type="text" name="name"  class="form-control"
                                                                     id="name" placeholder="Name">
                                                             </div>
                                                         </div>

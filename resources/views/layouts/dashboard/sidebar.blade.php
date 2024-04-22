@@ -29,32 +29,7 @@
                                     <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
                                 </a>
                             </li>
-                            <li class="nk-menu-item">
-                                <a href="#" class="nk-menu-link nk-menu-switch" data-target="navApps">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-menu-circled"></em></span>
-                                </a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="#" class="nk-menu-link nk-menu-switch" data-target="navPages">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-files"></em></span>
-                                </a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="#" class="nk-menu-link nk-menu-switch" data-target="navMisc">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-server"></em></span>
-                                </a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/apps/calendar.html" class="nk-menu-link" title="Calendar">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-calendar"></em></span>
-                                </a>
-                            </li>
-                            <li class="nk-menu-hr"></li>
-                            <li class="nk-menu-item">
-                                <a href="#" class="nk-menu-link nk-menu-switch" data-target="navComponents">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-layers"></em></span>
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="nk-sidebar-footer">
@@ -98,7 +73,13 @@
                         </div>
                         <div class="dropdown-inner">
                             <ul class="link-list">
-                                <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a>
+                                <li>
+
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    @method('post')
+                                    <button type="submit"><em class="icon ni ni-signout"></em><span>Sign out</span></a>
+                                </form>
                                 </li>
                             </ul>
                         </div>
@@ -174,13 +155,6 @@
                 <h5 class="title">MemberShip Manegment</h5>
                 <ul class="nk-menu">
 
-                    <li class="nk-menu-item">
-                        <a href="html/hospital/index.html" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
-                            <span class="nk-menu-text">Dashboard</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
-
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
@@ -205,8 +179,6 @@
                                 <a href="{{ route('subscription.index') }}" class="nk-menu-link"><span
                                         class="nk-menu-text">Subscription List</span></a>
                             </li>
-                            <a href="html/hospital/income-list.html" class="nk-menu-link"><span
-                                    class="nk-menu-text">Income</span></a>
                     </li>
 
                 </ul><!-- .nk-menu-sub -->
@@ -232,6 +204,7 @@
 
                     </ul><!-- .nk-menu-sub -->
                 </li><!-- .nk-menu-item -->
+
                 <li class="nk-menu-item has-sub">
                     <a href="#" class="nk-menu-link nk-menu-toggle">
                         <span class="nk-menu-icon"><em class="icon ni ni-star"></em></span>
@@ -245,13 +218,6 @@
                     </ul>
                 </li><!-- .nk-menu-item -->
 
-
-                <li class="nk-menu-item">
-                    <a href="html/hospital/settings.html" class="nk-menu-link">
-                        <span class="nk-menu-icon"><em class="icon ni ni-setting-fill"></em></span>
-                        <span class="nk-menu-text">Setting</span>
-                    </a>
-                </li><!-- .nk-menu-item -->
                 </ul><!-- .nk-menu -->
             </div>
             <div class="nk-menu-content menu-active" data-content="navDashboards">
@@ -268,37 +234,6 @@
                                 <a href="{{ route('role.index') }}" class="nk-menu-link"><span class="nk-menu-text">Role List</span></a>
                             </li>
 
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-capsule-fill"></em></span>
-                            <span class="nk-menu-text">Medicine</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/add-medicine.html" class="nk-menu-link"><span class="nk-menu-text">Add Medicine</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/medicine-list.html" class="nk-menu-link"><span class="nk-menu-text">Medicine List</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/medicine-details.html" class="nk-menu-link"><span class="nk-menu-text">Medicine Details</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-home-fill"></em></span>
-                            <span class="nk-menu-text">Manufacturer</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/manufacturer.html" class="nk-menu-link"><span class="nk-menu-text">Manufacturer List</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="html/pharmacy/manufacturer-ledger.html" class="nk-menu-link"><span class="nk-menu-text">Manufacturer Ledger</span></a>
-                            </li>
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
                 </ul><!-- .nk-menu -->

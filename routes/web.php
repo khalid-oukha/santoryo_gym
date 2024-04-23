@@ -42,14 +42,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('', [HomeController::class, 'index'])->name('home');
 
 // Authentication Routes...
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('loginform');
+    Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('loginform');
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+    // Registration Routes...
+    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('registerform');
+    Route::post('/register', [RegisterController::class, 'register'])->name('register');
+});
+
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Registration Routes...
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('registerform');
-Route::post('/register', [RegisterController::class, 'register'])->name('register');
+
 
 // Password Reset Routes...
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget.passwordform');
@@ -61,16 +65,16 @@ Route::post('/reset', [ResetPasswordController::class, 'GetnewPassword'])->name(
 // dashboard Routes...
 
 
-Route::middleware(['is_admin','auth'])->group(function () {
+Route::middleware(['is_admin', 'auth'])->group(function () {
 
-     //Coach
+    //Coach
     Route::resource('coach', CoachController::class);
     //Lesson
     Route::resource('lesson', LessonController::class);
     Route::get('lessonCancel/{lesson}', [LessonController::class, 'cancel'])->name('lesson.cancel');
     Route::get('lessonDone/{lesson}', [LessonController::class, 'done'])->name('lesson.done');
-    
-    
+
+
     //Category
     Route::resource('category', CategoryController::class);
     //Offer
@@ -93,8 +97,7 @@ Route::middleware(['is_admin','auth'])->group(function () {
 
     //role
     route::resource('role', RoleController::class);
-    route::get('membership_print',[PrintController::class, 'print'])->name('membership.print');
-
+    route::get('membership_print', [PrintController::class, 'print'])->name('membership.print');
 });
 
 Route::middleware('auth')->group(function () {
@@ -109,5 +112,4 @@ Route::middleware('auth')->group(function () {
 
 route::get('offers', [PricingController::class, 'index'])->name('pricing.index');
 route::get('lessonsAll', [lessonsListController::class, 'index'])->name('lessonsList.index');
-
-route::post('/lessons/filterbycategory',[FilterLessonsController::class , 'filterByCategory'])->name('filter.lessons');
+route::post('/lessons/filterbycategory', [FilterLessonsController::class, 'filterByCategory'])->name('filter.lessons');

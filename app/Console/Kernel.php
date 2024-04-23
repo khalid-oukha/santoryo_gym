@@ -10,6 +10,8 @@ class Kernel extends ConsoleKernel
 {
     protected $commands = [
         \App\Console\Commands\CreateRepositoryFiles::class,
+        \App\Console\Commands\ExpireMembershipSoon::class,
+        \App\Console\Commands\ExpireSubscriptions::class,
     ];
     /**
      * Define the application's command schedule.
@@ -20,8 +22,8 @@ class Kernel extends ConsoleKernel
         // $schedule->call(function () {
         //     Log::info('I was here @ ' . now());
         // })->everyMinute();
-        $schedule->command('subscriptions:expire')->daily()->at('22:12');
-        $schedule->command('notify:mail')->daily()->at('22:12');
+        $schedule->command('subscriptions:expire');
+        $schedule->command('notify:mail');
 
     }
 
